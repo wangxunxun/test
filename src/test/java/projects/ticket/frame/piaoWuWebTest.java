@@ -4,9 +4,9 @@ import test.autotest.base.WebApp;
 public class piaoWuWebTest extends WebApp{
 
 	public void initialTestData(){
-//		configFilePath = "/config/ticketSystem/configWeb.properties";
-		coreFilePath = "/config/ticketSystem/core.properties";
-		envName = "test";
+		configFilePath = "/config/ticketSystem/configWeb.properties";
+/*		coreFilePath = "/config/ticketSystem/core.properties";
+		envName = "test";*/
 	}
 	
 	public void enterHomePage(){

@@ -32,9 +32,9 @@ public class WebApp extends UI {
 
 		String dirs = null;
 		if (CommonTools.getOSName().matches("Mac OS X")) {
-			dirs = CommonTools.setPath("/testresource/chromedriver");
+			dirs = CommonTools.setPath("/testresource/tools/chromedriver");
 		} else {
-			dirs = CommonTools.setPath("/testresource/chromedriver.exe");
+			dirs = CommonTools.setPath("/testresource/tools/chromedriver.exe");
 		}
 
 		System.setProperty("webdriver.chrome.driver", dirs);
