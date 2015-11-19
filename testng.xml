@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Default suite">
+  <test verbose="2" name="Default test">
+    <listeners>
+     <listener class-name="test.autotest.utils.TestngListener" />
+	</listeners>
+    <groups>
+        <run>
+            
+        </run>
+    </groups>
+    <classes>
+      <class name="projects.NP.testCases.ad">
+      <methods>
+
+          <include name = "login"/>
+
+
+      </methods>
+      </class>
+
+    </classes>
+  </test> <!-- Default test -->
+</suite> <!-- Default suite -->
