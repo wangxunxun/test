@@ -9,10 +9,11 @@ import jxl.read.biff.BiffException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 
-//@Listeners(utils.TestngListener.class)
+@Listeners(test.autotest.utils.TestngListener.class)
 public class qiChe {
 	
 	piaoWuWebTest piaoWuWebApp = new piaoWuWebTest();

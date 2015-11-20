@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="projects.NP.testCases.ad">
+      <class name="projects.ticket.testCases.baShi">
         <methods>
-          <include name="login"/>
+          <include name="test000login"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- projects.NP.testCases.ad -->
+      </class> <!-- projects.ticket.testCases.baShi -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
