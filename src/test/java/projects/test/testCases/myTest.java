@@ -52,15 +52,19 @@ public class myTest {
     	myTest.sleep(5000);
     	myTest.clickElement("主页", "按钮");
 //    	myTest.clickElement("主页", "登陆");
-    	start();
-/*    	myTest.log(myTest.getCurrentActivity());
+//    	start();
+    	myTest.log(myTest.getCurrentActivity());
     	myTest.sleep(5000);
     	myTest.startActivity("hk.com.nextmedia.magazine.nextmediaplus.qa", "com.nextmedia.nextplus.userguide.UserGuide");
     	myTest.log(myTest.getCurrentActivity());
+    	myTest.setThirdAppElementData("/testResource/projects/NP/NPAndroid.xls", "elements");
     	myTest.sleep(5000);
+    	myTest.clickElement("启动页", "略过");
     	myTest.backToMainApp();
     	myTest.log(myTest.getCurrentActivity());
-    	myTest.sleep(5000);*/
+    	myTest.setMainAppElementData();
+    	myTest.clickElement("主页", "按钮");
+    	myTest.sleep(5000);
 //    	NPAndroid.runTestCase("进入首页");
 
 

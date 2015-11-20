@@ -1,85 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="3" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
-    <line>
-      <![CDATA[/Users/wangxun/Documents/workspace/test/testReport/failScreen/web/20151120-172853-753_test000login.png]]>
-    </line>
-    <line>
-      <![CDATA[<img src="..//Users/wangxun/Documents/workspace/test/testReport/failScreen/web/20151120-172853-753_test000login.png"/>]]>
-    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22969" started-at="2015-11-20T09:28:32Z" finished-at="2015-11-20T09:28:55Z">
+  <suite name="Default suite" duration-ms="37415" started-at="2015-11-20T10:01:41Z" finished-at="2015-11-20T10:02:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22969" started-at="2015-11-20T09:28:32Z" finished-at="2015-11-20T09:28:55Z">
-      <class name="projects.ticket.testCases.baShi">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.baShi@17c68925]" name="setUp" is-config="true" duration-ms="5036" started-at="2015-11-20T17:28:32Z" finished-at="2015-11-20T17:28:37Z">
+    <test name="Default test" duration-ms="37415" started-at="2015-11-20T10:01:41Z" finished-at="2015-11-20T10:02:19Z">
+      <class name="projects.test.testCases.myTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.test.testCases.myTest@7f63425a]" name="setUp" is-config="true" duration-ms="10425" started-at="2015-11-20T18:01:41Z" finished-at="2015-11-20T18:01:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="test000login()[pri:0, instance:projects.ticket.testCases.baShi@17c68925]" name="test000login" duration-ms="13358" started-at="2015-11-20T17:28:37Z" finished-at="2015-11-20T17:28:50Z">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [333334] but found [333]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [333334] but found [333]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:496)
-	at org.testng.Assert.assertEquals(Assert.java:125)
-	at org.testng.Assert.assertEquals(Assert.java:178)
-	at org.testng.Assert.assertEquals(Assert.java:188)
-	at test.autotest.core.UI.assertEquals(UI.java:86)
-	at projects.ticket.testCases.baShi.test000login(baShi.java:67)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1032)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-            <line>
-              <![CDATA[/Users/wangxun/Documents/workspace/test/testReport/failScreen/web/20151120-172853-753_test000login.png]]>
-            </line>
-            <line>
-              <![CDATA[<img src="..//Users/wangxun/Documents/workspace/test/testReport/failScreen/web/20151120-172853-753_test000login.png"/>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test000login -->
-        <test-method status="PASS" signature="test002login()[pri:0, instance:projects.ticket.testCases.baShi@17c68925]" name="test002login" duration-ms="129" started-at="2015-11-20T17:28:53Z" finished-at="2015-11-20T17:28:53Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:projects.test.testCases.myTest@7f63425a]" name="login" duration-ms="25924" started-at="2015-11-20T18:01:52Z" finished-at="2015-11-20T18:02:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test002login -->
-        <test-method status="PASS" signature="test003login()[pri:0, instance:projects.ticket.testCases.baShi@17c68925]" name="test003login" duration-ms="1" started-at="2015-11-20T17:28:53Z" finished-at="2015-11-20T17:28:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test003login -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.baShi@17c68925]" name="tearDown" is-config="true" duration-ms="1196" started-at="2015-11-20T17:28:53Z" finished-at="2015-11-20T17:28:55Z">
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.test.testCases.myTest@7f63425a]" name="tearDown" is-config="true" duration-ms="1031" started-at="2015-11-20T18:02:18Z" finished-at="2015-11-20T18:02:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- projects.ticket.testCases.baShi -->
+      </class> <!-- projects.test.testCases.myTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

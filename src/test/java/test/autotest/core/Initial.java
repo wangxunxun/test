@@ -178,6 +178,22 @@ public class Initial {
 		}
 		return eledata;
 	}
+	
+	public void setThirdAppElementData(String excelPath,String elementSheet) {
+		ReadElementData elementdata = new ReadElementData(excelPath, elementSheet);
+		Map<String, Map<String, Map<String, String>>> eledata = null;
+		try {			
+		eledata = elementdata.getdata();
+		} catch (Exception e) {
+			Assert.fail("Fail to get the element data.\n");
+		}
+		elementData = eledata;
+
+	}
+	
+	public void setMainAppElementData(){
+		elementData = getElementData();
+	}
 
 	public List<Map<String, String>> getTestData(String testDataSheet) {
 
