@@ -128,7 +128,7 @@ public class UI extends Initial {
 				System.out.println("Can not find the element.");
 			}
 		} catch (Exception e) {
-			Assert.fail("Can not find the "+name +" element on the "+page+" page.\n");		
+			Assert.fail("Can not find the " + name + " element on the " + page + " page."+"The "+ selecttype+" is "+location);		
 		}
 		return null;
 	}
@@ -156,6 +156,7 @@ public class UI extends Initial {
 		}
 
 	}
+
 
 	public boolean verifyDisplay(String page, String name) {
 

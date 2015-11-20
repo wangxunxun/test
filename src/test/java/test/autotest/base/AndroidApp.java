@@ -145,6 +145,20 @@ public class AndroidApp extends UI {
 			log("There is no imageview ");
 		}
 	}
+	
+	public String getCurrentActivity(){
+		log("Get current activity.");
+		return androidDriver.currentActivity();
+	}
+	
+	public void backToMainApp(String activity){
+		startActivity(appPackage, activity);
+	}
+	
+	public void backToMainApp(){
+		log("Back to main app.");
+		backToMainApp(mainActivity);
+	}
 
 	public void getImageButtons() {
 		List<AndroidElement> eles = androidDriver.findElementsByClassName("android.widget.ImageButton");
@@ -234,9 +248,10 @@ public class AndroidApp extends UI {
 	}
 
 	public AndroidElement findElement(String page, String name) {
-		try {
+
 			String selecttype = elementData.get(page).get(name).get("SelectType");
 			String location = elementData.get(page).get(name).get("Location");
+			try {
 			if (selecttype.equals("css")) {
 				return androidDriver.findElement(By.cssSelector(location));
 			} else if (selecttype.equals("id")) {
@@ -265,7 +280,7 @@ public class AndroidApp extends UI {
 				log("Can not find the element.");
 			}
 		} catch (Exception e) {
-			Assert.fail("Can not find the " + name + " element on the " + page + " page.\n");
+			Assert.fail("Can not find the " + name + " element on the " + page + " page."+"The "+ selecttype+" is "+location);
 		}
 		return null;
 	}

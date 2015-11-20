@@ -30,23 +30,26 @@ public class ad {
     public void login(){
     	NPAndroid.sleep(5000);
     	NPAndroid.waitDisplay("启动页", "略过");
-    	NPAndroid.clickElement("启动页", "略过");
-    	NPAndroid.sleep(20000);
+//    	NPAndroid.clickElement("启动页", "略过");
+
 /*    	NPAndroid.swipeOfType("up");
     	NPAndroid.swipeOfType("up");
     	NPAndroid.swipeOfType("up");*/
     	NPAndroid.sleep(5000);
-    	NPAndroid.waitDisplay("首页","广告");
+/*    	NPAndroid.waitDisplay("首页","广告");
     	NPAndroid.sleep(5000);
     	NPAndroid.getElementScreen("首页","广告");
     	int x = NPAndroid.getElementX("首页","广告");
     	int y = NPAndroid.getElementY("首页","广告");
     	NPAndroid.log(x);
-    	NPAndroid.log(y);
-    	NPAndroid.assertEquals("333", "44");
+    	NPAndroid.log(y);*/
 
+    	NPAndroid.startActivity("com.example.testandroid", "com.example.testandroid.MainActivity");
     	NPAndroid.sleep(5000);
-
+    	NPAndroid.clickElement("主页", "关于");
+    	NPAndroid.sleep(5000);
+    	NPAndroid.startActivity("hk.com.nextmedia.magazine.nextmediaplus.qa", "com.nextmedia.nextplus.userguide.UserGuide");
+    	NPAndroid.sleep(5000);
 
 //    	NPAndroid.runTestCase("进入首页");
 
