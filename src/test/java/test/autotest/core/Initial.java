@@ -111,7 +111,17 @@ public class Initial {
 	public static String testAppType;
 	protected String coreFilePath;
 	protected String envName;
+	protected String firefoxPath;
 	
+	
+	protected String getFirefoxPath(){
+		firefoxPath = getProperties("firefoxPath");
+		if (firefoxPath != null) {
+			return firefoxPath;
+		}
+
+		return "";
+	}
 	protected String getTestReportDir() {
 		testReportDir = getProperties("testReportDir");
 		if (testReportDir != null) {
@@ -499,6 +509,7 @@ public class Initial {
 		projectName = getProjectName();
 		projectInfo = getProjectInfo();
 		testSpecification = getTestSpecification();
+		firefoxPath = getFirefoxPath();
 
 		elementData = getElementData();
 		testCaseData = getTestCaseData();

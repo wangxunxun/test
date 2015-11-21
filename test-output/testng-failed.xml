@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="projects.test.testCases.myTest">
+      <class name="projects.ticket.testCases.baShi">
         <methods>
+          <include name="test000login"/>
           <include name="setUp"/>
-          <include name="login"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- projects.test.testCases.myTest -->
+      </class> <!-- projects.ticket.testCases.baShi -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

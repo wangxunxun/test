@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,6 +40,25 @@ public class WebApp extends UI {
 
 		System.setProperty("webdriver.chrome.driver", dirs);
 		driver = new ChromeDriver();
+		wait = new WebDriverWait(driver, waitTime);
+
+	}
+	
+	public void runFirefoxApp() {
+
+		try {
+			initialData();
+		} catch (Exception e) {
+			System.err.println(e.toString());
+		}
+		if(firefoxPath ==""){
+			driver = new FirefoxDriver();
+		}
+		else{
+			System.setProperty("webdriver.firefox.bin",firefoxPath);    
+			driver = new FirefoxDriver();
+		}
+
 		wait = new WebDriverWait(driver, waitTime);
 
 	}
