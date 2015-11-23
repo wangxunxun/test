@@ -465,10 +465,18 @@ public class CommonTools {
 
 		} 
 	
+	public static String getCurrentDay(){
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String data = df.format(new Date());
+		return data.substring(8, 10);
+	}
+	
 	public static void main(String[] args) throws RowsExceededException, BiffException, WriteException, IOException {
 		
-		
-		
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+		String data = df.format(new Date());
+		System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
+		System.out.println(data.substring(8, 10));
 		
 		System.out.println("end");
 	}

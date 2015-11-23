@@ -329,7 +329,7 @@ public class Initial {
 		if (logSwitch == true) {
 			String time = CommonTools.getCurrentTime();
 			System.out.println(time + " INFO - " + content);
-			writeLog(time + " INFO - " + content);
+//			writeLog(time + " INFO - " + content);
 			writeLogToExcel(time + " INFO - " + content);
 		}
 	}

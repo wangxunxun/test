@@ -12,15 +12,14 @@
         </run>
     </groups>
     <classes>
-      <class name="projects.NP.testCases.ad">
+      <class name="projects.ticket.testCases.ticketWeb.baShi">
       <methods>
-
-          <include name = "login"/>
-
-
       </methods>
       </class>
-
+      <class name="projects.ticket.testCases.ticketWeb.qiChe">
+      <methods>
+      </methods>
+      </class>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Default suite -->

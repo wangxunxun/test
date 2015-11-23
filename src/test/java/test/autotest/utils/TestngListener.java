@@ -103,7 +103,7 @@ public class TestngListener extends TestListenerAdapter {
 	@Override
 	public void onTestStart(ITestResult tr) {
 		super.onTestStart(tr);
-		System.out.println(tr.getName() + " Start");
+		System.out.println("The case "+ tr.getName() + " belong to the "+tr.getTestClass().getName()+ " Start.");
 	}
 
 	@Override

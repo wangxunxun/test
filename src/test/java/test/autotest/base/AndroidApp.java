@@ -85,7 +85,14 @@ public class AndroidApp extends UI {
 		testAppType = null;
 		androidDriver.quit();
 	}
+	
+	public AndroidElement findElementByName(String name){
+		return androidDriver.findElementByName(name);
+	}
 
+	public void clickElmentByName(String name){
+		findElementByName(name).click();
+	}
 	public String getApkName() {
 		return apkName;
 	}
