@@ -145,7 +145,7 @@ public class cheDuiAndCheLiang {
     
 //    @Test
     public void addCheDui(){
-    	piaoWuWebApp.runTestCase("登录");
+//    	piaoWuWebApp.runTestCase("登录");
     	piaoWuWebApp.waitDisplay("侧边栏","车队与车辆管理");
     	piaoWuWebApp.clickElement("侧边栏","车队与车辆管理");
     	piaoWuWebApp.waitDisplay("侧边栏","车队管理");

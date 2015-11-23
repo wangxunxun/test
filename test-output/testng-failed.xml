@@ -17,6 +17,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="test012editQiChePiaoJia"/>
           <include name="test005login"/>
         </methods>
       </class> <!-- projects.ticket.testCases.ticketWeb.qiChe -->

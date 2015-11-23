@@ -149,7 +149,7 @@ public class qiChe {
 			BiffException, IOException {
 
 		piaoWuWebApp.logTestDescription("ahahddsferewrewrewrewrerew");
-		/*		String piaojia = piaoWuWebApp.getProperties("qiChePiaoJia");
+		String piaojia = piaoWuWebApp.getProperties("qiChePiaoJia");
 
 		String newPiaoJia = piaoWuWebApp.getTableRowLocationByCss(piaojia, 6);
 
@@ -181,9 +181,9 @@ public class qiChe {
 
 		}
 
-		piaoWuWebApp.clickElement("汽车-票价", "提交");*/
+		piaoWuWebApp.clickElement("汽车-票价", "提交");
 
-		 piaoWuWebApp.runTestCase("添加城市");
+//		 piaoWuWebApp.runTestCase("添加城市");
 
 	}
 

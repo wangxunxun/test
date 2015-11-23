@@ -230,15 +230,18 @@ public class Initial {
 	}
 
 	protected Map<String, Object> getTestCaseData() {
-
-		ReadTestCasesData testCaseData = new ReadTestCasesData(testDataExcelPath, testCaseSheet);
-		Map<String, Object> data = null;
-		try {
-		data = testCaseData.getdata();
-		} catch (Exception e) {
-			Assert.fail("Fail to get the test case data .\n");
+		if(testCaseSheet!=null){
+			ReadTestCasesData testCaseData = new ReadTestCasesData(testDataExcelPath, testCaseSheet);
+			Map<String, Object> data = null;
+			try {
+			data = testCaseData.getdata();
+			} catch (Exception e) {
+				Assert.fail("Fail to get the test case data .\n");
+			}
+			return data;
 		}
-		return data;
+		return null;
+
 
 	}
 
