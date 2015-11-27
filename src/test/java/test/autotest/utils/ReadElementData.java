@@ -64,22 +64,22 @@ public class ReadElementData {
 
 			List<Object> element = new ArrayList<Object>();
 			if (readsheet.getCell(0, i).getContents() != "" & readsheet.getCell(1, i).getContents() != "") {
-				Map<String, String> location = new HashMap<String, String>();
-				location.put(header.get(2), readsheet.getCell(2, i).getContents());
-				location.put(header.get(3), readsheet.getCell(3, i).getContents());
-				location.put(header.get(4), readsheet.getCell(4, i).getContents());
+				Map<String, String> elementValue = new HashMap<String, String>();
+				elementValue.put(header.get(2), readsheet.getCell(2, i).getContents());
+				elementValue.put(header.get(3), readsheet.getCell(3, i).getContents());
+				elementValue.put(header.get(4), readsheet.getCell(4, i).getContents());
 				element.add(readsheet.getCell(1, i).getContents());
-				element.add(location);
+				element.add(elementValue);
 				elements.add(element);
 				pages.add(readsheet.getCell(0, i).getContents());
 			}
 			if (readsheet.getCell(0, i).getContents() == "" & readsheet.getCell(1, i).getContents() != "") {
-				Map<String, String> location = new HashMap<String, String>();
-				location.put(header.get(2), readsheet.getCell(2, i).getContents());
-				location.put(header.get(3), readsheet.getCell(3, i).getContents());
-				location.put(header.get(4), readsheet.getCell(4, i).getContents());
+				Map<String, String> elementValue = new HashMap<String, String>();
+				elementValue.put(header.get(2), readsheet.getCell(2, i).getContents());
+				elementValue.put(header.get(3), readsheet.getCell(3, i).getContents());
+				elementValue.put(header.get(4), readsheet.getCell(4, i).getContents());
 				element.add(readsheet.getCell(1, i).getContents());
-				element.add(location);
+				element.add(elementValue);
 				elements.add(element);
 			}
 

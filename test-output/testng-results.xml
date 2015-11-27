@@ -2,37 +2,37 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="43286" started-at="2015-11-27T14:12:01Z" finished-at="2015-11-27T14:12:45Z">
+  <suite name="Default suite" duration-ms="43710" started-at="2015-11-27T14:21:19Z" finished-at="2015-11-27T14:22:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="43286" started-at="2015-11-27T14:12:01Z" finished-at="2015-11-27T14:12:45Z">
+    <test name="Default test" duration-ms="43710" started-at="2015-11-27T14:21:19Z" finished-at="2015-11-27T14:22:02Z">
       <class name="projects.ticket.testCases.android.testa">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.android.testa@e580929]" name="setUp" is-config="true" duration-ms="16404" started-at="2015-11-27T22:12:01Z" finished-at="2015-11-27T22:12:18Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.android.testa@e580929]" name="setUp" is-config="true" duration-ms="15632" started-at="2015-11-27T22:21:19Z" finished-at="2015-11-27T22:21:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="searchQiChePiao()[pri:0, instance:projects.ticket.testCases.android.testa@e580929]" name="searchQiChePiao" duration-ms="24519" started-at="2015-11-27T22:12:18Z" finished-at="2015-11-27T22:12:42Z">
+        <test-method status="FAIL" signature="searchQiChePiao()[pri:0, instance:projects.ticket.testCases.android.testa@e580929]" name="searchQiChePiao" duration-ms="25691" started-at="2015-11-27T22:21:34Z" finished-at="2015-11-27T22:22:00Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 747 milliseconds
+Command duration or timeout: 893 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
 System info: host: 'troy-PC', ip: '192.168.21.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_60'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities [{app=F:\workspace\test/testResource/projects/ticket/ticket11-20.apk, appPackage=cn.beyondsoft.wicket, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=02a59885, platform=LINUX, appActivity=cn.beyondsoft.wicket.LoddingActivity, desired={app=F:\workspace\test/testResource/projects/ticket/ticket11-20.apk, appPackage=cn.beyondsoft.wicket, appActivity=cn.beyondsoft.wicket.LoddingActivity, unicodeKeyboard=true, platformName=Android, deviceName=null, resetKeyboard=true}, platformVersion=4.3, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
-Session ID: 6f18428c-0548-4291-a9c0-23dc7d9442f0
+Session ID: ca1fa976-705e-4569-b190-150029a15de7
 *** Element info: {Using=name, value=ÏÌÄþ}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 747 milliseconds
+Command duration or timeout: 893 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
 System info: host: 'troy-PC', ip: '192.168.21.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_60'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities [{app=F:\workspace\test/testResource/projects/ticket/ticket11-20.apk, appPackage=cn.beyondsoft.wicket, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=02a59885, platform=LINUX, appActivity=cn.beyondsoft.wicket.LoddingActivity, desired={app=F:\workspace\test/testResource/projects/ticket/ticket11-20.apk, appPackage=cn.beyondsoft.wicket, appActivity=cn.beyondsoft.wicket.LoddingActivity, unicodeKeyboard=true, platformName=Android, deviceName=null, resetKeyboard=true}, platformVersion=4.3, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
-Session ID: 6f18428c-0548-4291-a9c0-23dc7d9442f0
+Session ID: ca1fa976-705e-4569-b190-150029a15de7
 *** Element info: {Using=name, value=ÏÌÄþ}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -82,7 +82,7 @@ Session ID: 6f18428c-0548-4291-a9c0-23dc7d9442f0
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchQiChePiao -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.android.testa@e580929]" name="tearDown" is-config="true" duration-ms="2328" started-at="2015-11-27T22:12:42Z" finished-at="2015-11-27T22:12:45Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.android.testa@e580929]" name="tearDown" is-config="true" duration-ms="2352" started-at="2015-11-27T22:22:00Z" finished-at="2015-11-27T22:22:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
