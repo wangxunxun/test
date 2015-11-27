@@ -27,7 +27,7 @@ import test.autotest.core.UI;
 
 public class IOSApp extends UI {
 
-	protected IOSDriver<IOSElement> iosDriver;
+	
 
   	public void runIOSApp(){
 		    // set up appium

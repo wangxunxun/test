@@ -19,7 +19,7 @@ import org.testng.Assert;
 import test.autotest.core.UI;
 
 public class AndroidApp extends UI {
-	protected AndroidDriver<AndroidElement> androidDriver;
+	
 
 	public void runAndroidApp() {
 		// set up appium
@@ -86,13 +86,7 @@ public class AndroidApp extends UI {
 		androidDriver.quit();
 	}
 	
-	public AndroidElement findElementByName(String name){
-		return androidDriver.findElementByName(name);
-	}
 
-	public void clickElmentByName(String name){
-		findElementByName(name).click();
-	}
 	public String getApkName() {
 		return apkName;
 	}

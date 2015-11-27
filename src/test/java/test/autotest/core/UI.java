@@ -13,12 +13,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.IOSElement;
 import test.autotest.core.Initial;
 import test.autotest.utils.CommonTools;
 import test.autotest.utils.ImageUtils;
 
 public class UI extends Initial {
 	public static WebDriver driver;
+	protected AndroidDriver<AndroidElement> androidDriver;
+	protected IOSDriver<IOSElement> iosDriver;
 	protected WebDriverWait wait;
 	public void clickElement(String page, String name) {
 		log("Click the " + name + " element on the " + page + " page.");
@@ -118,6 +125,14 @@ public class UI extends Initial {
 
 	public void assertEqual(String page, String name){
 		assertEquals(getElementText(page, name), getElementExpectedValue(page, name));
+	}
+	
+	public WebElement findElementByName(String name){
+		return driver.findElement(By.name(name));
+	}
+
+	public void clickElmentByName(String name){
+		findElementByName(name).click();
 	}
 	public WebElement findElement(String page, String name) {
 		String selecttype = elementData.get(page).get(name).get("SelectType");

@@ -38,6 +38,7 @@ public class testa{
     @Test
     public void searchQiChePiao(){
     	ticketApp.enterMainPage();
+    	ticketApp.sleep(5000);
     	ticketApp.clickElement("汽车票", "起始站");
     	ticketApp.sendKeys("选择出发城市", "搜索输入框","XN");
     	ticketApp.clickElmentByName("咸宁");

@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\troy\AppData\Local\Temp\testng-eclipse--2072988373\testng-customsuite.xml</span>
+                    <span>C:\Users\troy\AppData\Local\Temp\testng-eclipse--1076169680\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -128,14 +128,14 @@
                   </a> <!-- searchQiChePiao -->
                   <span class="method-name">searchQiChePiao</span>
                   <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 893 milliseconds
+Command duration or timeout: 3.56 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
 System info: host: &apos;troy-PC&apos;, ip: &apos;192.168.21.1&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_60&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities [{app=F:\workspace\test/testResource/projects/ticket/ticket11-20.apk, appPackage=cn.beyondsoft.wicket, networkConnectionEnabled=true, warnings={}, databaseEnabled=false, deviceName=02a59885, platform=LINUX, appActivity=cn.beyondsoft.wicket.LoddingActivity, desired={app=F:\workspace\test/testResource/projects/ticket/ticket11-20.apk, appPackage=cn.beyondsoft.wicket, appActivity=cn.beyondsoft.wicket.LoddingActivity, unicodeKeyboard=true, platformName=Android, deviceName=null, resetKeyboard=true}, platformVersion=4.3, webStorageEnabled=false, locationContextEnabled=false, browserName=Android, takesScreenshot=true, javascriptEnabled=true, unicodeKeyboard=true, platformName=Android, resetKeyboard=true}]
-Session ID: ca1fa976-705e-4569-b190-150029a15de7
-*** Element info: {Using=name, value=ÏÌÄþ}
+Session ID: 112fe065-83cc-4687-b31f-229bd4f52edf
+*** Element info: {Using=name, value=ÄÏÉ½Æû³µÕ¾}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -151,9 +151,14 @@ Session ID: ca1fa976-705e-4569-b190-150029a15de7
 	at io.appium.java_client.DefaultGenericMobileDriver.findElementByName(DefaultGenericMobileDriver.java:75)
 	at io.appium.java_client.AppiumDriver.findElementByName(AppiumDriver.java:1)
 	at io.appium.java_client.android.AndroidDriver.findElementByName(AndroidDriver.java:1)
-	at test.autotest.base.AndroidApp.findElementByName(AndroidApp.java:90)
-	at test.autotest.base.AndroidApp.clickElmentByName(AndroidApp.java:94)
-	at projects.ticket.testCases.android.testa.searchQiChePiao(testa.java:43)
+	at org.openqa.selenium.By$ByName.findElement(By.java:300)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:37)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at test.autotest.core.UI.findElementByName(UI.java:131)
+	at test.autotest.core.UI.clickElmentByName(UI.java:135)
+	at projects.ticket.testCases.android.testa.searchQiChePiao(testa.java:54)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -187,7 +192,7 @@ Session ID: ca1fa976-705e-4569-b190-150029a15de7
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\troy\AppData\Local\Temp\testng-eclipse--2072988373\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\troy\AppData\Local\Temp\testng-eclipse--1076169680\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -240,12 +245,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'searchQiChePiao')
 data.setCell(0, 2, 'projects.ticket.testCases.android.testa')
-data.setCell(0, 3, 25691);
+data.setCell(0, 3, 56221);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 25 seconds</span>
+              <span class="suite-total-time">Total running time: 56 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -280,11 +285,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">searchQiChePiao</span>
-                <span class="method-start">15632 ms</span>
+                <span class="method-start">16493 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">41336 ms</span>
+                <span class="method-start">72732 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
