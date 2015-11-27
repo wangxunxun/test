@@ -255,7 +255,6 @@ public class AndroidApp extends UI {
 	}
 
 	public AndroidElement findElement(String page, String name) {
-
 			String selecttype = elementData.get(page).get(name).get("SelectType");
 			String location = elementData.get(page).get(name).get("Location");
 			try {

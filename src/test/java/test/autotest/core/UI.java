@@ -84,6 +84,7 @@ public class UI extends Initial {
 
 	public void assertEquals(String actual, String expected) {
 		Assert.assertEquals(actual, expected);
+		log("Expected ["+expected+"] found ["+expected+"],pass.");
 	}
 
 	public boolean isSlected(String page, String name) {
@@ -102,9 +103,23 @@ public class UI extends Initial {
 		log("Sleep " + time + " ms.");
 		CommonTools.sleep(time);
 	}
+	
+	public String getElementExpectedValue(String page, String name){
+		log("To get the expected text of the " + name + " element on the " + page + " page.");
+		String value = elementData.get(page).get(name).get("Expected Value");
+		if (value != null) {
+			log("The expected text is \"" + value + "\".");
+			return value;
+		} else {
+			log("The expected text is null.");
+		}
+		return value;		
+	}
 
+	public void assertEqual(String page, String name){
+		assertEquals(getElementText(page, name), getElementExpectedValue(page, name));
+	}
 	public WebElement findElement(String page, String name) {
-
 		String selecttype = elementData.get(page).get(name).get("SelectType");
 		String location = elementData.get(page).get(name).get("Location");
 		try {

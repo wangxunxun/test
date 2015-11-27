@@ -67,6 +67,7 @@ public class ReadElementData {
 				Map<String, String> location = new HashMap<String, String>();
 				location.put(header.get(2), readsheet.getCell(2, i).getContents());
 				location.put(header.get(3), readsheet.getCell(3, i).getContents());
+				location.put(header.get(4), readsheet.getCell(4, i).getContents());
 				element.add(readsheet.getCell(1, i).getContents());
 				element.add(location);
 				elements.add(element);
@@ -76,6 +77,7 @@ public class ReadElementData {
 				Map<String, String> location = new HashMap<String, String>();
 				location.put(header.get(2), readsheet.getCell(2, i).getContents());
 				location.put(header.get(3), readsheet.getCell(3, i).getContents());
+				location.put(header.get(4), readsheet.getCell(4, i).getContents());
 				element.add(readsheet.getCell(1, i).getContents());
 				element.add(location);
 				elements.add(element);

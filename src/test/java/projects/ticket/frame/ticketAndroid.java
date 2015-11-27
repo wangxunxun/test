@@ -20,6 +20,8 @@ public class ticketAndroid extends AndroidApp{
     	swipeOfType("left");
     	sleep(500);
     	swipeOfType("left");
+    	getElementExpectedValue("启动页", "开启直达车");
+    	assertEqual("启动页", "开启直达车");
     	clickElement("启动页", "开启直达车");
     	
     }

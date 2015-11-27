@@ -484,6 +484,7 @@ public class Initial {
 
 	}
 
+
 	protected String getTestClassName() {
 		String className = getClassName();
 		String[] ddd = className.split("\\.");
