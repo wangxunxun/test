@@ -6,12 +6,11 @@ import test.autotest.utils.CommonTools;
 import test.autotest.utils.OperateExcel;
 import test.autotest.utils.TestngListener;
 import io.appium.java_client.android.AndroidDriver;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -38,8 +37,8 @@ public class AndroidApp extends UI {
 		capabilities.setCapability("appActivity", mainActivity);
 		try {
 			androidDriver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			System.err.println(e.toString());
 		}
 		wait = new WebDriverWait(androidDriver, waitTime);
 		driver = androidDriver;
@@ -95,61 +94,35 @@ public class AndroidApp extends UI {
 		return appPackage;
 	}
 
-	public void getButtons() {
-		List<AndroidElement> eles = androidDriver.findElementsByClassName("android.widget.Button");
-		if (eles.size() != 0) {
-			log("The total of button is " + eles.size());
-
-			for (int i = 0; i < eles.size(); i++) {
-				log("The " + i + " button is " + eles.get(i).getText());
-			}
-		} else {
-			log("There is no textview ");
-		}
+	public void printAllButtons() {
+		printAllElesByClassName("android.widget.Button");
 	}
 
-	public void getTextViews() {
-		List<AndroidElement> eles = androidDriver.findElementsByClassName("android.widget.TextView");
-		if (eles.size() != 0) {
-			log("The total of textview is " + eles.size());
-			int i = 0;
-			for (AndroidElement ele : eles) {
-				log("The " + i + " textview is " + ele.getText());
-				i++;
-
-			}
-		} else {
-			log("There is no textview ");
-		}
+	public void printAllTextViews() {
+		printAllElesByClassName("android.widget.TextView");
 	}
 
-	public void getEditTexts() {
-		List<AndroidElement> eles = androidDriver.findElementsByClassName("android.widget.EditText");
-		if (eles.size() != 0) {
-			log("The total of edittext is " + eles.size());
-			int i = 0;
-			for (AndroidElement ele : eles) {
-				log("The " + i + " edittext is " + ele.getText());
-				i++;
-
-			}
-		} else {
-			log("There is no edittext ");
-		}
+	public void printAllEditTexts() {
+		printAllElesByClassName("android.widget.EditText");
 	}
 
-	public void getImageViews() {
-		List<AndroidElement> eles = androidDriver.findElementsByClassName("android.widget.ImageView");
-		if (eles.size() != 0) {
-			log("The total of imageview is " + eles.size());
-		} else {
-			log("There is no imageview ");
-		}
+	public void printAllImageViews() {
+		printAllElesByClassName("android.widget.ImageView");
+	}
+	
+
+	public void printAllImageButtons() {
+		printAllElesByClassName("android.widget.ImageButton");
 	}
 	
 	public String getCurrentActivity(){
 		log("Get current activity.");
 		return androidDriver.currentActivity();
+	}
+	
+	public void startActivity(String appPackage, String appActivity) {
+		log("Start to launch activity " + appActivity + ".");
+		androidDriver.startActivity(appPackage, appActivity);
 	}
 	
 	public void backToMainApp(String activity){
@@ -160,64 +133,23 @@ public class AndroidApp extends UI {
 		log("Back to main app.");
 		backToMainApp(mainActivity);
 	}
-
-	public void getImageButtons() {
-		List<AndroidElement> eles = androidDriver.findElementsByClassName("android.widget.ImageButton");
-		if (eles.size() != 0) {
-			log("The total of imagebutton is " + eles.size());
-		} else {
-			log("There is no imagebutton ");
-		}
+	
+	public void swipeLeft(){
+		swipeOfType("left");
+	}
+	
+	public void swipeRight(){
+		swipeOfType("right");
+	}
+	
+	public void swipeUp(){
+		swipeOfType("up");
+	}
+	
+	public void swipeDown(){
+		swipeOfType("down");
 	}
 
-	public AndroidElement findElementByClassNameIndex(String classname, int index) {
-		List<AndroidElement> eles = androidDriver.findElementsByClassName(classname);
-		return eles.get(index);
-	}
-
-	public void swipeOfType(String type) {
-		try {
-			int windowlenX = androidDriver.manage().window().getSize().getWidth();
-			int windowlenY = androidDriver.manage().window().getSize().getHeight();
-			String swipeLeft = "left";
-			String swipeRight = "right";
-
-			String swipeUp = "up";
-
-			String swipeDown = "down";
-
-			// Sliding screen to the left
-			if (type.equalsIgnoreCase(swipeLeft)) {
-				log("Swipe left.");
-				androidDriver.swipe((int) (windowlenX * 0.9), (int) (windowlenY * 0.5), (int) (windowlenX * 0.1),
-						(int) (windowlenY * 0.5), 3000);
-			}
-
-			// Sliding screen to the right
-			if (type.equalsIgnoreCase(swipeRight)) {
-				log("Swipe right.");
-				androidDriver.swipe((int) (windowlenX * 0.1), (int) (windowlenY * 0.5), (int) (windowlenX * 0.9),
-						(int) (windowlenY * 0.5), 3000);
-			}
-
-			// Screen upward sliding
-			if (type.equalsIgnoreCase(swipeUp)) {
-				log("Swipe up.");
-				androidDriver.swipe((int) (windowlenX * 0.5), (int) (windowlenY * 0.8), (int) (windowlenX * 0.5),
-						(int) (windowlenY * 0.4), 3000);
-			}
-
-			// Slide down the screen
-			if (type.equalsIgnoreCase(swipeDown)) {
-				log("Swipe down.");
-				androidDriver.swipe((int) (windowlenX * 0.5), (int) (windowlenY * 0.4), (int) (windowlenX * 0.5),
-						(int) (windowlenY * 0.8), 3000);
-			}
-		} catch (Exception e) {
-			Assert.fail("Fail to swip to " + type + ".");
-		}
-
-	}
 
 	public void clickEnter() {
 		log("Click Enter.");
@@ -232,58 +164,24 @@ public class AndroidApp extends UI {
 	public void clickHome() {
 		log("Click Home.");
 		executeAdbShell("adb shell input keyevent 3");
+
 	}
 
 	public void clickMenu() {
 		log("Click Menu.");
 		executeAdbShell("adb shell input keyevent 1");
+		
 	}
 
 	public void executeAdbShell(String adbshell) {
 		try {
-			log("Execute adb Shell \"" + adbshell + "\".");
 			Runtime.getRuntime().exec(adbshell);
 		} catch (Exception e) {
 			Assert.fail("Fail to execute the script " + adbshell + ".");
 		}
+		sleep(3000);
 	}
 
-	public AndroidElement findElement(String page, String name) {
-			String selecttype = elementData.get(page).get(name).get("SelectType");
-			String location = elementData.get(page).get(name).get("Location");
-			try {
-			if (selecttype.equals("css")) {
-				return androidDriver.findElement(By.cssSelector(location));
-			} else if (selecttype.equals("id")) {
-				return androidDriver.findElement(By.id(location));
-			} else if (selecttype.equals("xpath")) {
-				return androidDriver.findElement(By.xpath(location));
-			} else if (selecttype.equals("name")) {
-				return androidDriver.findElement(By.name(location));
-			}
-
-			else if (selecttype.equals("linktext")) {
-				return androidDriver.findElement(By.linkText(location));
-			} else if (selecttype.equals("partiallinktext")) {
-				return androidDriver.findElement(By.partialLinkText(location));
-			} else if (selecttype.equals("tagname")) {
-				return androidDriver.findElement(By.tagName(location));
-			} else if (selecttype.equals("scrollname")) {
-				return androidDriver.scrollTo(location);
-			} else if (selecttype.equals("index")) {
-				String[] sourceStrArray = location.split(",");
-				String classname = sourceStrArray[0];
-				String index = sourceStrArray[1];
-				int in = Integer.parseInt(index);
-				return findElementByClassNameIndex(classname, in);
-			} else {
-				log("Can not find the element.");
-			}
-		} catch (Exception e) {
-			Assert.fail("Can not find the " + name + " element on the " + page + " page."+"The "+ selecttype+" is "+location);
-		}
-		return null;
-	}
 
 	public void tabElement(String page, String name) {
 		try {
@@ -323,28 +221,6 @@ public class AndroidApp extends UI {
 		}
 	}
 
-	public void swipeElement(String page, String name) {
-		try {
-		String selecttype = elementData.get(page).get(name).get("SelectType");
-		String location = elementData.get(page).get(name).get("Location");
-		if (selecttype.equals("swipe")) {
-			String[] sourceStrArray = location.split(",");
-			String startx = sourceStrArray[0];
-			String starty = sourceStrArray[1];
-			String endx = sourceStrArray[2];
-			String endy = sourceStrArray[3];
-			int startnewx = Integer.parseInt(startx);
-			int startnewy = Integer.parseInt(starty);
-			int endnewx = Integer.parseInt(endx);
-			int endnewy = Integer.parseInt(endy);
-			swipe(startnewx, startnewy, endnewx, endnewy, 1000);
-		} else {
-			log("Please provide the coordinate.");
-		}
-	} catch (Exception e) {
-		Assert.fail("Fail to swip to the " + name + " element on the " + page + " page.\n");
-	}
-	}
 
 	public void tab(int fingers, int x, int y, int duration) {
 		float a = (float) x / basicWindowX;
@@ -352,6 +228,7 @@ public class AndroidApp extends UI {
 		int newx = (int) (a * androidDriver.manage().window().getSize().getWidth());
 		int newy = (int) (b * androidDriver.manage().window().getSize().getHeight());
 		androidDriver.tap(fingers, newx, newy, duration);
+		
 	}
 
 	public void tab(int x, int y) {
@@ -396,10 +273,7 @@ public class AndroidApp extends UI {
 		androidDriver.findElementByName(text).click();
 	}
 
-	public void startActivity(String appPackage, String appActivity) {
-		log("Start to launch activity " + appActivity + ".");
-		androidDriver.startActivity(appPackage, appActivity);
-	}
+
 
 	public void slideUpToFindElement(String page, String name) {
 		boolean statu = false;
@@ -414,8 +288,8 @@ public class AndroidApp extends UI {
 			}
 		}
 		if (statu == false) {
-			log("Don't find the " + name + " element on the " + page + " page.");
-			Assert.fail("Don't find the " + name + " element on the " + page + " page.");
+			log("Can't find the " + name + " element on the " + page + " page.");
+			Assert.fail("Can't find the " + name + " element on the " + page + " page.");
 		}
 	}
 
@@ -540,13 +414,6 @@ public class AndroidApp extends UI {
 				String script = appClass + "." + "startActivity(\"" + appPackage + "\"" + ",\"" + value + "\");";
 				putScriptData(rowin, script);
 
-			} else if (action.equals("swipe")) {
-				swipeElement(page, name);
-				logResult(rowin);
-				putResultData(rowin, "P");
-				String script = appClass + "." + "swipeElement(\"" + page + "\",\"" + name + "\");";
-				putScriptData(rowin, script);
-
 			} else if (action.equals("scrollToClick")) {
 				scrollToClick(value);
 				logResult(rowin);
@@ -569,6 +436,11 @@ public class AndroidApp extends UI {
 			}
 
 		}
+	}
+	
+	public WebElement findElement(String page, String name) {
+		
+		return findElement(page, name, this);
 	}
 
 }

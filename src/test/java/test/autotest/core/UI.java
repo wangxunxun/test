@@ -2,6 +2,7 @@ package test.autotest.core;
 
 import java.awt.Color;
 import java.io.File;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -18,6 +19,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import test.autotest.base.AndroidApp;
 import test.autotest.core.Initial;
 import test.autotest.utils.CommonTools;
 import test.autotest.utils.ImageUtils;
@@ -134,7 +136,31 @@ public class UI extends Initial {
 	public void clickElmentByName(String name){
 		findElementByName(name).click();
 	}
+	
+	public void printAllElesByClassName(String className){
+		List<WebElement> eles = driver.findElements(By.className(className));
+		if (eles.size() != 0) {
+			log("The count of "+className+" is " + eles.size());
+
+			for (int i = 0; i < eles.size(); i++) {
+				log("The " + i + " th "+className+" is " + eles.get(i).getText());
+			}
+		} else {
+			log("Can not find any elements.");
+		}
+	}
+	
+
+	
+	public WebElement findElementByClassNameIndex(String className, int index) {
+		List<WebElement> eles = driver.findElements(By.className(className));
+		return eles.get(index);
+	}
+	
 	public WebElement findElement(String page, String name) {
+		return findElement(page, name, this);
+	}
+	public WebElement findElement(String page, String name,UI ui) {
 		String selecttype = elementData.get(page).get(name).get("SelectType");
 		String location = elementData.get(page).get(name).get("Location");
 		try {
@@ -154,8 +180,20 @@ public class UI extends Initial {
 				return driver.findElement(By.partialLinkText(location));
 			} else if (selecttype.equals("tagname")) {
 				return driver.findElement(By.tagName(location));
+			} else if (selecttype.equals("index")) {
+				String[] sourceStrArray = location.split(",");
+				String classname = sourceStrArray[0];
+				String index = sourceStrArray[1];
+				int in = Integer.parseInt(index);
+				return findElementByClassNameIndex(classname, in);
+				
+			} else if (ui instanceof AndroidApp) {
+				if(selecttype.equals("scrollname")){
+					return androidDriver.scrollTo(location);
+				}
+				
 			} else {
-				System.out.println("Can not find the element.");
+				log("Can not find the " + name + " element on the " + page + " page."+"The "+ selecttype+" is "+location);
 			}
 		} catch (Exception e) {
 			Assert.fail("Can not find the " + name + " element on the " + page + " page."+"The "+ selecttype+" is "+location);		
@@ -200,9 +238,7 @@ public class UI extends Initial {
 				log("The " + name + " element on the " + page + " page is not displayed.");
 				return false;
 			}
-			log("The " + name + " element on the " + page + " page is displayed.");
-			sleep(500);
-			return true;
+
 
 		} else if (selecttype.equals("id")) {
 			try {
@@ -212,9 +248,6 @@ public class UI extends Initial {
 				return false;
 			}
 
-			log("The " + name + " element on the " + page + " page is displayed.");
-			sleep(500);
-			return true;
 		} else if (selecttype.equals("xpath")) {
 			try {
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(location)));
@@ -223,9 +256,6 @@ public class UI extends Initial {
 				return false;
 			}
 
-			log("The " + name + " element on the " + page + " page is displayed.");
-			sleep(500);
-			return true;
 		} else if (selecttype.equals("linktext")) {
 			try {
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(location)));
@@ -234,9 +264,6 @@ public class UI extends Initial {
 				return false;
 			}
 
-			log("The " + name + " element on the " + page + " page is displayed.");
-			sleep(500);
-			return true;
 		} else if (selecttype.equals("name")) {
 			try {
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.name(location)));
@@ -245,9 +272,6 @@ public class UI extends Initial {
 				return false;
 			}
 
-			log("The " + name + " element on the " + page + " page is displayed.");
-			sleep(500);
-			return true;
 		} else if (selecttype.equals("partiallinktext")) {
 			try {
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.partialLinkText(location)));
@@ -256,9 +280,6 @@ public class UI extends Initial {
 				return false;
 			}
 
-			log("The " + name + " element on the " + page + " page is displayed.");
-			sleep(500);
-			return true;
 		} else if (selecttype.equals("tagname")) {
 			try {
 				wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName(location)));
@@ -267,9 +288,6 @@ public class UI extends Initial {
 				return false;
 			}
 
-			log("The " + name + " element on the " + page + " page is displayed.");
-			sleep(500);
-			return true;
 		} else if (selecttype.equals("index")) {
 			String[] sourceStrArray = location.split(",");
 			String classname = sourceStrArray[0];
@@ -279,15 +297,56 @@ public class UI extends Initial {
 				log("The " + name + " element on the " + page + " page is not displayed.");
 				return false;
 			}
-			log("The " + name + " element on the " + page + " page is displayed.");
-			sleep(500);
-			return true;
+
 		} else {
 			log("Don't support the type.");
 			return false;
 		}
+		log("The " + name + " element on the " + page + " page is displayed.");
+		sleep(100);
+		return true;
 	}
+	protected void swipeOfType(String type) {
+		try {
+			int windowlenX = androidDriver.manage().window().getSize().getWidth();
+			int windowlenY = androidDriver.manage().window().getSize().getHeight();
+			String swipeLeft = "left";
+			String swipeRight = "right";
+			String swipeUp = "up";
+			String swipeDown = "down";
 
+			// Sliding screen to the left
+			if (type.equalsIgnoreCase(swipeLeft)) {
+				log("Swipe left.");
+				androidDriver.swipe((int) (windowlenX * 0.9), (int) (windowlenY * 0.5), (int) (windowlenX * 0.1),
+						(int) (windowlenY * 0.5), 3000);
+			}
+
+			// Sliding screen to the right
+			if (type.equalsIgnoreCase(swipeRight)) {
+				log("Swipe right.");
+				androidDriver.swipe((int) (windowlenX * 0.1), (int) (windowlenY * 0.5), (int) (windowlenX * 0.9),
+						(int) (windowlenY * 0.5), 3000);
+			}
+
+			// Screen upward sliding
+			if (type.equalsIgnoreCase(swipeUp)) {
+				log("Swipe up.");
+				androidDriver.swipe((int) (windowlenX * 0.5), (int) (windowlenY * 0.8), (int) (windowlenX * 0.5),
+						(int) (windowlenY * 0.4), 3000);
+			}
+
+			// Slide down the screen
+			if (type.equalsIgnoreCase(swipeDown)) {
+				log("Swipe down.");
+				androidDriver.swipe((int) (windowlenX * 0.5), (int) (windowlenY * 0.4), (int) (windowlenX * 0.5),
+						(int) (windowlenY * 0.8), 3000);
+			}
+		} catch (Exception e) {
+			Assert.fail("Fail to swip to " + type + ".");
+		}
+
+	}
 	public void getScreen(String filename) {
 		File scrFile = null;
 

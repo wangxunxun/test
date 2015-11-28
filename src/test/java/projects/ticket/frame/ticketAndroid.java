@@ -17,10 +17,9 @@ public class ticketAndroid extends AndroidApp{
 
     	sleep(10000);
     	waitDisplay("启动页", "首页");
-    	swipeOfType("left");
+    	swipeLeft();
     	sleep(500);
-    	swipeOfType("left");
-    	getElementExpectedValue("启动页", "开启直达车");
+    	swipeLeft();
     	assertEqual("启动页", "开启直达车");
     	clickElement("启动页", "开启直达车");
     	
@@ -29,5 +28,11 @@ public class ticketAndroid extends AndroidApp{
     	sendKeys("登录", "账户","18627802681");
     	sendKeys("登录", "密码","12345678");
     	clickElement("登录", "普通登录按钮");
+    }
+    
+    public void checkUpdate(){
+    	if(verifyDisplay("首页", "是否更新")){
+    		clickElement("首页", "是否更新");
+    	}
     }
 }

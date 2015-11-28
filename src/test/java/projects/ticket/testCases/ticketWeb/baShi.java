@@ -12,7 +12,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-//@Listeners(test.autotest.utils.TestngListener.class)
+@Listeners(test.autotest.utils.TestngListener.class)
 public class baShi {
 	piaoWuWebTest piaoWuWebApp = new piaoWuWebTest();
 	piaoWuWebTest testaaa;
@@ -47,8 +47,8 @@ public class baShi {
 	public void setUp(){
 		
 		piaoWuWebApp.initialTestData();
-//		piaoWuWebApp.runChormeApp();	
-		piaoWuWebApp.runFirefoxApp();
+		piaoWuWebApp.runChormeApp();	
+//		piaoWuWebApp.runFirefoxApp();
 //		piaoWuWebApp.logClassInfo("342423resrewrewrewr");
 
 	}
@@ -80,7 +80,7 @@ public class baShi {
 		piaoWuWebApp.logSuccessMessage("3434234234edfdf23");
 	}
 	
-//	@Test
+	@Test
 	public void test004login() {
 		piaoWuWebApp.logTestDescription("test");
 		piaoWuWebApp.waitDisplay("侧边栏", "巴士售票管理");
@@ -88,7 +88,7 @@ public class baShi {
 		piaoWuWebApp.logSuccessMessage("3434234234eeer23");
 	}
 	
-//	@Test
+	@Test
 	public void test001EnterBusStationPage(){
 		piaoWuWebApp.waitDisplay("侧边栏", "巴士售票管理");
 		piaoWuWebApp.clickElement("侧边栏", "巴士售票管理");

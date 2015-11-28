@@ -40,7 +40,8 @@ public class cheDuiAndCheLiang {
 	public void setUp(){
 		
 		piaoWuWebApp.initialTestData();
-		piaoWuWebApp.runFirefoxApp();	
+//		piaoWuWebApp.runFirefoxApp();	
+		piaoWuWebApp.runChormeApp();
 
 
 	}
@@ -57,7 +58,7 @@ public class cheDuiAndCheLiang {
 		piaoWuWebApp.enterHomePage();
 	}
 	
-//	@Test
+	@Test
 	public void test010EnterAddCheLiangPage(){
 		piaoWuWebApp.waitDisplay("侧边栏", "车队与车辆管理");
 		piaoWuWebApp.clickElement("侧边栏", "车队与车辆管理");
@@ -65,7 +66,7 @@ public class cheDuiAndCheLiang {
 		piaoWuWebApp.clickElement("侧边栏", "车辆管理");
 	}
 
-//	@Test(dataProvider="addCheLiang")
+	@Test(dataProvider="addCheLiang")
     public void test011AddCheLiang(String siJi,String cheDui,String carType,String car_owner,String phone_number,String seat_num,String max_seat_num,String add_seat_num,String plate_number,String buy_year,String engine_number,String brand  ) throws InterruptedException, BiffException, IOException{
 
 
