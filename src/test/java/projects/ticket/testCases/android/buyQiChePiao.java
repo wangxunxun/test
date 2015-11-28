@@ -6,19 +6,19 @@ package projects.ticket.testCases.android;
 
 
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+
+import org.testng.annotations.BeforeClass;
+
 import org.testng.annotations.Test;
 
 import projects.ticket.frame.ticketAndroid;
 import test.autotest.utils.CommonTools;
 
 
-
-
 public class buyQiChePiao{
 	ticketAndroid ticketApp = new ticketAndroid();
-	@BeforeMethod
+	@BeforeClass
 	public void setUp(){
 		ticketApp.initialTestData();
 		
@@ -26,7 +26,7 @@ public class buyQiChePiao{
 		ticketApp.logClassInfo("测试购买汽车票");
 	}
 
-    @AfterMethod
+    @AfterClass
     public void tearDown(){
 
     	ticketApp.quit();
@@ -45,7 +45,7 @@ public class buyQiChePiao{
     	
 
     }
-
+    @Test
     public void test002search(){
     	ticketApp.logTestDescription("输入起始站和终点站进行搜索");
     	ticketApp.clickElement("汽车票", "起始站");
@@ -66,6 +66,7 @@ public class buyQiChePiao{
     	ticketApp.clickElmentByName("18:00");
     	ticketApp.logSuccessMessage("成功搜索");
     }
+    @Test
     public void test003loginAndChoosePerson(){
     	ticketApp.logTestDescription("登录并选择乘车人");
     	ticketApp.login();
@@ -88,7 +89,7 @@ public class buyQiChePiao{
     	}
     	ticketApp.logSuccessMessage("成功登录并选中一个乘车人");
     }
-    
+    @Test
     public void test004buyTicket(){
     	ticketApp.logTestDescription("分别选择微信和支付宝支付");
     	ticketApp.waitDisplay("汽车填写订单","添加乘车人");

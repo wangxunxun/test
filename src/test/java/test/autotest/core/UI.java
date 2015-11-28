@@ -202,7 +202,7 @@ public class UI extends Initial {
 	}
 
 	public void waitDisplay(String page, String name) {
-		waitDisplay(page, name, 2);
+		waitDisplay(page, name, 4);
 	}
 
 	public void waitDisplay(String page, String name, int count) {

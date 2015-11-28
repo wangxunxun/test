@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]">
+  <listeners>
+    <listener class-name="test.autotest.utils.TestngListener"/>
+  </listeners>
   <test name="Default test(failed)">
     <classes>
-      <class name="projects.ticket.testCases.android.testa">
+      <class name="projects.ticket.testCases.android.buyQiChePiao">
         <methods>
-          <include name="searchQiChePiao"/>
           <include name="tearDown"/>
+          <include name="test004buyTicket"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- projects.ticket.testCases.android.testa -->
+      </class> <!-- projects.ticket.testCases.android.buyQiChePiao -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

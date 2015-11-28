@@ -12,9 +12,9 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="projects.ticket.testCases.android。buyQiChePiao">
+			<class name="projects.ticket.testCases.android.buyQiChePiao">
 				<methods>
-				</methods>
+				</methods> 
 			</class>
 
 		</classes>
