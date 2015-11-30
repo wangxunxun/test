@@ -238,7 +238,7 @@ public class AndroidApp extends UI {
 
 	public void longTab(int x, int y) {
 		log("Long tab (" + x + "," + y + ").");
-		tab(1, x, y, 3000);
+		tab(1, x, y, 5000);
 	}
 
 	public void tapElementByXY(String page, String name) {

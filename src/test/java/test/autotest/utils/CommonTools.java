@@ -192,11 +192,35 @@ public class CommonTools {
 		return successRate1;
 	}
 
+	public static int getFileCount(String dirPath){
+		File dir = new File(dirPath);
+		File[] files = dir.listFiles();
+		int count = 0;
+		for(File fileIndex:files){
+			if(fileIndex.isFile()){
+				count = count+1;
+			}
+		}
+		return count;
+	}
+	
+	public static void keepFileCount(String dirPath,int count){
+		int actualCount = getFileCount(dirPath);
+		if(actualCount>count){
+			File dir = new File(dirPath);
+			File[] files = dir.listFiles();
+			for(int i =0;i<actualCount-count;i++){
+				files[i].delete();
+			}
+		}
+	}
+	
 	public static void createWorkbook(String excelDir, String excelName, String className, int index,String projectName,String projectInfo,String testSpecification)
 			throws IOException, WriteException, BiffException {
 		if (!(new File(excelDir).isDirectory())) { // 判断是否存在该目录
 			new File(excelDir).mkdir(); // 如果不存在则新建一个目录
 		}
+		keepFileCount(excelDir, 1);
 		String navigation[] = { "Success", "Failure ", "Skipped", "Success Rate", "Time Consuming", "Total"};
 		String classNavigation[] = { "Test Suite", "Suite Summary","Success Rate", "Log", "Case Counts","Test Case", "Case Summary","Time Consuming",
 				"Error Screenshot", "Status", "Comment" };
@@ -494,9 +518,10 @@ public class CommonTools {
 		System.out.println(data.substring(8, 10));
 		
 		System.out.println("end");
-		
-		String a = getStr(3, "33");
+		int a =getFileCount("F:/workspace/test/testReport");
 		System.out.println(a);
+		keepFileCount("F:/workspace/test/testReport", 1);
+		System.out.println("end");
 	}
 
 }

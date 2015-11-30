@@ -2,40 +2,40 @@
 <testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="177720" started-at="2015-11-30T10:09:53Z" finished-at="2015-11-30T10:12:51Z">
+  <suite name="Default suite" duration-ms="274464" started-at="2015-11-30T13:31:45Z" finished-at="2015-11-30T13:36:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="177720" started-at="2015-11-30T10:09:53Z" finished-at="2015-11-30T10:12:51Z">
+    <test name="Default test" duration-ms="274464" started-at="2015-11-30T13:31:45Z" finished-at="2015-11-30T13:36:19Z">
       <class name="projects.ticket.testCases.android.contacts">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="setUp" is-config="true" duration-ms="17478" started-at="2015-11-30T18:09:53Z" finished-at="2015-11-30T18:10:11Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.android.contacts@7c75222b]" name="setUp" is-config="true" duration-ms="96515" started-at="2015-11-30T21:31:45Z" finished-at="2015-11-30T21:33:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test001enterContactsPage()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test001enterContactsPage" duration-ms="36353" started-at="2015-11-30T18:10:11Z" finished-at="2015-11-30T18:10:47Z">
+        <test-method status="PASS" signature="test001enterContactsPage()[pri:0, instance:projects.ticket.testCases.android.contacts@7c75222b]" name="test001enterContactsPage" duration-ms="47331" started-at="2015-11-30T21:33:21Z" finished-at="2015-11-30T21:34:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test001enterContactsPage -->
-        <test-method status="PASS" signature="test002checkName()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test002checkName" duration-ms="21315" started-at="2015-11-30T18:10:47Z" finished-at="2015-11-30T18:11:08Z">
+        <test-method status="PASS" signature="test002checkName()[pri:0, instance:projects.ticket.testCases.android.contacts@7c75222b]" name="test002checkName" duration-ms="19377" started-at="2015-11-30T21:34:09Z" finished-at="2015-11-30T21:34:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test002checkName -->
-        <test-method status="PASS" signature="test003checkPhone()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test003checkPhone" duration-ms="46691" started-at="2015-11-30T18:11:08Z" finished-at="2015-11-30T18:11:55Z">
+        <test-method status="PASS" signature="test003checkPhone()[pri:0, instance:projects.ticket.testCases.android.contacts@7c75222b]" name="test003checkPhone" duration-ms="40998" started-at="2015-11-30T21:34:28Z" finished-at="2015-11-30T21:35:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test003checkPhone -->
-        <test-method status="PASS" signature="test004checkID()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test004checkID" duration-ms="34016" started-at="2015-11-30T18:11:55Z" finished-at="2015-11-30T18:12:29Z">
+        <test-method status="PASS" signature="test004checkID()[pri:0, instance:projects.ticket.testCases.android.contacts@7c75222b]" name="test004checkID" duration-ms="33759" started-at="2015-11-30T21:35:09Z" finished-at="2015-11-30T21:35:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test004checkID -->
-        <test-method status="PASS" signature="test005addContact()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test005addContact" duration-ms="13699" started-at="2015-11-30T18:12:29Z" finished-at="2015-11-30T18:12:43Z">
+        <test-method status="PASS" signature="test005addContact()[pri:0, instance:projects.ticket.testCases.android.contacts@7c75222b]" name="test005addContact" duration-ms="11966" started-at="2015-11-30T21:35:43Z" finished-at="2015-11-30T21:35:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test005addContact -->
-        <test-method status="PASS" signature="test006deleteContact()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test006deleteContact" duration-ms="5208" started-at="2015-11-30T18:12:43Z" finished-at="2015-11-30T18:12:48Z">
+        <test-method status="PASS" signature="test006deleteContact()[pri:0, instance:projects.ticket.testCases.android.contacts@7c75222b]" name="test006deleteContact" duration-ms="16891" started-at="2015-11-30T21:35:55Z" finished-at="2015-11-30T21:36:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test006deleteContact -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="tearDown" is-config="true" duration-ms="2909" started-at="2015-11-30T18:12:48Z" finished-at="2015-11-30T18:12:51Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.android.contacts@7c75222b]" name="tearDown" is-config="true" duration-ms="7572" started-at="2015-11-30T21:36:12Z" finished-at="2015-11-30T21:36:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
