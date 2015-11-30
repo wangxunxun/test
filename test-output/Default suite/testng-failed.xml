@@ -6,13 +6,13 @@
   </listeners>
   <test name="Default test(failed)">
     <classes>
-      <class name="projects.ticket.testCases.android.buyQiChePiao">
+      <class name="projects.ticket.testCases.android.contacts">
         <methods>
-          <include name="tearDown"/>
-          <include name="test004buyTicket"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="test006deleteContact"/>
         </methods>
-      </class> <!-- projects.ticket.testCases.android.buyQiChePiao -->
+      </class> <!-- projects.ticket.testCases.android.contacts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

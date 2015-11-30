@@ -241,11 +241,18 @@ public class AndroidApp extends UI {
 		tab(1, x, y, 3000);
 	}
 
-	public void clickElementByXY(String page, String name) {
+	public void tapElementByXY(String page, String name) {
 		log("Click the " + name + " element on the " + page + " page by XY.");
 		int X = getElementLocateX(page, name);
 		int Y = getElementLocateY(page, name);
 		tab(X + 10, Y + 10);
+	}
+	
+	public void longTapElementByXY(String page, String name) {
+		log("Click the " + name + " element on the " + page + " page by XY.");
+		int X = getElementLocateX(page, name);
+		int Y = getElementLocateY(page, name);
+		longTab(X + 10, Y + 10);
 	}
 
 	public void swipe(int startx, int starty, int endx, int endy, int duration) {

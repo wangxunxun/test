@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="150282" started-at="2015-11-28T14:03:43Z" finished-at="2015-11-28T14:06:13Z">
+  <suite name="Default suite" duration-ms="177720" started-at="2015-11-30T10:09:53Z" finished-at="2015-11-30T10:12:51Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="150282" started-at="2015-11-28T14:03:43Z" finished-at="2015-11-28T14:06:13Z">
-      <class name="projects.ticket.testCases.android.buyQiChePiao">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.android.buyQiChePiao@7c75222b]" name="setUp" is-config="true" duration-ms="19761" started-at="2015-11-28T22:03:43Z" finished-at="2015-11-28T22:04:03Z">
+    <test name="Default test" duration-ms="177720" started-at="2015-11-30T10:09:53Z" finished-at="2015-11-30T10:12:51Z">
+      <class name="projects.ticket.testCases.android.contacts">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="setUp" is-config="true" duration-ms="17478" started-at="2015-11-30T18:09:53Z" finished-at="2015-11-30T18:10:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test001enterMainPage()[pri:0, instance:projects.ticket.testCases.android.buyQiChePiao@7c75222b]" name="test001enterMainPage" duration-ms="18465" started-at="2015-11-28T22:04:03Z" finished-at="2015-11-28T22:04:21Z">
+        <test-method status="PASS" signature="test001enterContactsPage()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test001enterContactsPage" duration-ms="36353" started-at="2015-11-30T18:10:11Z" finished-at="2015-11-30T18:10:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test001enterMainPage -->
-        <test-method status="PASS" signature="test002search()[pri:0, instance:projects.ticket.testCases.android.buyQiChePiao@7c75222b]" name="test002search" duration-ms="35333" started-at="2015-11-28T22:04:21Z" finished-at="2015-11-28T22:04:56Z">
+        </test-method> <!-- test001enterContactsPage -->
+        <test-method status="PASS" signature="test002checkName()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test002checkName" duration-ms="21315" started-at="2015-11-30T18:10:47Z" finished-at="2015-11-30T18:11:08Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test002search -->
-        <test-method status="PASS" signature="test003loginAndChoosePerson()[pri:0, instance:projects.ticket.testCases.android.buyQiChePiao@7c75222b]" name="test003loginAndChoosePerson" duration-ms="23645" started-at="2015-11-28T22:04:56Z" finished-at="2015-11-28T22:05:20Z">
+        </test-method> <!-- test002checkName -->
+        <test-method status="PASS" signature="test003checkPhone()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test003checkPhone" duration-ms="46691" started-at="2015-11-30T18:11:08Z" finished-at="2015-11-30T18:11:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test003loginAndChoosePerson -->
-        <test-method status="PASS" signature="test004buyTicket()[pri:0, instance:projects.ticket.testCases.android.buyQiChePiao@7c75222b]" name="test004buyTicket" duration-ms="48590" started-at="2015-11-28T22:05:20Z" finished-at="2015-11-28T22:06:09Z">
+        </test-method> <!-- test003checkPhone -->
+        <test-method status="PASS" signature="test004checkID()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test004checkID" duration-ms="34016" started-at="2015-11-30T18:11:55Z" finished-at="2015-11-30T18:12:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test004buyTicket -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.android.buyQiChePiao@7c75222b]" name="tearDown" is-config="true" duration-ms="4455" started-at="2015-11-28T22:06:09Z" finished-at="2015-11-28T22:06:13Z">
+        </test-method> <!-- test004checkID -->
+        <test-method status="PASS" signature="test005addContact()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test005addContact" duration-ms="13699" started-at="2015-11-30T18:12:29Z" finished-at="2015-11-30T18:12:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test005addContact -->
+        <test-method status="PASS" signature="test006deleteContact()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="test006deleteContact" duration-ms="5208" started-at="2015-11-30T18:12:43Z" finished-at="2015-11-30T18:12:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test006deleteContact -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.android.contacts@e580929]" name="tearDown" is-config="true" duration-ms="2909" started-at="2015-11-30T18:12:48Z" finished-at="2015-11-30T18:12:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- projects.ticket.testCases.android.buyQiChePiao -->
+      </class> <!-- projects.ticket.testCases.android.contacts -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

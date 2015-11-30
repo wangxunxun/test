@@ -12,7 +12,21 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="projects.ticket.testCases.android.buyQiChePiao">
+<!-- 			<class name="projects.ticket.testCases.android.buyQiChePiao">
+				<methods>
+				</methods> 
+			</class> 
+			
+			<class name="projects.ticket.testCases.android.more">
+				<methods>
+				</methods> 
+			</class>
+			
+			<class name="projects.ticket.testCases.android.feedBack">
+				<methods>
+				</methods> 
+			</class>-->
+			<class name="projects.ticket.testCases.android.contacts">
 				<methods>
 				</methods> 
 			</class>

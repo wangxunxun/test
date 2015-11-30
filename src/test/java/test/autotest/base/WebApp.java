@@ -224,10 +224,9 @@ public class WebApp extends UI {
 	}
 
 	public void switchToFrame(String nameOrId) {
-		log("Switch to the \"" + nameOrId + "\" frame.");
 		driver.switchTo().frame(nameOrId);
 	}
-
+	
 	public void switchToFrame(int index) {
 		driver.switchTo().frame(index);
 	}

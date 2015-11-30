@@ -12,6 +12,7 @@ import java.nio.channels.FileChannel;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -465,12 +466,26 @@ public class CommonTools {
 
 		} 
 	
-	public static String getCurrentDay(){
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String data = df.format(new Date());
-		return data.substring(8, 10);
+	public static int getCurrentDay(){
+		Calendar now = Calendar.getInstance();
+		int day = now.get(Calendar.DATE);
+		return day;
 	}
 	
+	public static int getNextDay(){
+		Calendar now = Calendar.getInstance();
+		now.add(Calendar.DATE, 1);
+		int day = now.get(Calendar.DATE);
+		return day;
+	}
+	
+	public static String getStr(int num,String str){
+		StringBuffer sb = new StringBuffer("");
+		for(int i=0;i<num;i++){
+		   sb.append(str);
+		}
+		return sb.toString();
+	}
 	public static void main(String[] args) throws RowsExceededException, BiffException, WriteException, IOException {
 		
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
@@ -479,6 +494,9 @@ public class CommonTools {
 		System.out.println(data.substring(8, 10));
 		
 		System.out.println("end");
+		
+		String a = getStr(3, "33");
+		System.out.println(a);
 	}
 
 }

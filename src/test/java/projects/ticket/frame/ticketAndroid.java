@@ -20,11 +20,13 @@ public class ticketAndroid extends AndroidApp{
     	swipeLeft();
     	sleep(500);
     	swipeLeft();
-    	assertEqual("启动页", "开启直达车");
+    	assertElementContains("启动页", "开启直达车");
     	clickElement("启动页", "开启直达车");
+    	waitDisplay("首页", "我的");
     	
     }
     public void login(){
+    	waitDisplay("登录", "账户");
     	sendKeys("登录", "账户","18627802681");
     	sendKeys("登录", "密码","12345678");
     	clickElement("登录", "普通登录按钮");

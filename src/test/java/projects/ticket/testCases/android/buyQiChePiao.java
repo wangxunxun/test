@@ -55,10 +55,17 @@ public class buyQiChePiao{
     	ticketApp.sendKeys("选择出发城市", "搜索输入框","SZ");
     	ticketApp.clickElmentByName("深圳");
     	ticketApp.clickElement("汽车票", "乘车日期");
-    	String currentDay = CommonTools.getCurrentDay();
-    	int day = Integer.parseInt(currentDay);
-    	ticketApp.clickElmentByName(String.valueOf(day+1));
- 	
+    	ticketApp.sleep(3000);
+    	int nextDay = CommonTools.getNextDay();
+    	if(nextDay ==1){
+    		ticketApp.swipeLeft();
+    		ticketApp.clickElmentByName(String.valueOf(nextDay));
+    	}
+    	else{
+    		ticketApp.clickElmentByName(String.valueOf(nextDay));
+    	}
+    	
+    	ticketApp.waitDisplay("汽车票", "查询");
     	ticketApp.clickElement("汽车票", "查询");
     	ticketApp.waitDisplay("汽车线路列表", "终点");
     	ticketApp.clickElmentByName("南山汽车站");
