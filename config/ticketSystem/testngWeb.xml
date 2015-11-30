@@ -16,14 +16,14 @@
 				<methods>
 				</methods>
 			</class>
-			<class name="projects.ticket.testCases.ticketWeb.qiChe">
+<!-- 			<class name="projects.ticket.testCases.ticketWeb.qiChe">
 				<methods>
 				</methods>
 			</class>
 			<class name="projects.ticket.testCases.ticketWeb.cheDuiAndCheLiang">
 				<methods>
 				</methods>
-			</class>
+			</class> -->
 		</classes>
 	</test> <!-- Default test -->
 </suite> <!-- Default suite -->
