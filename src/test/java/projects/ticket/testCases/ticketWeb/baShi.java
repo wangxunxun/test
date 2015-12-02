@@ -159,7 +159,7 @@ public class baShi {
 		
 		
 		piaoWuWebApp.waitDisplayByCss(newLuDuan);
-		piaoWuWebApp.clickByCss(newLuDuan);
+		piaoWuWebApp.clickElementByCss(newLuDuan);
 
 		piaoWuWebApp.switchToFrame("xubox_iframe1");
 
@@ -194,7 +194,7 @@ public class baShi {
 		piaoWuWebApp.clickElement("侧边栏", "巴士线路维护");
 
 		piaoWuWebApp.waitDisplayByCss(newPiaoJia);
-		piaoWuWebApp.clickByCss(newPiaoJia);
+		piaoWuWebApp.clickElementByCss(newPiaoJia);
 
 		piaoWuWebApp.switchToFrame("xubox_iframe1");
 		

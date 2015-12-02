@@ -532,6 +532,7 @@ public class Initial {
 		testReportDir = getTestReportDir();
 		testReportName = getTestReportName();
 		testSummarySheetName = getTestSummarySheetName();
+		CommonTools.keepFileCount(testReportDir, 4);
 		createWorkBook(testSummarySheetName, 0);
 		createSheet(999);
 		testAppType = "web";

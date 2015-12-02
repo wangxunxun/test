@@ -227,12 +227,13 @@ public class WebApp extends UI {
 		driver.switchTo().frame(nameOrId);
 	}
 	
+	
 	public void switchToFrame(int index) {
 		driver.switchTo().frame(index);
 	}
 
-	public void switchToFrame(WebElement frameElement) {
-		driver.switchTo().frame(frameElement);
+	public void switchToFrame(String page, String name) {		
+		driver.switchTo().frame(findElement(page, name));
 	}
 
 	public void switchToDefaultContent() {
@@ -249,7 +250,7 @@ public class WebApp extends UI {
 		return sb.toString();
 	}
 
-	public void clickByCss(String selector) {
+	public void clickElementByCss(String selector) {
 		driver.findElement(By.cssSelector(selector)).click();
 	}
 

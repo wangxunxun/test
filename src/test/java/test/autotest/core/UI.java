@@ -193,7 +193,7 @@ public class UI extends Initial {
 	public WebElement findElement(String page, String name) {
 		return findElement(page, name, this);
 	}
-	public WebElement findElement(String page, String name,UI ui) {
+	protected WebElement findElement(String page, String name,UI ui) {
 		String selecttype = elementData.get(page).get(name).get("SelectType");
 		String location = elementData.get(page).get(name).get("Location");
 		try {

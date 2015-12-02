@@ -9,15 +9,12 @@ import jxl.read.biff.BiffException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 
-//@Listeners(test.autotest.utils.TestngListener.class)
 public class qiChe {
 	
 	piaoWuWebTest piaoWuWebApp = new piaoWuWebTest();
-
 	@DataProvider(name = "addqichezhan")
 	public Object[][] dataProvider1() {
 		String addQiCheZhan = piaoWuWebApp.getProperties("addQiCheZhan");
@@ -43,47 +40,27 @@ public class qiChe {
 		piaoWuWebApp.quit();
 	}
 
-	@Test
-	public void test000login() {
-//		piaoWuWebApp.logTestDescription("login the ststem");
-		piaoWuWebApp.enterHomePage();
-	}
 	
 	@Test
-	public void test003login() {
-		piaoWuWebApp.logTestDescription("test");
-		piaoWuWebApp.logSuccessMessage("test0003success");
-	}
-	@Test
-	public void test004login() {
-
-		piaoWuWebApp.logSuccessMessage("test0004success");
-	}
-	@Test
-	public void test005login() {
-		piaoWuWebApp.logTestDescription("teewrewrewrewrewrst");
-		piaoWuWebApp.enterHomePage();
-		piaoWuWebApp.clear("3434", "3434");
-	}
-	@Test
-	public void test006login() {
-		piaoWuWebApp.logTestDescription("teewrewrewre65565wrewrst");
-	}
-
-	// @Test
 	public void test001enterAddCityPage() {
+		piaoWuWebApp.logTestDescription("进入主页");
+		piaoWuWebApp.enterHomePage();
 		piaoWuWebApp.waitDisplay("侧边栏", "长途售票管理");
 		piaoWuWebApp.clickElement("侧边栏", "长途售票管理");
+		piaoWuWebApp.logSuccessMessage("成功进入主页");
+		
+
+	}
+
+	@Test(dataProvider="addCity")
+	public void test010addCity(String name, String pinYin, String hot) {
+		piaoWuWebApp.logTestDescription("添加城市-"+name);
 		piaoWuWebApp.waitDisplay("侧边栏", "城市管理");
 		piaoWuWebApp.clickElement("侧边栏", "城市管理");
+		piaoWuWebApp.switchToFrame("添加城市", "iframe");
 		piaoWuWebApp.waitDisplay("城市管理", "添加城市");
 		piaoWuWebApp.clickElement("城市管理", "添加城市");
 		piaoWuWebApp.switchToFrame("xubox_iframe1");
-	}
-
-	// @Test(dataProvider="addCity")
-	public void test010addCity(String name, String pinYin, String hot) {
-
 		piaoWuWebApp.waitDisplay("添加城市", "城市名称");
 		piaoWuWebApp.sendKeys("添加城市", "城市名称", name);
 		piaoWuWebApp.waitDisplay("添加城市", "城市拼音简写");
@@ -93,27 +70,30 @@ public class qiChe {
 		}
 
 		piaoWuWebApp.clickElement("添加城市", "提交");
-
+		if(piaoWuWebApp.verifyDisplay("添加城市", "提交")){
+			piaoWuWebApp.switchToDefaultContent();
+			piaoWuWebApp.switchToFrame("添加城市", "iframe");
+			piaoWuWebApp.clickElement("添加城市", "删除");			
+			piaoWuWebApp.switchToDefaultContent();
+			piaoWuWebApp.logSuccessMessage(name+"-已经存在");
+		}
+		else{			
+			piaoWuWebApp.switchToDefaultContent();
+			piaoWuWebApp.logSuccessMessage("成功添加 -"+name);
+		}
+		
 	}
 
-	// @Test
-	public void test020enterAddQiChePage() {
-		piaoWuWebApp.getElementScreen("侧边栏", "长途售票管理");
-		piaoWuWebApp.getScreenMarkedByText("为俄方的");
-		piaoWuWebApp.waitDisplay("侧边栏", "长途售票管理");
-		piaoWuWebApp.clickElement("侧边栏", "长途售票管理");
-		piaoWuWebApp.waitDisplay("侧边栏", "汽车车站维护");
-		piaoWuWebApp.clickElement("侧边栏", "汽车车站维护");
-
-	}
-
-//	@Test(dataProvider="addqichezhan")
+	@Test(dataProvider="addqichezhan")
 	public void test021addQiCheZhan(String address, String name, String pinyin,
 			String longitude, String latitude, String bashi, String phone,
 			String from, String to, String city) throws InterruptedException,
 			BiffException, IOException {
-		/*		piaoWuWebApp.logTestDescription("ahahddsferewrewrewrewrerew");
-		
+		piaoWuWebApp.logTestDescription("添加汽车站-"+name);
+		piaoWuWebApp.waitDisplay("侧边栏", "汽车车站维护");
+		piaoWuWebApp.clickElement("侧边栏", "汽车车站维护");
+
+		piaoWuWebApp.switchToFrame("汽车-添加车站", "iframe");
 		piaoWuWebApp.waitDisplay("汽车车站维护", "添加车站");
 		piaoWuWebApp.clickElement("汽车车站维护", "添加车站");
 
@@ -129,23 +109,32 @@ public class qiChe {
 		piaoWuWebApp.sendKeys("汽车-添加车站", "车站电话", phone);
 
 		piaoWuWebApp.sendKeys("汽车-添加车站", "营业时间从", from);
+		piaoWuWebApp.clickElement("汽车-添加车站", "车站地址");
 		piaoWuWebApp.sendKeys("汽车-添加车站", "营业时间到", to);
+		piaoWuWebApp.clickElement("汽车-添加车站", "车站地址");
+
+		piaoWuWebApp.clear("汽车-添加车站", "车站所在城市");
 		piaoWuWebApp.sendKeys("汽车-添加车站", "车站所在城市", city);
 		piaoWuWebApp.clickElement("汽车-添加车站", "车站地址");
 		piaoWuWebApp.clickElement("汽车-添加车站", "提交");
-		if (piaoWuWebApp.verifyDisplay("汽车车站维护", "添加车站") == false) {
-			piaoWuWebApp
-					.get("http://zdc.hldf.net/Server/LongDistanceBus/Station");
-			
-			 * piaoWuWebApp.waitDisplay("汽车-添加车站", "关闭");
-			 * piaoWuWebApp.clickElement("汽车-添加车站", "关闭");
-			 
-		}*/
-
+		if (piaoWuWebApp.verifyDisplay("汽车-添加车站", "提交")) {
+			piaoWuWebApp.log(city+"已经存在");		
+			piaoWuWebApp.switchToDefaultContent();
+			piaoWuWebApp.switchToFrame("汽车-添加车站", "iframe");
+			piaoWuWebApp.waitDisplay("汽车-添加车站", "关闭");
+			piaoWuWebApp.clickElement("汽车-添加车站", "关闭");	
+			piaoWuWebApp.switchToDefaultContent();
+			piaoWuWebApp.logSuccessMessage(name+"-已经存在");
+		}
+		else{
+			piaoWuWebApp.switchToDefaultContent();
+			piaoWuWebApp.logSuccessMessage("成功添加-"+name);
+		}
+ 		
 	}
 
-	@Test
-	public void test012editQiChePiaoJia() throws InterruptedException,
+//	@Test
+	public void test022editQiChePiaoJia() throws InterruptedException,
 			BiffException, IOException {
 
 		piaoWuWebApp.logTestDescription("ahahddsferewrewrewrewrerew");
@@ -158,7 +147,7 @@ public class qiChe {
 		piaoWuWebApp.waitDisplay("侧边栏", "汽车线路管理");
 		piaoWuWebApp.clickElement("侧边栏", "汽车线路管理");
 		piaoWuWebApp.waitDisplayByCss(newPiaoJia);
-		piaoWuWebApp.clickByCss(newPiaoJia);
+		piaoWuWebApp.clickElementByCss(newPiaoJia);
 
 		piaoWuWebApp.switchToFrame("xubox_iframe1");
 		for (int i = 1; i <= 91; i++) {

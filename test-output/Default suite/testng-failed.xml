@@ -6,13 +6,13 @@
   </listeners>
   <test name="Default test(failed)">
     <classes>
-      <class name="projects.ticket.testCases.ticketWeb.baShi">
+      <class name="projects.ticket.testCases.ticketWeb.qiChe">
         <methods>
-          <include name="test000login"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="test010addCity" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- projects.ticket.testCases.ticketWeb.baShi -->
+      </class> <!-- projects.ticket.testCases.ticketWeb.qiChe -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

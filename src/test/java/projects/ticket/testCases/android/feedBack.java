@@ -133,7 +133,7 @@ public class feedBack {
 		piaoWuWebApp.waitDisplay("侧边栏", "用户反馈");
 		piaoWuWebApp.clickElement("侧边栏", "用户反馈");
 		
-		piaoWuWebApp.switchToFrame(piaoWuWebApp.findElement("用户反馈", "frame"));
+		piaoWuWebApp.switchToFrame("用户反馈", "frame");
 		piaoWuWebApp.waitDisplay("用户反馈", "电话");
 		
 		String content500 = CommonTools.getStr(100, "autot");

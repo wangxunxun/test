@@ -220,7 +220,7 @@ public class CommonTools {
 		if (!(new File(excelDir).isDirectory())) { // 判断是否存在该目录
 			new File(excelDir).mkdir(); // 如果不存在则新建一个目录
 		}
-		keepFileCount(excelDir, 4);
+		
 		String navigation[] = { "Success", "Failure ", "Skipped", "Success Rate", "Time Consuming", "Total"};
 		String classNavigation[] = { "Test Suite", "Suite Summary","Success Rate", "Log", "Case Counts","Test Case", "Case Summary","Time Consuming",
 				"Error Screenshot", "Status", "Comment" };
