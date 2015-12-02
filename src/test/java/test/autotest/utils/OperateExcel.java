@@ -35,8 +35,7 @@ public class OperateExcel {
 	protected WritableFont font;
 	protected static WritableCellFormat format;
 
-	public OperateExcel(String excelPath, String className)
-			throws BiffException, IOException {
+	public OperateExcel(String excelPath, String className) throws BiffException, IOException {
 
 		wb = Workbook.getWorkbook(new File(excelPath));
 		wbe = Workbook.createWorkbook(new File(excelPath), wb);
@@ -45,8 +44,7 @@ public class OperateExcel {
 	}
 
 	public void writeLastRow(int cow, Object content)
-			throws RowsExceededException, WriteException, BiffException,
-			IOException {
+			throws RowsExceededException, WriteException, BiffException, IOException {
 
 		int row = sheet.getRows();
 		if (format != null) {
@@ -57,11 +55,11 @@ public class OperateExcel {
 			sheet.addCell(lable);
 		}
 	}
-	public void writeLastRow(int cow, String content, int size,Colour colour)
+
+	public void writeLastRow(int cow, String content, int size, Colour colour)
 			throws RowsExceededException, WriteException {
 		int row = sheet.getRows();
-		WritableFont font = new WritableFont(WritableFont.ARIAL, size,
-				WritableFont.BOLD);
+		WritableFont font = new WritableFont(WritableFont.ARIAL, size, WritableFont.BOLD);
 		font.setColour(colour);
 		WritableCellFormat format = new WritableCellFormat(font);
 		format.setBorder(Border.ALL, BorderLineStyle.THIN);
@@ -70,12 +68,11 @@ public class OperateExcel {
 		Label label = new Label(cow, row, content, format);
 		sheet.addCell(label);
 	}
-	
-	public void writeSameRow(int cow, String content, int size,Colour colour)
+
+	public void writeSameRow(int cow, String content, int size, Colour colour)
 			throws RowsExceededException, WriteException {
 		int row = sheet.getRows();
-		WritableFont font = new WritableFont(WritableFont.ARIAL, size,
-				WritableFont.BOLD);
+		WritableFont font = new WritableFont(WritableFont.ARIAL, size, WritableFont.BOLD);
 		font.setColour(colour);
 		WritableCellFormat format = new WritableCellFormat(font);
 		format.setBorder(Border.ALL, BorderLineStyle.THIN);
@@ -84,9 +81,9 @@ public class OperateExcel {
 		Label label = new Label(cow, row - 1, content, format);
 		sheet.addCell(label);
 	}
+
 	public void writeSameRow(int cow, Object content)
-			throws RowsExceededException, WriteException, BiffException,
-			IOException {
+			throws RowsExceededException, WriteException, BiffException, IOException {
 
 		int row = sheet.getRows();
 		if (format != null) {
@@ -98,9 +95,8 @@ public class OperateExcel {
 		}
 	}
 
-	public void writeData(int cow, int row, Object content,WritableCellFormat format)
-			throws RowsExceededException, WriteException, BiffException,
-			IOException {
+	public void writeData(int cow, int row, Object content, WritableCellFormat format)
+			throws RowsExceededException, WriteException, BiffException, IOException {
 
 		if (format != null) {
 			Label lable = new Label(cow, row, (String) content, format);
@@ -110,10 +106,9 @@ public class OperateExcel {
 			sheet.addCell(lable);
 		}
 	}
-	
+
 	public void writeData(int cow, int row, Object content)
-			throws RowsExceededException, WriteException, BiffException,
-			IOException {
+			throws RowsExceededException, WriteException, BiffException, IOException {
 
 		if (format != null) {
 			Label lable = new Label(cow, row, (String) content, format);
@@ -129,8 +124,7 @@ public class OperateExcel {
 		wbe.close();
 	}
 
-	public void mergeCells(int col1, int row1, int col2, int row2)
-			throws RowsExceededException, WriteException {
+	public void mergeCells(int col1, int row1, int col2, int row2) throws RowsExceededException, WriteException {
 		sheet.mergeCells(col1, row1, col2, row2);
 	}
 
@@ -138,17 +132,15 @@ public class OperateExcel {
 		sheet.setColumnView(col, width);
 	}
 
-	public void writeTitle(int cow, int row, String content, int size)
-			throws RowsExceededException, WriteException {
-		WritableFont font = new WritableFont(WritableFont.ARIAL, size,
-				WritableFont.BOLD);
+	public void writeTitle(int cow, int row, String content, int size) throws RowsExceededException, WriteException {
+		WritableFont font = new WritableFont(WritableFont.ARIAL, size, WritableFont.BOLD);
 		WritableCellFormat format = new WritableCellFormat(font);
 		Label label = new Label(cow, row, content, format);
 		sheet.addCell(label);
 	}
 
-	public void writeDataByColour(int cow, int row, String content, int size,
-			Colour colour) throws RowsExceededException, WriteException {
+	public void writeDataByColour(int cow, int row, String content, int size, Colour colour)
+			throws RowsExceededException, WriteException {
 		WritableFont font = new WritableFont(WritableFont.ARIAL, size);
 		WritableCellFormat format = new WritableCellFormat(font);
 		format.setBackground(colour);
@@ -164,8 +156,8 @@ public class OperateExcel {
 		format.setBorder(Border.ALL, BorderLineStyle.THIN);
 		format.setVerticalAlignment(VerticalAlignment.CENTRE);
 	}
-	
-	public static WritableCellFormat getFormat(int size, Boolean wrap,Colour fontColour) throws WriteException {
+
+	public static WritableCellFormat getFormat(int size, Boolean wrap, Colour fontColour) throws WriteException {
 		WritableFont font1 = new WritableFont(WritableFont.ARIAL, size);
 		font1.setColour(fontColour);
 		WritableCellFormat format1 = new WritableCellFormat(font1);
@@ -173,39 +165,38 @@ public class OperateExcel {
 		return format1;
 	}
 
-	public void setHyperLinkForFile(int cow, int row, String filePath,String desc)
+	public void setHyperLinkForFile(int cow, int row, String filePath, String desc)
 			throws MalformedURLException, RowsExceededException, WriteException {
-		WritableHyperlink link = new WritableHyperlink(cow, row, new File(
-				filePath),desc);
+		WritableHyperlink link = new WritableHyperlink(cow, row, new File(filePath), desc);
 		sheet.addHyperlink(link);
 	}
 
-	public void setHyperLinkForSheet(int col, int row, String desc,
-			String sheetName, int destCol, int destRow)
+	public void setHyperLinkForSheet(int col, int row, String desc, String sheetName, int destCol, int destRow)
 			throws RowsExceededException, WriteException {
 		WritableSheet desSheet = wbe.getSheet(sheetName);
-		WritableHyperlink link = new WritableHyperlink(col, row, desc,
-				desSheet, destCol, destRow);
+		WritableHyperlink link = new WritableHyperlink(col, row, desc, desSheet, destCol, destRow);
 		sheet.addHyperlink(link);
 	}
-	
-	public void setHyperLinkByFormu(int col, int row,String path,String name) throws RowsExceededException, WriteException{
-		WritableFont font1 = new WritableFont(WritableFont.ARIAL,10,WritableFont.NO_BOLD,false,UnderlineStyle.SINGLE);
+
+	public void setHyperLinkByFormu(int col, int row, String path, String name)
+			throws RowsExceededException, WriteException {
+		WritableFont font1 = new WritableFont(WritableFont.ARIAL, 10, WritableFont.NO_BOLD, false,
+				UnderlineStyle.SINGLE);
 		font1.setColour(Colour.BLUE);
 		WritableCellFormat format1 = new WritableCellFormat(font1);
 		format1.setWrap(true);
 		format1.setBorder(Border.ALL, BorderLineStyle.THIN);
-		String formu = "HYPERLINK(\""+path+"\",\""+name+"\")";  
-		Formula formula = new Formula(col, row, formu,format1);
+		String formu = "HYPERLINK(\"" + path + "\",\"" + name + "\")";
+		Formula formula = new Formula(col, row, formu, format1);
 		sheet.addCell(formula);
 	}
 
-	public void setVerticalFreeze(int col){
+	public void setVerticalFreeze(int col) {
 		SheetSettings setting = sheet.getSettings();
 		setting.setVerticalFreeze(col);
 	}
-	public void copySheet(String modelPath, String destPath)
-			throws BiffException, IOException, WriteException {
+
+	public void copySheet(String modelPath, String destPath) throws BiffException, IOException, WriteException {
 		WritableWorkbook wb = Workbook.createWorkbook(new File(destPath));
 		Workbook model = Workbook.getWorkbook(new File(modelPath));
 		Sheet modelSheet = model.getSheet(0);
@@ -215,19 +206,18 @@ public class OperateExcel {
 
 	}
 
-	
-	public void writeLogToExcel(List<List<String>> logData) throws BiffException, IOException, RowsExceededException, WriteException{
+	public void writeLogToExcel(List<List<String>> logData)
+			throws BiffException, IOException, RowsExceededException, WriteException {
 
 		int currentRow = 1;
-		List<Integer> firstCol= new ArrayList<Integer>();
-		for(int i = 0;i <logData.size();i++){
+		List<Integer> firstCol = new ArrayList<Integer>();
+		for (int i = 0; i < logData.size(); i++) {
 			String title = logData.get(i).get(0);
 			String content = logData.get(i).get(1);
-			if(title == ""){
+			if (title == "") {
 				writeLastRow(0, title);
 				writeSameRow(1, content);
-			}
-			else{
+			} else {
 				currentRow = sheet.getRows();
 				firstCol.add(currentRow);
 				writeLastRow(0, title, 12, Colour.BLACK);
@@ -236,31 +226,29 @@ public class OperateExcel {
 		}
 
 		firstCol.add(sheet.getRows());
-		if (logData.get(0).get(0)=="ClassName"){
-			for(int i = 0 ;i<firstCol.size()-3;i++){
-				int endRow = firstCol.get(i+3)-1;
-				int startRow = firstCol.get(i+2);
-				if(endRow>startRow){
+		if (logData.get(0).get(0) == "ClassName") {
+			for (int i = 0; i < firstCol.size() - 3; i++) {
+				int endRow = firstCol.get(i + 3) - 1;
+				int startRow = firstCol.get(i + 2);
+				if (endRow > startRow) {
 					sheet.mergeCells(0, startRow, 0, endRow);
 				}
 			}
-			
-		}
-		else{
-			for(int i = 0 ;i<firstCol.size()-1;i++){
-				int endRow = firstCol.get(i+1)-1;
+
+		} else {
+			for (int i = 0; i < firstCol.size() - 1; i++) {
+				int endRow = firstCol.get(i + 1) - 1;
 				int startRow = firstCol.get(i);
-				if(endRow>startRow){
+				if (endRow > startRow) {
 					sheet.mergeCells(0, startRow, 0, endRow);
 				}
 			}
 		}
 	}
-	
+
 	public void writeTestSummaryToExcel(List<Map<String, String>> classData)
-			throws RowsExceededException, WriteException, BiffException,
-			IOException {
-		if (classData.size() != 0){
+			throws RowsExceededException, WriteException, BiffException, IOException {
+		if (classData.size() != 0) {
 			int startRow = sheet.getRows();
 			int methodsCounts = classData.size();
 			int successCount = 0;
@@ -283,59 +271,51 @@ public class OperateExcel {
 				time = String.valueOf(time1) + "s";
 				if (i == 0) {
 					writeLastRow(0, className);
-					if(classInfo !=null){
+					if (classInfo != null) {
 						writeSameRow(1, classInfo);
-					}
-					else{
+					} else {
 						writeSameRow(1, "");
 					}
-					
+
 					writeSameRow(3, "");
-					setHyperLinkForSheet(3, startRow, className + "-log",
-							className, 0, 1);
+					setHyperLinkForSheet(3, startRow, className + "-log", className, 0, 1);
 				} else {
 					writeLastRow(0, "");
 				}
-	
+
 				writeSameRow(5, method);
 				writeSameRow(7, time);
-				if(caseInfo !=null){
+				if (caseInfo != null) {
 					writeSameRow(6, caseInfo);
-				}
-				else{
+				} else {
 					writeSameRow(6, "");
 				}
-				
+
 				if (screenPath != null) {
 					writeSameRow(8, "");
 					String[] newTestReportDir = Initial.testReportDir.split("/");
-					String lastReportDir = newTestReportDir[newTestReportDir.length-1];
+					String lastReportDir = newTestReportDir[newTestReportDir.length - 1];
 					String path = screenPath.split(lastReportDir)[1];
 					String newPath = path.substring(1, path.length());
-					setHyperLinkByFormu(8, sheet.getRows() - 1, newPath,method);
-				}
-				else{
+					setHyperLinkByFormu(8, sheet.getRows() - 1, newPath, method);
+				} else {
 					writeSameRow(8, "");
 				}
 				writeSameRow(10, comment);
 				if (status.equals("Success")) {
 					successCount = successCount + 1;
-					writeDataByColour(9, sheet.getRows() - 1, status, 10,
-							Colour.GREEN);
+					writeDataByColour(9, sheet.getRows() - 1, status, 10, Colour.GREEN);
 				}
 				if (status.equals("Failure")) {
 					failureCount = failureCount + 1;
-					writeDataByColour(9, sheet.getRows() - 1, status, 10,
-							Colour.RED);
+					writeDataByColour(9, sheet.getRows() - 1, status, 10, Colour.RED);
 				}
 				if (status.equals("Skipped")) {
 					skippedCount = skippedCount + 1;
-					writeDataByColour(9, sheet.getRows() - 1, status, 10,
-							Colour.YELLOW);
+					writeDataByColour(9, sheet.getRows() - 1, status, 10, Colour.YELLOW);
 				}
 			}
-			String classSuccessRate = CommonTools.getPercent(successCount,
-					methodsCounts);
+			String classSuccessRate = CommonTools.getPercent(successCount, methodsCounts);
 			writeData(2, startRow, classSuccessRate);
 			writeData(4, startRow, String.valueOf(methodsCounts));
 			int endRow = sheet.getRows();
@@ -344,12 +324,9 @@ public class OperateExcel {
 			mergeCells(2, startRow, 2, endRow - 1);
 			mergeCells(3, startRow, 3, endRow - 1);
 			mergeCells(4, startRow, 4, endRow - 1);
-			int oldSuccessCount = Integer.parseInt(sheet.getCell(0, 4)
-					.getContents());
-			int oldFailureCount = Integer.parseInt(sheet.getCell(1, 4)
-					.getContents());
-			int oldSkippedCount = Integer.parseInt(sheet.getCell(2, 4)
-					.getContents());
+			int oldSuccessCount = Integer.parseInt(sheet.getCell(0, 4).getContents());
+			int oldFailureCount = Integer.parseInt(sheet.getCell(1, 4).getContents());
+			int oldSkippedCount = Integer.parseInt(sheet.getCell(2, 4).getContents());
 			int newSuccessCount = successCount + oldSuccessCount;
 			int newFailureCount = failureCount + oldFailureCount;
 			int newSiippedCount = skippedCount + oldSkippedCount;
@@ -361,14 +338,12 @@ public class OperateExcel {
 			writeData(3, 4, allPercent);
 			writeData(4, 4, String.format("%.3f", TotalTime) + "s");
 			writeData(5, 4, String.valueOf(total));
-		}
-		else{
+		} else {
 			System.out.println("Please run the test case in listener mode.");
 		}
 	}
 
-	public static void main(String[] args) throws RowsExceededException,
-			BiffException, WriteException, IOException {
+	public static void main(String[] args) throws RowsExceededException, BiffException, WriteException, IOException {
 
 		// OperateExcel excel = new
 		// OperateExcel("/Users/wangxun/Documents/workspace/java/appautotest/ticketIOS.xls",
@@ -383,7 +358,8 @@ public class OperateExcel {
 		 */
 		// excel.copySheet("/Users/wangxun/Documents/workspace/java/appautotest/ticketWeb.xls","/Users/wangxun/Documents/workspace/java/appautotest/ticketIOS.xls");
 		// excel.close();
-		OperateExcel ddd = new OperateExcel("C:/Users/xun/Desktop/新建文件夹/TestReport_20151114_17_27_02.480.xls", "TestSummary");
+		OperateExcel ddd = new OperateExcel("C:/Users/xun/Desktop/新建文件夹/TestReport_20151114_17_27_02.480.xls",
+				"TestSummary");
 		String a1 = "20151118_093018766.png";
 		String a2 = "20151118_094219964.png";
 		String a3 = "20151118_095301378.png";
@@ -394,22 +370,18 @@ public class OperateExcel {
 		String a8 = "20151118_101406375.png";
 		String a9 = "20151118_103437497.png";
 		String a10 = "20151118_104436889.png";
-		
-		
-		
-		
-		
-		ddd.setHyperLinkByFormu(10, 9, "screenCaptures/Android/"+a1, a1);
-		ddd.setHyperLinkByFormu(10, 35, "screenCaptures/Android/"+a2, a2);
-		ddd.setHyperLinkByFormu(10, 51, "screenCaptures/Android/"+a3, a3);
 
-		ddd.setHyperLinkByFormu(10, 59, "screenCaptures/Android/"+a4, a4);
-		ddd.setHyperLinkByFormu(10, 61, "screenCaptures/Android/"+a5, a5);
-		ddd.setHyperLinkByFormu(10, 62, "screenCaptures/Android/"+a6, a6);
-		ddd.setHyperLinkByFormu(10, 65, "screenCaptures/Android/"+a7, a7);
-		ddd.setHyperLinkByFormu(10, 67, "screenCaptures/Android/"+a8, a8);
-		ddd.setHyperLinkByFormu(10, 78, "screenCaptures/Android/"+a9, a9);
-		ddd.setHyperLinkByFormu(10, 99, "screenCaptures/Android/"+a10, a10);
+		ddd.setHyperLinkByFormu(10, 9, "screenCaptures/Android/" + a1, a1);
+		ddd.setHyperLinkByFormu(10, 35, "screenCaptures/Android/" + a2, a2);
+		ddd.setHyperLinkByFormu(10, 51, "screenCaptures/Android/" + a3, a3);
+
+		ddd.setHyperLinkByFormu(10, 59, "screenCaptures/Android/" + a4, a4);
+		ddd.setHyperLinkByFormu(10, 61, "screenCaptures/Android/" + a5, a5);
+		ddd.setHyperLinkByFormu(10, 62, "screenCaptures/Android/" + a6, a6);
+		ddd.setHyperLinkByFormu(10, 65, "screenCaptures/Android/" + a7, a7);
+		ddd.setHyperLinkByFormu(10, 67, "screenCaptures/Android/" + a8, a8);
+		ddd.setHyperLinkByFormu(10, 78, "screenCaptures/Android/" + a9, a9);
+		ddd.setHyperLinkByFormu(10, 99, "screenCaptures/Android/" + a10, a10);
 		ddd.close();
 		int a = 3;
 		int b = 52;

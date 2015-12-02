@@ -30,7 +30,7 @@ public class TestngListener extends TestListenerAdapter {
 	private String classInfo;
 	public static List<Map<String, String>> classData = new ArrayList<Map<String, String>>();
 
-	private void test(ITestResult tr,String status){
+	private void test(ITestResult tr, String status) {
 		Map<String, String> methodData = new HashMap<String, String>();
 		className = tr.getTestClass().getName();
 		String[] ddd = className.split("\\.");
@@ -43,34 +43,32 @@ public class TestngListener extends TestListenerAdapter {
 		Initial.caseInfo = null;
 		classInfo = Initial.classInfo;
 		Initial.classInfo = null;
-		if(status == "Failure"){
+		if (status == "Failure") {
 			CommonTools.log(method + " Failure");
-				try {
-					screenPath = takeScreenShot(tr);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+			try {
+				screenPath = takeScreenShot(tr);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			comment = "Failure info - " + tr.getThrowable().getMessage();
 
-		}
-		else if (status =="Success"){
+		} else if (status == "Success") {
 			screenPath = null;
 			if (successMessage == null) {
 				comment = "Success info - " + "No comment";
 			} else {
 				comment = "Success info - " + successMessage;
 				Initial.successMessage = null;
-			}			
-		}
-		else if (status == "Skipped"){
+			}
+		} else if (status == "Skipped") {
 			screenPath = null;
 			comment = "Skipped info - " + tr.getThrowable().getMessage();
 
-		}		
+		}
 		methodData.put("className", className);
 		methodData.put("classInfo", classInfo);
 		methodData.put("caseInfo", caseInfo);
@@ -78,32 +76,32 @@ public class TestngListener extends TestListenerAdapter {
 		methodData.put("time", time + "");
 		methodData.put("status", status);
 		methodData.put("comment", comment);
-		methodData.put("screenPath", screenPath);		
+		methodData.put("screenPath", screenPath);
 		classData.add(methodData);
 	}
-	
+
 	@Override
 	public void onTestFailure(ITestResult tr) {
 		super.onTestFailure(tr);
 		test(tr, "Failure");
 	}
-	
+
 	@Override
 	public void onTestSuccess(ITestResult tr) {
 		super.onTestSuccess(tr);
 		test(tr, "Success");
 	}
+
 	@Override
 	public void onTestSkipped(ITestResult tr) {
 		super.onTestSkipped(tr);
 		test(tr, "Skipped");
 	}
-	
 
 	@Override
 	public void onTestStart(ITestResult tr) {
 		super.onTestStart(tr);
-		System.out.println("The case "+ tr.getName() + " belong to the "+tr.getTestClass().getName()+ " Start.");
+		System.out.println("The case " + tr.getName() + " belong to the " + tr.getTestClass().getName() + " Start.");
 	}
 
 	@Override
@@ -120,23 +118,21 @@ public class TestngListener extends TestListenerAdapter {
 	public void onStart(ITestContext testContext) {
 		super.onStart(testContext);
 		System.out.println("The cases start on " + testContext.getStartDate());
-		System.out.println("Start to excute " + testContext.getAllTestMethods().length+" case");
+		System.out.println("Start to excute " + testContext.getAllTestMethods().length + " case");
 	}
 
 	private String takeScreenShot(ITestResult tr) throws InterruptedException, IOException {
 		Thread.sleep(3000);
 		File scrFile = null;
 		String dir_name = null;
-        if (Initial.testAppType =="web"){
-    		dir_name = Initial.testReportDir+"failScreen/web/";
-        } 
-        else if(Initial.testAppType =="android"){
-        	dir_name = Initial.testReportDir+"failScreen/android/";      	
-        }
-        else if (Initial.testAppType =="ios"){
-        	dir_name = Initial.testReportDir+"failScreen/ios/";
-        }
-        scrFile = ((TakesScreenshot)UI.driver).getScreenshotAs(OutputType.FILE);
+		if (Initial.testAppType == "web") {
+			dir_name = Initial.testReportDir + "failScreen/web/";
+		} else if (Initial.testAppType == "android") {
+			dir_name = Initial.testReportDir + "failScreen/android/";
+		} else if (Initial.testAppType == "ios") {
+			dir_name = Initial.testReportDir + "failScreen/ios/";
+		}
+		scrFile = ((TakesScreenshot) UI.driver).getScreenshotAs(OutputType.FILE);
 
 		if (!(new File(dir_name).isDirectory())) { // 判断是否存在该目录
 			new File(dir_name).mkdir(); // 如果不存在则新建一个目录

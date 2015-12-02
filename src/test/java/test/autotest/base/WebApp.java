@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -43,7 +42,7 @@ public class WebApp extends UI {
 		wait = new WebDriverWait(driver, waitTime);
 
 	}
-	
+
 	public void runFirefoxApp() {
 
 		try {
@@ -51,11 +50,10 @@ public class WebApp extends UI {
 		} catch (Exception e) {
 			System.err.println(e.toString());
 		}
-		if(firefoxPath ==""){
+		if (firefoxPath == "") {
 			driver = new FirefoxDriver();
-		}
-		else{
-			System.setProperty("webdriver.firefox.bin",firefoxPath);    
+		} else {
+			System.setProperty("webdriver.firefox.bin", firefoxPath);
 			driver = new FirefoxDriver();
 		}
 
@@ -77,11 +75,11 @@ public class WebApp extends UI {
 		try {
 			testAppType = null;
 			String excelPath = CommonTools.setPath(testDataExcelPath);
-			if(writeResult==true){
+			if (writeResult == true) {
 				CommonTools.writeResultToExcel(excelPath, testCaseSheet, testResultData);
 				testResultData.clear();
 			}
-			if(writeScript == true){
+			if (writeScript == true) {
 				CommonTools.writeScriptToExcel(excelPath, testCaseSheet, testScriptData);
 				testScriptData.clear();
 			}
@@ -94,22 +92,20 @@ public class WebApp extends UI {
 			testClassSheet.writeLogToExcel(logData);
 			testClassSheet.close();
 			logData.clear();
-			
-			OperateExcel testSummaySheet = new OperateExcel(testReportDir + testReportName + ".xls", testSummarySheetName);
+
+			OperateExcel testSummaySheet = new OperateExcel(testReportDir + testReportName + ".xls",
+					testSummarySheetName);
 			testSummaySheet.setFormat(10, true);
 			testSummaySheet.writeTestSummaryToExcel(TestngListener.classData);
 			testSummaySheet.close();
 			TestngListener.classData.clear();
-						
 
-			
-
-			
 		} catch (Exception e) {
 			System.err.println(e);
 		}
 		driver.quit();
 	}
+
 	public void quitWithoutTestData() {
 		testAppType = null;
 		driver.quit();
@@ -226,13 +222,12 @@ public class WebApp extends UI {
 	public void switchToFrame(String nameOrId) {
 		driver.switchTo().frame(nameOrId);
 	}
-	
-	
+
 	public void switchToFrame(int index) {
 		driver.switchTo().frame(index);
 	}
 
-	public void switchToFrame(String page, String name) {		
+	public void switchToFrame(String page, String name) {
 		driver.switchTo().frame(findElement(page, name));
 	}
 
@@ -304,7 +299,6 @@ public class WebApp extends UI {
 				putResultData(rowin, "P");
 				String script = appClass + "." + "clickElement(\"" + page + "\",\"" + name + "\");";
 				putScriptData(rowin, script);
-
 
 			} else if (action.equals("sleep")) {
 				int v = Integer.parseInt(value);

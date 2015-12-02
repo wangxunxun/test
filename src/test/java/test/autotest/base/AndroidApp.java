@@ -18,7 +18,6 @@ import org.testng.Assert;
 import test.autotest.core.UI;
 
 public class AndroidApp extends UI {
-	
 
 	public void runAndroidApp() {
 		// set up appium
@@ -84,7 +83,6 @@ public class AndroidApp extends UI {
 		testAppType = null;
 		androidDriver.quit();
 	}
-	
 
 	public String getApkName() {
 		return apkName;
@@ -109,47 +107,45 @@ public class AndroidApp extends UI {
 	public void printAllImageViews() {
 		printAllElesByClassName("android.widget.ImageView");
 	}
-	
 
 	public void printAllImageButtons() {
 		printAllElesByClassName("android.widget.ImageButton");
 	}
-	
-	public String getCurrentActivity(){
+
+	public String getCurrentActivity() {
 		log("Get current activity.");
 		return androidDriver.currentActivity();
 	}
-	
+
 	public void startActivity(String appPackage, String appActivity) {
 		log("Start to launch activity " + appActivity + ".");
 		androidDriver.startActivity(appPackage, appActivity);
 	}
-	
-	public void backToMainApp(String activity){
+
+	public void backToMainApp(String activity) {
 		startActivity(appPackage, activity);
 	}
-	
-	public void backToMainApp(){
+
+	public void backToMainApp() {
 		log("Back to main app.");
 		backToMainApp(mainActivity);
 	}
-	
-	public void swipeLeft(){
+
+	public void swipeLeft() {
 		swipeOfType("left");
 	}
-	
-	public void swipeRight(){
+
+	public void swipeRight() {
 		swipeOfType("right");
 	}
-	
-	public void swipeUp(){
+
+	public void swipeUp() {
 		swipeOfType("up");
 	}
-	
-	public void swipeDown(){
+
+	public void swipeDown() {
 		swipeOfType("down");
 	}
-
 
 	public void clickEnter() {
 		log("Click Enter.");
@@ -170,7 +166,7 @@ public class AndroidApp extends UI {
 	public void clickMenu() {
 		log("Click Menu.");
 		executeAdbShell("adb shell input keyevent 1");
-		
+
 	}
 
 	public void executeAdbShell(String adbshell) {
@@ -181,7 +177,6 @@ public class AndroidApp extends UI {
 		}
 		sleep(3000);
 	}
-
 
 	public void tabElement(String page, String name) {
 		try {
@@ -221,14 +216,13 @@ public class AndroidApp extends UI {
 		}
 	}
 
-
 	public void tab(int fingers, int x, int y, int duration) {
 		float a = (float) x / basicWindowX;
 		float b = (float) y / basicWindowY;
 		int newx = (int) (a * androidDriver.manage().window().getSize().getWidth());
 		int newy = (int) (b * androidDriver.manage().window().getSize().getHeight());
 		androidDriver.tap(fingers, newx, newy, duration);
-		
+
 	}
 
 	public void tab(int x, int y) {
@@ -247,7 +241,7 @@ public class AndroidApp extends UI {
 		int Y = getElementLocateY(page, name);
 		tab(X + 10, Y + 10);
 	}
-	
+
 	public void longTapElementByXY(String page, String name) {
 		log("Click the " + name + " element on the " + page + " page by XY.");
 		int X = getElementLocateX(page, name);
@@ -279,8 +273,6 @@ public class AndroidApp extends UI {
 		log("Click " + text + ".");
 		androidDriver.findElementByName(text).click();
 	}
-
-
 
 	public void slideUpToFindElement(String page, String name) {
 		boolean statu = false;
@@ -444,9 +436,9 @@ public class AndroidApp extends UI {
 
 		}
 	}
-	
+
 	public WebElement findElement(String page, String name) {
-		
+
 		return findElement(page, name, this);
 	}
 

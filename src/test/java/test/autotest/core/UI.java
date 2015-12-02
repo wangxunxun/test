@@ -29,12 +29,13 @@ public class UI extends Initial {
 	protected AndroidDriver<AndroidElement> androidDriver;
 	protected IOSDriver<IOSElement> iosDriver;
 	protected WebDriverWait wait;
+
 	public void clickElement(String page, String name) {
 		log("Click the " + name + " element on the " + page + " page.");
 		try {
 			findElement(page, name).click();
 		} catch (Exception e) {
-			Assert.fail("Fail to click the "+name +" element on the "+page+" page.\n");		
+			Assert.fail("Fail to click the " + name + " element on the " + page + " page.\n");
 		}
 	}
 
@@ -54,9 +55,10 @@ public class UI extends Initial {
 	public void sendKeys(String page, String name, String value) {
 		log("Send the \"" + value + "\" value to the " + name + " element on the " + page + " page.");
 		try {
-		findElement(page, name).sendKeys(value);
+			findElement(page, name).sendKeys(value);
 		} catch (Exception e) {
-			Assert.fail("Fail to send the \"" + value + "\" value to the "+name +" element on the "+page+" page.\n");		
+			Assert.fail(
+					"Fail to send the \"" + value + "\" value to the " + name + " element on the " + page + " page.\n");
 		}
 	}
 
@@ -65,31 +67,32 @@ public class UI extends Initial {
 		log("Clear the " + name + " element on the " + page + " page.");
 		clear(page, name);
 	}
-	
+
 	public void clear(String page, String name) {
 		log("Clear the " + name + " element on the " + page + " page.");
-		try {		
+		try {
 			findElement(page, name).clear();
 		} catch (Exception e) {
-			Assert.fail("Fail to clear the "+name +" element on the "+page+" page.\n");		
+			Assert.fail("Fail to clear the " + name + " element on the " + page + " page.\n");
 		}
 	}
-	public void clear(String page, String name,String defaultStr) {
-		log("Clear the " + name + " element on the " + page + " page.");			
-			while(true){
-				WebElement ele = findElement(page, name);
-				if(!getElementText(page, name).contains(defaultStr)){
-					try {	
-						ele.clear();
-					} catch (Exception e) {
-						Assert.fail("Fail to clear the "+name +" element on the "+page+" page.\n");		
-					}
+
+	public void clear(String page, String name, String defaultStr) {
+		log("Clear the " + name + " element on the " + page + " page.");
+		while (true) {
+			WebElement ele = findElement(page, name);
+			if (!getElementText(page, name).contains(defaultStr)) {
+				try {
+					ele.clear();
+				} catch (Exception e) {
+					Assert.fail("Fail to clear the " + name + " element on the " + page + " page.\n");
 				}
-				else{
-					break;
-				}
+			} else {
+				break;
 			}
+		}
 	}
+
 	public String getElementText(String page, String name) {
 		log("To get the text of the " + name + " element on the " + page + " page.");
 		String value = findElement(page, name).getText();
@@ -106,22 +109,20 @@ public class UI extends Initial {
 		((JavascriptExecutor) driver).executeScript(js, element);
 	}
 
-	
-	public void assertFail(String message){
+	public void assertFail(String message) {
 		Assert.fail(message);
 	}
-	
-	public void assertContains(String actual, String expected){
-		if(!expected.contains(actual)){
-			Assert.fail("Expected ["+expected+"] but found ["+actual+"]");
-		}
-		else{
-			log("Expected ["+expected+"] found ["+actual+"]");
+
+	public void assertContains(String actual, String expected) {
+		if (!expected.contains(actual)) {
+			Assert.fail("Expected [" + expected + "] but found [" + actual + "]");
+		} else {
+			log("Expected [" + expected + "] found [" + actual + "]");
 		}
 	}
-	
-	public void assertEquals(String actual, String expected){
-		log("assertEquals expected["+expected+"] actual["+actual+"]");
+
+	public void assertEquals(String actual, String expected) {
+		log("assertEquals expected[" + expected + "] actual[" + actual + "]");
 		Assert.assertEquals(actual, expected);
 	}
 
@@ -141,8 +142,8 @@ public class UI extends Initial {
 		log("Sleep " + time + " ms.");
 		CommonTools.sleep(time);
 	}
-	
-	public String getElementExpectedValue(String page, String name){
+
+	public String getElementExpectedValue(String page, String name) {
 		log("To get the expected text of the " + name + " element on the " + page + " page.");
 		String value = elementData.get(page).get(name).get("Expected Value");
 		if (value != null) {
@@ -151,49 +152,48 @@ public class UI extends Initial {
 		} else {
 			log("The expected text is null.");
 		}
-		return value;		
+		return value;
 	}
 
-	public void assertElementContains(String page, String name){
+	public void assertElementContains(String page, String name) {
 		assertContains(getElementText(page, name), getElementExpectedValue(page, name));
 	}
-	
-	public void assertElementEquals(String page, String name){
+
+	public void assertElementEquals(String page, String name) {
 		assertEquals(getElementText(page, name), getElementExpectedValue(page, name));
 	}
-	
-	public WebElement findElementByName(String name){
+
+	public WebElement findElementByName(String name) {
 		return driver.findElement(By.name(name));
 	}
 
-	public void clickElmentByName(String name){
+	public void clickElmentByName(String name) {
 		findElementByName(name).click();
 	}
-	
-	public void printAllElesByClassName(String className){
+
+	public void printAllElesByClassName(String className) {
 		List<WebElement> eles = driver.findElements(By.className(className));
 		if (eles.size() != 0) {
-			log("The count of "+className+" is " + eles.size());
+			log("The count of " + className + " is " + eles.size());
 
 			for (int i = 0; i < eles.size(); i++) {
-				log("The " + i + " th "+className+" is " + eles.get(i).getText());
+				log("The " + i + " th " + className + " is " + eles.get(i).getText());
 			}
 		} else {
 			log("Can not find any elements.");
 		}
 	}
-	
 
-	
 	public WebElement findElementByClassNameIndex(String className, int index) {
 		List<WebElement> eles = driver.findElements(By.className(className));
 		return eles.get(index);
 	}
-	
+
 	public WebElement findElement(String page, String name) {
 		return findElement(page, name, this);
 	}
-	protected WebElement findElement(String page, String name,UI ui) {
+
+	protected WebElement findElement(String page, String name, UI ui) {
 		String selecttype = elementData.get(page).get(name).get("SelectType");
 		String location = elementData.get(page).get(name).get("Location");
 		try {
@@ -205,10 +205,10 @@ public class UI extends Initial {
 				return driver.findElement(By.xpath(location));
 			} else if (selecttype.equals("name")) {
 				return driver.findElement(By.name(location));
-	
+
 			} else if (selecttype.equals("linktext")) {
 				return driver.findElement(By.linkText(location));
-	
+
 			} else if (selecttype.equals("partiallinktext")) {
 				return driver.findElement(By.partialLinkText(location));
 			} else if (selecttype.equals("tagname")) {
@@ -218,20 +218,22 @@ public class UI extends Initial {
 				String classname = sourceStrArray[0];
 				String index = sourceStrArray[1];
 				int in = Integer.parseInt(index);
-				return findElementByClassNameIndex(classname, in);				
+				return findElementByClassNameIndex(classname, in);
 			} else if (ui instanceof AndroidApp) {
-				if(selecttype.equals("scrollname")){
+				if (selecttype.equals("scrollname")) {
 					return androidDriver.scrollTo(location);
-				}				
+				}
 			} else {
-				log("Can not find the " + name + " element on the " + page + " page."+"The "+ selecttype+" is "+location);
+				log("Can not find the " + name + " element on the " + page + " page." + "The " + selecttype + " is "
+						+ location);
 			}
 		} catch (Exception e) {
-			Assert.fail("Can not find the " + name + " element on the " + page + " page."+"The "+ selecttype+" is "+location);		
+			Assert.fail("Can not find the " + name + " element on the " + page + " page." + "The " + selecttype + " is "
+					+ location);
 		}
 		return null;
 	}
-	
+
 	public List<WebElement> findElements(String page, String name) {
 		String selecttype = elementData.get(page).get(name).get("SelectType");
 		String location = elementData.get(page).get(name).get("Location");
@@ -244,21 +246,23 @@ public class UI extends Initial {
 				return driver.findElements(By.xpath(location));
 			} else if (selecttype.equals("name")) {
 				return driver.findElements(By.name(location));
-	
+
 			} else if (selecttype.equals("linktext")) {
 				return driver.findElements(By.linkText(location));
-	
+
 			} else if (selecttype.equals("partiallinktext")) {
 				return driver.findElements(By.partialLinkText(location));
 			} else if (selecttype.equals("tagname")) {
 				return driver.findElements(By.tagName(location));
 			} else if (selecttype.equals("classname")) {
-				return driver.findElements(By.className(location));						
+				return driver.findElements(By.className(location));
 			} else {
-				log("Can not find the " + name + " element on the " + page + " page."+"The "+ selecttype+" is "+location);
+				log("Can not find the " + name + " element on the " + page + " page." + "The " + selecttype + " is "
+						+ location);
 			}
 		} catch (Exception e) {
-			Assert.fail("Can not find the " + name + " element on the " + page + " page."+"The "+ selecttype+" is "+location);		
+			Assert.fail("Can not find the " + name + " element on the " + page + " page." + "The " + selecttype + " is "
+					+ location);
 		}
 		return null;
 	}
@@ -299,7 +303,6 @@ public class UI extends Initial {
 				log("The " + name + " element on the " + page + " page is not displayed.");
 				return false;
 			}
-
 
 		} else if (selecttype.equals("id")) {
 			try {
@@ -367,6 +370,7 @@ public class UI extends Initial {
 		sleep(100);
 		return true;
 	}
+
 	protected void swipeOfType(String type) {
 		try {
 			int windowlenX = androidDriver.manage().window().getSize().getWidth();
@@ -408,11 +412,11 @@ public class UI extends Initial {
 		}
 
 	}
+
 	public void getScreen(String filename) {
 		File scrFile = null;
 
-    	scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-
+		scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 		if (!(new File(screenDir).isDirectory())) { // 判断是否存在该目录
 			new File(screenDir).mkdir(); // 如果不存在则新建一个目录
@@ -429,7 +433,7 @@ public class UI extends Initial {
 	private String getScreenReturnPath(String filename) {
 		File scrFile = null;
 
-        scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 		if (!(new File(screenDir).isDirectory())) { // 判断是否存在该目录
 			new File(screenDir).mkdir(); // 如果不存在则新建一个目录
@@ -465,7 +469,7 @@ public class UI extends Initial {
 		int elementX = getElementX(page, name);
 		int elementY = getElementY(page, name);
 		try {
-		ImageUtils.cutImage(srcImg, destImg + "cut by element_ " + name + " " + imgName, x, y, elementX, elementY);
+			ImageUtils.cutImage(srcImg, destImg + "cut by element_ " + name + " " + imgName, x, y, elementX, elementY);
 		} catch (Exception e) {
 			Assert.fail("Get element screen failed.\n");
 
@@ -479,8 +483,8 @@ public class UI extends Initial {
 		String destImg = screenDir;
 		String name = srcImg1.getName();
 		try {
-		ImageUtils.markImageByText(srcImg, destImg + "marked by text " + content + " " + name, content, Color.red, "黑体",
-				13);
+			ImageUtils.markImageByText(srcImg, destImg + "marked by text " + content + " " + name, content, Color.red,
+					"黑体", 13);
 		} catch (Exception e) {
 			Assert.fail("Get element screen failed.\n");
 		}

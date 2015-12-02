@@ -162,6 +162,7 @@ public class CommonTools {
 		wbe.write();
 		wbe.close();
 	}
+
 	public static boolean verifySheet(String excelPath, String name) throws BiffException, IOException, WriteException {
 		Workbook wb = Workbook.getWorkbook(new File(excelPath));
 		WritableWorkbook wbe = Workbook.createWorkbook(new File(excelPath), wb);
@@ -178,13 +179,13 @@ public class CommonTools {
 				return true;
 			}
 
-		}		
+		}
 		wbe.write();
 		wbe.close();
 		return false;
 	}
-	
-	public static String getPercent(int numerator,int denominator){
+
+	public static String getPercent(int numerator, int denominator) {
 		float numerator1 = numerator;
 		float successRate = numerator1 / denominator;
 		DecimalFormat df = new DecimalFormat("0.00%");
@@ -192,56 +193,57 @@ public class CommonTools {
 		return successRate1;
 	}
 
-	public static int getFileCount(String dirPath){
+	public static int getFileCount(String dirPath) {
 		File dir = new File(dirPath);
 		File[] files = dir.listFiles();
 		int count = 0;
-		for(File fileIndex:files){
-			if(fileIndex.isFile()){
-				count = count+1;
+		for (File fileIndex : files) {
+			if (fileIndex.isFile()) {
+				count = count + 1;
 			}
 		}
 		return count;
 	}
-	
-	public static void keepFileCount(String dirPath,int count){
+
+	public static void keepFileCount(String dirPath, int count) {
 		int actualCount = getFileCount(dirPath);
-		if(actualCount>count){
+		if (actualCount > count) {
 			File dir = new File(dirPath);
 			File[] files = dir.listFiles();
-			for(int i =0;i<actualCount-count;i++){
-				files[i+1].delete();
+			for (int i = 0; i < actualCount - count; i++) {
+				files[i + 1].delete();
 			}
 		}
 	}
-	
-	public static void createWorkbook(String excelDir, String excelName, String className, int index,String projectName,String projectInfo,String testSpecification)
-			throws IOException, WriteException, BiffException {
+
+	public static void createWorkbook(String excelDir, String excelName, String className, int index,
+			String projectName, String projectInfo, String testSpecification)
+					throws IOException, WriteException, BiffException {
 		if (!(new File(excelDir).isDirectory())) { // 判断是否存在该目录
 			new File(excelDir).mkdir(); // 如果不存在则新建一个目录
 		}
-		
-		String navigation[] = { "Success", "Failure ", "Skipped", "Success Rate", "Time Consuming", "Total"};
-		String classNavigation[] = { "Test Suite", "Suite Summary","Success Rate", "Log", "Case Counts","Test Case", "Case Summary","Time Consuming",
-				"Error Screenshot", "Status", "Comment" };
+
+		String navigation[] = { "Success", "Failure ", "Skipped", "Success Rate", "Time Consuming", "Total" };
+		String classNavigation[] = { "Test Suite", "Suite Summary", "Success Rate", "Log", "Case Counts", "Test Case",
+				"Case Summary", "Time Consuming", "Error Screenshot", "Status", "Comment" };
 		WritableWorkbook wb = Workbook.createWorkbook(new File(excelDir + excelName));
 		className = getValidSheetName(className);
 		wb.createSheet(className, index);
 
 		WritableSheet homePageSheet = wb.getSheet(className);
-		WritableFont fontTitle = new WritableFont(WritableFont.ARIAL, 10,WritableFont.BOLD);
+		WritableFont fontTitle = new WritableFont(WritableFont.ARIAL, 10, WritableFont.BOLD);
 		WritableCellFormat formatTitle = new WritableCellFormat(fontTitle);
 		formatTitle.setWrap(true);
 		formatTitle.setBorder(Border.ALL, BorderLineStyle.THIN);
 		formatTitle.setVerticalAlignment(VerticalAlignment.CENTRE);
 		formatTitle.setBackground(Colour.BLUE_GREY);
-		
+
 		WritableFont fontBody = new WritableFont(WritableFont.ARIAL, 10);
 		WritableCellFormat formatBody = new WritableCellFormat(fontBody);
 		formatBody.setWrap(true);
 		formatBody.setBorder(Border.ALL, BorderLineStyle.THIN);
 		formatBody.setVerticalAlignment(VerticalAlignment.CENTRE);
-		
+
 		Label projectNameLabel = new Label(0, 0, "Project Name", formatTitle);
 		Label projectInfoLabel = new Label(0, 1, "Project Info", formatTitle);
 		Label testSpecificationLabel = new Label(0, 2, "Test Specification", formatTitle);
@@ -275,8 +277,6 @@ public class CommonTools {
 		homePageSheet.addCell(label5);
 		homePageSheet.addCell(label6);
 
-
-
 		for (int i = 0; i < classNavigation.length; i++) {
 			homePageSheet.addCell(new Label(i, 7, classNavigation[i], formatTitle));
 		}
@@ -295,35 +295,36 @@ public class CommonTools {
 		wb.close();
 	}
 
-	public static void writeResultToExcel(String excelPath, String className,List<List<String>> testResultData) throws BiffException, IOException, RowsExceededException, WriteException{
+	public static void writeResultToExcel(String excelPath, String className, List<List<String>> testResultData)
+			throws BiffException, IOException, RowsExceededException, WriteException {
 		Workbook wb = Workbook.getWorkbook(new File(excelPath));
 		WritableWorkbook wbe = Workbook.createWorkbook(new File(excelPath), wb);
 		WritableSheet sheet = wbe.getSheet(className);
-		for(int i = 0;i <testResultData.size();i++){
+		for (int i = 0; i < testResultData.size(); i++) {
 			int row = Integer.parseInt(testResultData.get(i).get(0));
 			String result = testResultData.get(i).get(1);
 			Label lable = new Label(8, row, result);
-			sheet.addCell(lable);	
-		}
-		wbe.write();
-		wbe.close();
-	}
-	
-	public static void writeScriptToExcel(String excelPath, String className,List<List<String>> testScriptData) throws BiffException, IOException, RowsExceededException, WriteException{
-		Workbook wb = Workbook.getWorkbook(new File(excelPath));
-		WritableWorkbook wbe = Workbook.createWorkbook(new File(excelPath), wb);
-		WritableSheet sheet = wbe.getSheet(className);
-		for(int i = 0;i <testScriptData.size();i++){
-			int row = Integer.parseInt(testScriptData.get(i).get(0));
-			String result = testScriptData.get(i).get(1);
-			Label lable = new Label(9, row, result);
-			sheet.addCell(lable);	
+			sheet.addCell(lable);
 		}
 		wbe.write();
 		wbe.close();
 	}
 
-	
+	public static void writeScriptToExcel(String excelPath, String className, List<List<String>> testScriptData)
+			throws BiffException, IOException, RowsExceededException, WriteException {
+		Workbook wb = Workbook.getWorkbook(new File(excelPath));
+		WritableWorkbook wbe = Workbook.createWorkbook(new File(excelPath), wb);
+		WritableSheet sheet = wbe.getSheet(className);
+		for (int i = 0; i < testScriptData.size(); i++) {
+			int row = Integer.parseInt(testScriptData.get(i).get(0));
+			String result = testScriptData.get(i).get(1);
+			Label lable = new Label(9, row, result);
+			sheet.addCell(lable);
+		}
+		wbe.write();
+		wbe.close();
+	}
+
 	public static void createXmlforTestNg(String path, Map<String, String> data, String className) {
 
 		XMLWriter output = null;
@@ -426,99 +427,98 @@ public class CommonTools {
 		}
 		return classData;
 	}
-	
-	public static String getValidSheetName(String sheetName){
-		if(sheetName.length()>31){
-			return sheetName.substring(sheetName.length()-31, sheetName.length());
+
+	public static String getValidSheetName(String sheetName) {
+		if (sheetName.length() > 31) {
+			return sheetName.substring(sheetName.length() - 31, sheetName.length());
 		}
 		return sheetName;
 	}
 
-    protected static void copyScreenShot(File screenShotFile, File outputFile) throws IOException {
+	protected static void copyScreenShot(File screenShotFile, File outputFile) throws IOException {
 
-        FileInputStream imgIs = new FileInputStream(screenShotFile);
-        FileOutputStream imageOs = new FileOutputStream(outputFile);
-        FileChannel imgCin = imgIs.getChannel();
-        FileChannel imgCout = imageOs.getChannel();
-        imgCin.transferTo(0, imgCin.size(), imgCout);
-        imgCin.close();
-        imgCout.close();
-        imgIs.close();
-        imageOs.close();
-    }
-    
-    
-    public static String getConfigValue(Properties configProperties, String propertieName) {
+		FileInputStream imgIs = new FileInputStream(screenShotFile);
+		FileOutputStream imageOs = new FileOutputStream(outputFile);
+		FileChannel imgCin = imgIs.getChannel();
+		FileChannel imgCout = imageOs.getChannel();
+		imgCin.transferTo(0, imgCin.size(), imgCout);
+		imgCin.close();
+		imgCout.close();
+		imgIs.close();
+		imageOs.close();
+	}
 
-        // if the specified propertieName exist as an environment variable.
-        // if so , use it. otherwise , search the configJsonNode specified.
-        String returnValue = StringUtils.defaultString(System.getenv(propertieName));
-        if (StringUtils.isBlank(returnValue)) {
-            try {
-                returnValue = configProperties.getProperty(propertieName);
-            } catch (NullPointerException e) {
-                System.err.println("Cannot locate config file at " + propertieName + ". Will try continue without it.");
-                return "";
-            }
-        }
-        return returnValue;
-    }
-	
-	public void copyFile(String oldPath, String newPath) { 
-		try { 
-		int bytesum = 0; 
-		int byteread = 0; 
-		File oldfile = new File(oldPath); 
-		if (oldfile.exists()) { //文件存在时 
-		InputStream inStream = new FileInputStream(oldPath); //读入原文件 
-		FileOutputStream fs = new FileOutputStream(newPath); 
-		byte[] buffer = new byte[1444]; 
-		while ( (byteread = inStream.read(buffer)) != -1) { 
-		bytesum += byteread; //字节数 文件大小 
-		System.out.println(bytesum); 
-		fs.write(buffer, 0, byteread); 
-		fs.close();
-		} 
-		inStream.close(); 
-		} 
-		} 
-		catch (Exception e) { 
-		System.out.println("复制单个文件操作出错"); 
-		e.printStackTrace(); 
+	public static String getConfigValue(Properties configProperties, String propertieName) {
 
-		} 
+		// if the specified propertieName exist as an environment variable.
+		// if so , use it. otherwise , search the configJsonNode specified.
+		String returnValue = StringUtils.defaultString(System.getenv(propertieName));
+		if (StringUtils.isBlank(returnValue)) {
+			try {
+				returnValue = configProperties.getProperty(propertieName);
+			} catch (NullPointerException e) {
+				System.err.println("Cannot locate config file at " + propertieName + ". Will try continue without it.");
+				return "";
+			}
+		}
+		return returnValue;
+	}
 
-		} 
-	
-	public static int getCurrentDay(){
+	public void copyFile(String oldPath, String newPath) {
+		try {
+			int bytesum = 0;
+			int byteread = 0;
+			File oldfile = new File(oldPath);
+			if (oldfile.exists()) { // 文件存在时
+				InputStream inStream = new FileInputStream(oldPath); // 读入原文件
+				FileOutputStream fs = new FileOutputStream(newPath);
+				byte[] buffer = new byte[1444];
+				while ((byteread = inStream.read(buffer)) != -1) {
+					bytesum += byteread; // 字节数 文件大小
+					System.out.println(bytesum);
+					fs.write(buffer, 0, byteread);
+					fs.close();
+				}
+				inStream.close();
+			}
+		} catch (Exception e) {
+			System.out.println("复制单个文件操作出错");
+			e.printStackTrace();
+
+		}
+
+	}
+
+	public static int getCurrentDay() {
 		Calendar now = Calendar.getInstance();
 		int day = now.get(Calendar.DATE);
 		return day;
 	}
-	
-	public static int getNextDay(){
+
+	public static int getNextDay() {
 		Calendar now = Calendar.getInstance();
 		now.add(Calendar.DATE, 1);
 		int day = now.get(Calendar.DATE);
 		return day;
 	}
-	
-	public static String getStr(int num,String str){
+
+	public static String getStr(int num, String str) {
 		StringBuffer sb = new StringBuffer("");
-		for(int i=0;i<num;i++){
-		   sb.append(str);
+		for (int i = 0; i < num; i++) {
+			sb.append(str);
 		}
 		return sb.toString();
 	}
+
 	public static void main(String[] args) throws RowsExceededException, BiffException, WriteException, IOException {
-		
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
 		String data = df.format(new Date());
 		System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
 		System.out.println(data.substring(8, 10));
-		
+
 		System.out.println("end");
-		int a =getFileCount("F:/workspace/test/testReport");
+		int a = getFileCount("F:/workspace/test/testReport");
 		System.out.println(a);
 		keepFileCount("F:/workspace/test/testReport", 1);
 		System.out.println("end");
