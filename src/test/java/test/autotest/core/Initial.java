@@ -127,7 +127,7 @@ public class Initial {
 			return CommonTools.setPath(testReportDir);
 		}
 
-		return CommonTools.setPath("/testReport/");
+		return CommonTools.setPath("/testReport/"+projectName+"/");
 	}
 
 	protected String getProjectName() {
@@ -136,7 +136,7 @@ public class Initial {
 			return projectName;
 		}
 
-		return "";
+		return "defaultProject";
 	}
 
 	protected String getProjectInfo() {
@@ -523,6 +523,7 @@ public class Initial {
 		testClassName = getTestClassName();
 		appDir = getAppDir();
 		testReportDir = getTestReportDir();
+		System.out.println(testReportDir);
 		testReportName = getTestReportName();
 		testSummarySheetName = getTestSummarySheetName();
 		CommonTools.keepFileCount(testReportDir, 4);

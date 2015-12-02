@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="63912" started-at="2015-12-02T14:13:33Z" finished-at="2015-12-02T14:14:37Z">
+  <suite name="Default suite" duration-ms="68815" started-at="2015-12-02T14:38:09Z" finished-at="2015-12-02T14:39:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="63912" started-at="2015-12-02T14:13:33Z" finished-at="2015-12-02T14:14:37Z">
+    <test name="Default test" duration-ms="68815" started-at="2015-12-02T14:38:09Z" finished-at="2015-12-02T14:39:18Z">
       <class name="projects.ticket.testCases.ticketWeb.qiChe">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="setUp" is-config="true" duration-ms="11302" started-at="2015-12-02T22:13:33Z" finished-at="2015-12-02T22:13:44Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="setUp" is-config="true" duration-ms="5804" started-at="2015-12-02T22:38:09Z" finished-at="2015-12-02T22:38:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test001enterAddCityPage()[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test001enterAddCityPage" duration-ms="13114" started-at="2015-12-02T22:13:44Z" finished-at="2015-12-02T22:13:57Z">
+        <test-method status="PASS" signature="test001enterAddCityPage()[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test001enterAddCityPage" duration-ms="16873" started-at="2015-12-02T22:38:15Z" finished-at="2015-12-02T22:38:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test001enterAddCityPage -->
-        <test-method status="PASS" signature="test010addCity(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test010addCity" duration-ms="4438" started-at="2015-12-02T22:13:57Z" data-provider="addCity" finished-at="2015-12-02T22:14:02Z">
+        <test-method status="PASS" signature="test010addCity(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test010addCity" duration-ms="10235" started-at="2015-12-02T22:38:32Z" data-provider="addCity" finished-at="2015-12-02T22:38:42Z">
           <params>
             <param index="0">
               <value>
@@ -36,7 +36,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test010addCity -->
-        <test-method status="PASS" signature="test010addCity(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test010addCity" duration-ms="2606" started-at="2015-12-02T22:14:02Z" data-provider="addCity" finished-at="2015-12-02T22:14:05Z">
+        <test-method status="PASS" signature="test010addCity(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test010addCity" duration-ms="2593" started-at="2015-12-02T22:38:42Z" data-provider="addCity" finished-at="2015-12-02T22:38:45Z">
           <params>
             <param index="0">
               <value>
@@ -57,7 +57,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test010addCity -->
-        <test-method status="PASS" signature="test010addCity(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test010addCity" duration-ms="2699" started-at="2015-12-02T22:14:05Z" data-provider="addCity" finished-at="2015-12-02T22:14:07Z">
+        <test-method status="PASS" signature="test010addCity(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test010addCity" duration-ms="2707" started-at="2015-12-02T22:38:45Z" data-provider="addCity" finished-at="2015-12-02T22:38:47Z">
           <params>
             <param index="0">
               <value>
@@ -78,7 +78,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test010addCity -->
-        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="5257" started-at="2015-12-02T22:14:07Z" data-provider="addqichezhan" finished-at="2015-12-02T22:14:13Z">
+        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="4673" started-at="2015-12-02T22:38:48Z" data-provider="addqichezhan" finished-at="2015-12-02T22:38:52Z">
           <params>
             <param index="0">
               <value>
@@ -134,7 +134,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test021addQiCheZhan -->
-        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="4704" started-at="2015-12-02T22:14:13Z" data-provider="addqichezhan" finished-at="2015-12-02T22:14:17Z">
+        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="3971" started-at="2015-12-02T22:38:52Z" data-provider="addqichezhan" finished-at="2015-12-02T22:38:56Z">
           <params>
             <param index="0">
               <value>
@@ -190,7 +190,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test021addQiCheZhan -->
-        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="4232" started-at="2015-12-02T22:14:17Z" data-provider="addqichezhan" finished-at="2015-12-02T22:14:22Z">
+        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="5271" started-at="2015-12-02T22:38:56Z" data-provider="addqichezhan" finished-at="2015-12-02T22:39:02Z">
           <params>
             <param index="0">
               <value>
@@ -246,7 +246,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test021addQiCheZhan -->
-        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="4551" started-at="2015-12-02T22:14:22Z" data-provider="addqichezhan" finished-at="2015-12-02T22:14:26Z">
+        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="5489" started-at="2015-12-02T22:39:02Z" data-provider="addqichezhan" finished-at="2015-12-02T22:39:07Z">
           <params>
             <param index="0">
               <value>
@@ -302,7 +302,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test021addQiCheZhan -->
-        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="4655" started-at="2015-12-02T22:14:26Z" data-provider="addqichezhan" finished-at="2015-12-02T22:14:31Z">
+        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="3909" started-at="2015-12-02T22:39:07Z" data-provider="addqichezhan" finished-at="2015-12-02T22:39:11Z">
           <params>
             <param index="0">
               <value>
@@ -358,7 +358,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test021addQiCheZhan -->
-        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="4080" started-at="2015-12-02T22:14:31Z" data-provider="addqichezhan" finished-at="2015-12-02T22:14:35Z">
+        <test-method status="PASS" signature="test021addQiCheZhan(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="test021addQiCheZhan" duration-ms="5332" started-at="2015-12-02T22:39:11Z" data-provider="addqichezhan" finished-at="2015-12-02T22:39:16Z">
           <params>
             <param index="0">
               <value>
@@ -414,7 +414,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test021addQiCheZhan -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="tearDown" is-config="true" duration-ms="1920" started-at="2015-12-02T22:14:35Z" finished-at="2015-12-02T22:14:37Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@5594a1b5]" name="tearDown" is-config="true" duration-ms="1563" started-at="2015-12-02T22:39:16Z" finished-at="2015-12-02T22:39:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
