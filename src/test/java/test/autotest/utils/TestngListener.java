@@ -124,14 +124,14 @@ public class TestngListener extends TestListenerAdapter {
 	private String takeScreenShot(ITestResult tr) throws InterruptedException, IOException {
 		Thread.sleep(3000);
 		File scrFile = null;
-		String dir_name = null;
-		if (Initial.testAppType == "web") {
+		String dir_name = Initial.testReportDir + "failScreen/";
+/*		if (Initial.testAppType == "web") {
 			dir_name = Initial.testReportDir + "failScreen/web/";
 		} else if (Initial.testAppType == "android") {
 			dir_name = Initial.testReportDir + "failScreen/android/";
 		} else if (Initial.testAppType == "ios") {
 			dir_name = Initial.testReportDir + "failScreen/ios/";
-		}
+		}*/
 		scrFile = ((TakesScreenshot) UI.driver).getScreenshotAs(OutputType.FILE);
 
 		if (!(new File(dir_name).isDirectory())) { // 判断是否存在该目录

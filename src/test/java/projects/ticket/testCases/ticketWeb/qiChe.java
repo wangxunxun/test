@@ -81,10 +81,11 @@ public class qiChe {
 			piaoWuWebApp.switchToDefaultContent();
 			piaoWuWebApp.logSuccessMessage("成功添加 -"+name);
 		}
+		piaoWuWebApp.assertFail("111");
 		
 	}
 
-	@Test(dataProvider="addqichezhan")
+//	@Test(dataProvider="addqichezhan")
 	public void test021addQiCheZhan(String address, String name, String pinyin,
 			String longitude, String latitude, String bashi, String phone,
 			String from, String to, String city) throws InterruptedException,

@@ -204,6 +204,18 @@ public class CommonTools {
 		}
 		return count;
 	}
+	
+	public static int getDirCount(String dirPath) {
+		File dir = new File(dirPath);
+		File[] files = dir.listFiles();
+		int count = 0;
+		for (File fileIndex : files) {
+			if (fileIndex.isDirectory()) {
+				count = count + 1;
+			}
+		}
+		return count;
+	}
 
 	public static void keepFileCount(String dirPath, int count) {
 		if (!(new File(dirPath).isDirectory())) { // 判断是否存在该目录
@@ -215,6 +227,22 @@ public class CommonTools {
 			File[] files = dir.listFiles();
 			for (int i = 0; i < actualCount - count; i++) {
 				files[i + 1].delete();
+			}
+		}
+	}
+	
+	public static void keepDirCount(String dirPath, int count) {
+		if (!(new File(dirPath).isDirectory())) { // 判断是否存在该目录
+			new File(dirPath).mkdir(); // 如果不存在则新建一个目录
+		}
+		int actualCount = getDirCount(dirPath);
+		System.out.println(actualCount);
+		if (actualCount > count) {
+			File dir = new File(dirPath);
+			File[] files = dir.listFiles();
+			for (int i = 0; i < actualCount - count; i++) {
+
+				System.out.println("delete");
 			}
 		}
 	}

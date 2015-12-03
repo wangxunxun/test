@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>F:\workspace\test\config\ticketSystem\testngWeb.xml</span>
+                    <span>testngWeb.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods,   10 passed</span>
+                    <span class="method-stats">4 methods, 3 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test010addCity(æ­¦æ±‰, WH, æ˜¯)">test010addCity(æ­¦æ±‰, WH, æ˜¯)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test010addCity(å’¸å®, XN, æ˜¯)">test010addCity(å’¸å®, XN, æ˜¯)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test010addCity(æ·±åœ³, SZ, æ˜¯)">test010addCity(æ·±åœ³, SZ, æ˜¯)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,51 +126,6 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test001enterAddCityPage">test001enterAddCityPage</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test010addCity(ÏÌÄş, XN, ÊÇ)">test010addCity(ÏÌÄş, XN, ÊÇ)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test010addCity(ÉîÛÚ, SZ, ÊÇ)">test010addCity(ÉîÛÚ, SZ, ÊÇ)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test010addCity(Îäºº, WH, ÊÇ)">test010addCity(Îäºº, WH, ÊÇ)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test021addQiCheZhan(ÄÏÉ½ÄÏÍ·ÉÌÒµ²½ĞĞ½ÖE1(ÀÍ¶¯´óÏÃ¶ÔÃæ), ÄÏÉ½Æû³µÕ¾, nanshanqichezhan, 113.920202, 22.548785, 2, 075586003177, 7:00, 21:00, Éî...)">test021addQiCheZhan(ÄÏÉ½ÄÏÍ·ÉÌÒµ²½ĞĞ½ÖE1(ÀÍ¶¯´óÏÃ¶ÔÃæ), ÄÏÉ½Æû³µÕ¾, nanshanqichezhan, 113.920202, 22.548785, 2, 075586003177, 7:00, 21:00, Éî...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test021addQiCheZhan(ÏÌÄşÊĞºØÊ¤Â·264ºÅ, ÏÌÄşÊĞÎÂÈªÖĞĞÄ¿ÍÔËÕ¾, xiangningshiwenquanzhongxinkeyunzhan, 114.353536, 29.852981, 6, 07158137708,...)">test021addQiCheZhan(ÏÌÄşÊĞºØÊ¤Â·264ºÅ, ÏÌÄşÊĞÎÂÈªÖĞĞÄ¿ÍÔËÕ¾, xiangningshiwenquanzhongxinkeyunzhan, 114.353536, 29.852981, 6, 07158137708,...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test021addQiCheZhan(ÎäººÊĞÎä²ıÇøÖĞÉ½Â·519ºÅ, ºê»ù¿ÍÔËÕ¾, hongjikeyunzhan, 114.323837, 30.539449, 903, 02788074966, 7:00, 21:00, Îäºº)">test021addQiCheZhan(ÎäººÊĞÎä²ıÇøÖĞÉ½Â·519ºÅ, ºê»ù¿ÍÔËÕ¾, hongjikeyunzhan, 114.323837, 30.539449, 903, 02788074966, 7:00, 21:00, Îäºº)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test021addQiCheZhan(ÏÌÄşÊĞÍ¨É½ÏØÍ¨ÑòÕòÄÏÊĞÂ·23ºÅ, ÏÌÄşÊĞÍ¨É½Æû³µÕ¾, xianningshitongshanqichezhan, 114.490728, 29.618874, 2, 07152395741, 7:00...)">test021addQiCheZhan(ÏÌÄşÊĞÍ¨É½ÏØÍ¨ÑòÕòÄÏÊĞÂ·23ºÅ, ÏÌÄşÊĞÍ¨É½Æû³µÕ¾, xianningshitongshanqichezhan, 114.490728, 29.618874, 2, 07152395741, 7:00...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test021addQiCheZhan(ºş±±Ê¡ÎäººÊĞÎäçóÂ·358ºÅ, ¸µ¼ÒÆÂ¿ÍÔËÕ¾, fujiapokeyunzhan, 114.333652, 30.541762, 555, 02796513, 7:00, 21:00, Îäºº)">test021addQiCheZhan(ºş±±Ê¡ÎäººÊĞÎäçóÂ·358ºÅ, ¸µ¼ÒÆÂ¿ÍÔËÕ¾, fujiapokeyunzhan, 114.333652, 30.541762, 555, 02796513, 7:00, 21:00, Îäºº)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.qiChe" hash-for-method="test021addQiCheZhan(ÉîÛÚÊĞÃ·ÁÖ¼ì²éÕ¾¹Ø¿Ú¹«½»Õ¾ÅÔ, »Ê¸ÚÆû³µÕ¾, huanggangqichezhan, 114.079165, 22.527134, 2, 075583287975, 7:00, 21:00, ÉîÛÚ)">test021addQiCheZhan(ÉîÛÚÊĞÃ·ÁÖ¼ì²éÕ¾¹Ø¿Ú¹«½»Õ¾ÅÔ, »Ê¸ÚÆû³µÕ¾, huanggangqichezhan, 114.079165, 22.527134, 2, 075583287975, 7:00, 21:00, ÉîÛÚ)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -161,6 +140,128 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">projects.ticket.testCases.ticketWeb.qiChe</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test010addCity(æ­¦æ±‰, WH, æ˜¯)">
+                  </a> <!-- test010addCity(æ­¦æ±‰, WH, æ˜¯) -->
+                  <span class="method-name">test010addCity</span>
+                  <span class="parameters">(æ­¦æ±‰, WH, æ˜¯)</span>
+                  <div class="stack-trace">java.lang.AssertionError: 111
+	at org.testng.Assert.fail(Assert.java:94)
+	at test.autotest.core.UI.assertFail(UI.java:113)
+	at projects.ticket.testCases.ticketWeb.qiChe.test010addCity(qiChe.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
+	at org.testng.TestNG.run(TestNG.java:1032)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test010addCity(å’¸å®, XN, æ˜¯)">
+                  </a> <!-- test010addCity(å’¸å®, XN, æ˜¯) -->
+                  <span class="method-name">test010addCity</span>
+                  <span class="parameters">(å’¸å®, XN, æ˜¯)</span>
+                  <div class="stack-trace">java.lang.AssertionError: 111
+	at org.testng.Assert.fail(Assert.java:94)
+	at test.autotest.core.UI.assertFail(UI.java:113)
+	at projects.ticket.testCases.ticketWeb.qiChe.test010addCity(qiChe.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
+	at org.testng.TestNG.run(TestNG.java:1032)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test010addCity(æ·±åœ³, SZ, æ˜¯)">
+                  </a> <!-- test010addCity(æ·±åœ³, SZ, æ˜¯) -->
+                  <span class="method-name">test010addCity</span>
+                  <span class="parameters">(æ·±åœ³, SZ, æ˜¯)</span>
+                  <div class="stack-trace">java.lang.AssertionError: 111
+	at org.testng.Assert.fail(Assert.java:94)
+	at test.autotest.core.UI.assertFail(UI.java:113)
+	at projects.ticket.testCases.ticketWeb.qiChe.test010addCity(qiChe.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:771)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
+	at org.testng.TestNG.run(TestNG.java:1032)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -174,84 +275,12 @@
                   <span class="method-name">test001enterAddCityPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test010addCity(ÏÌÄş, XN, ÊÇ)">
-                  </a> <!-- test010addCity(ÏÌÄş, XN, ÊÇ) -->
-                  <span class="method-name">test010addCity</span>
-                  <span class="parameters">(ÏÌÄş, XN, ÊÇ)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test010addCity(ÉîÛÚ, SZ, ÊÇ)">
-                  </a> <!-- test010addCity(ÉîÛÚ, SZ, ÊÇ) -->
-                  <span class="method-name">test010addCity</span>
-                  <span class="parameters">(ÉîÛÚ, SZ, ÊÇ)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test010addCity(Îäºº, WH, ÊÇ)">
-                  </a> <!-- test010addCity(Îäºº, WH, ÊÇ) -->
-                  <span class="method-name">test010addCity</span>
-                  <span class="parameters">(Îäºº, WH, ÊÇ)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test021addQiCheZhan(ÄÏÉ½ÄÏÍ·ÉÌÒµ²½ĞĞ½ÖE1(ÀÍ¶¯´óÏÃ¶ÔÃæ), ÄÏÉ½Æû³µÕ¾, nanshanqichezhan, 113.920202, 22.548785, 2, 075586003177, 7:00, 21:00, Éî...)">
-                  </a> <!-- test021addQiCheZhan(ÄÏÉ½ÄÏÍ·ÉÌÒµ²½ĞĞ½ÖE1(ÀÍ¶¯´óÏÃ¶ÔÃæ), ÄÏÉ½Æû³µÕ¾, nanshanqichezhan, 113.920202, 22.548785, 2, 075586003177, 7:00, 21:00, Éî...) -->
-                  <span class="method-name">test021addQiCheZhan</span>
-                  <span class="parameters">(ÄÏÉ½ÄÏÍ·ÉÌÒµ²½ĞĞ½ÖE1(ÀÍ¶¯´óÏÃ¶ÔÃæ), ÄÏÉ½Æû³µÕ¾, nanshanqichezhan, 113.920202, 22.548785, 2, 075586003177, 7:00, 21:00, ÉîÛÚ)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test021addQiCheZhan(ÏÌÄşÊĞºØÊ¤Â·264ºÅ, ÏÌÄşÊĞÎÂÈªÖĞĞÄ¿ÍÔËÕ¾, xiangningshiwenquanzhongxinkeyunzhan, 114.353536, 29.852981, 6, 07158137708,...)">
-                  </a> <!-- test021addQiCheZhan(ÏÌÄşÊĞºØÊ¤Â·264ºÅ, ÏÌÄşÊĞÎÂÈªÖĞĞÄ¿ÍÔËÕ¾, xiangningshiwenquanzhongxinkeyunzhan, 114.353536, 29.852981, 6, 07158137708,...) -->
-                  <span class="method-name">test021addQiCheZhan</span>
-                  <span class="parameters">(ÏÌÄşÊĞºØÊ¤Â·264ºÅ, ÏÌÄşÊĞÎÂÈªÖĞĞÄ¿ÍÔËÕ¾, xiangningshiwenquanzhongxinkeyunzhan, 114.353536, 29.852981, 6, 07158137708, 7:00, 21:00, ÏÌÄş)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test021addQiCheZhan(ÎäººÊĞÎä²ıÇøÖĞÉ½Â·519ºÅ, ºê»ù¿ÍÔËÕ¾, hongjikeyunzhan, 114.323837, 30.539449, 903, 02788074966, 7:00, 21:00, Îäºº)">
-                  </a> <!-- test021addQiCheZhan(ÎäººÊĞÎä²ıÇøÖĞÉ½Â·519ºÅ, ºê»ù¿ÍÔËÕ¾, hongjikeyunzhan, 114.323837, 30.539449, 903, 02788074966, 7:00, 21:00, Îäºº) -->
-                  <span class="method-name">test021addQiCheZhan</span>
-                  <span class="parameters">(ÎäººÊĞÎä²ıÇøÖĞÉ½Â·519ºÅ, ºê»ù¿ÍÔËÕ¾, hongjikeyunzhan, 114.323837, 30.539449, 903, 02788074966, 7:00, 21:00, Îäºº)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test021addQiCheZhan(ÏÌÄşÊĞÍ¨É½ÏØÍ¨ÑòÕòÄÏÊĞÂ·23ºÅ, ÏÌÄşÊĞÍ¨É½Æû³µÕ¾, xianningshitongshanqichezhan, 114.490728, 29.618874, 2, 07152395741, 7:00...)">
-                  </a> <!-- test021addQiCheZhan(ÏÌÄşÊĞÍ¨É½ÏØÍ¨ÑòÕòÄÏÊĞÂ·23ºÅ, ÏÌÄşÊĞÍ¨É½Æû³µÕ¾, xianningshitongshanqichezhan, 114.490728, 29.618874, 2, 07152395741, 7:00...) -->
-                  <span class="method-name">test021addQiCheZhan</span>
-                  <span class="parameters">(ÏÌÄşÊĞÍ¨É½ÏØÍ¨ÑòÕòÄÏÊĞÂ·23ºÅ, ÏÌÄşÊĞÍ¨É½Æû³µÕ¾, xianningshitongshanqichezhan, 114.490728, 29.618874, 2, 07152395741, 7:00, 21:00, ÏÌÄş)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test021addQiCheZhan(ºş±±Ê¡ÎäººÊĞÎäçóÂ·358ºÅ, ¸µ¼ÒÆÂ¿ÍÔËÕ¾, fujiapokeyunzhan, 114.333652, 30.541762, 555, 02796513, 7:00, 21:00, Îäºº)">
-                  </a> <!-- test021addQiCheZhan(ºş±±Ê¡ÎäººÊĞÎäçóÂ·358ºÅ, ¸µ¼ÒÆÂ¿ÍÔËÕ¾, fujiapokeyunzhan, 114.333652, 30.541762, 555, 02796513, 7:00, 21:00, Îäºº) -->
-                  <span class="method-name">test021addQiCheZhan</span>
-                  <span class="parameters">(ºş±±Ê¡ÎäººÊĞÎäçóÂ·358ºÅ, ¸µ¼ÒÆÂ¿ÍÔËÕ¾, fujiapokeyunzhan, 114.333652, 30.541762, 555, 02796513, 7:00, 21:00, Îäºº)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="test021addQiCheZhan(ÉîÛÚÊĞÃ·ÁÖ¼ì²éÕ¾¹Ø¿Ú¹«½»Õ¾ÅÔ, »Ê¸ÚÆû³µÕ¾, huanggangqichezhan, 114.079165, 22.527134, 2, 075583287975, 7:00, 21:00, ÉîÛÚ)">
-                  </a> <!-- test021addQiCheZhan(ÉîÛÚÊĞÃ·ÁÖ¼ì²éÕ¾¹Ø¿Ú¹«½»Õ¾ÅÔ, »Ê¸ÚÆû³µÕ¾, huanggangqichezhan, 114.079165, 22.527134, 2, 075583287975, 7:00, 21:00, ÉîÛÚ) -->
-                  <span class="method-name">test021addQiCheZhan</span>
-                  <span class="parameters">(ÉîÛÚÊĞÃ·ÁÖ¼ì²éÕ¾¹Ø¿Ú¹«½»Õ¾ÅÔ, »Ê¸ÚÆû³µÕ¾, huanggangqichezhan, 114.079165, 22.527134, 2, 075583287975, 7:00, 21:00, ÉîÛÚ)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">F:\workspace\test\config\ticketSystem\testngWeb.xml</span>
+            <span class="header-content">/Users/wangxun/Documents/workspace/test/config/ticketSystem/testngWeb.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -303,52 +332,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(10);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test001enterAddCityPage')
+data.setCell(0, 1, 'test010addCity')
 data.setCell(0, 2, 'projects.ticket.testCases.ticketWeb.qiChe')
-data.setCell(0, 3, 16873);
+data.setCell(0, 3, 19741);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test010addCity')
+data.setCell(1, 1, 'test001enterAddCityPage')
 data.setCell(1, 2, 'projects.ticket.testCases.ticketWeb.qiChe')
-data.setCell(1, 3, 10235);
+data.setCell(1, 3, 13763);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'test021addQiCheZhan')
+data.setCell(2, 1, 'test010addCity')
 data.setCell(2, 2, 'projects.ticket.testCases.ticketWeb.qiChe')
-data.setCell(2, 3, 5489);
+data.setCell(2, 3, 4446);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'test021addQiCheZhan')
+data.setCell(3, 1, 'test010addCity')
 data.setCell(3, 2, 'projects.ticket.testCases.ticketWeb.qiChe')
-data.setCell(3, 3, 5332);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'test021addQiCheZhan')
-data.setCell(4, 2, 'projects.ticket.testCases.ticketWeb.qiChe')
-data.setCell(4, 3, 5271);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'test021addQiCheZhan')
-data.setCell(5, 2, 'projects.ticket.testCases.ticketWeb.qiChe')
-data.setCell(5, 3, 4673);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'test021addQiCheZhan')
-data.setCell(6, 2, 'projects.ticket.testCases.ticketWeb.qiChe')
-data.setCell(6, 3, 3971);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'test021addQiCheZhan')
-data.setCell(7, 2, 'projects.ticket.testCases.ticketWeb.qiChe')
-data.setCell(7, 3, 3909);
-data.setCell(8, 0, 8)
-data.setCell(8, 1, 'test010addCity')
-data.setCell(8, 2, 'projects.ticket.testCases.ticketWeb.qiChe')
-data.setCell(8, 3, 2707);
-data.setCell(9, 0, 9)
-data.setCell(9, 1, 'test010addCity')
-data.setCell(9, 2, 'projects.ticket.testCases.ticketWeb.qiChe')
-data.setCell(9, 3, 2593);
+data.setCell(3, 3, 2272);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 40 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -359,6 +364,27 @@ return data;
             <span class="header-content">Reporter output for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">test010addCity(æ­¦æ±‰, WH, æ˜¯)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">/Users/wangxun/Documents/workspace/test/testReport/ç›´è¾¾è½¦webç‰ˆ/20151203-181116-606/failScreen/20151203-181208-959_test010addCity.png</span>
+                <span class="reporter-method-output"><img src="..//Users/wangxun/Documents/workspace/test/testReport/ç›´è¾¾è½¦webç‰ˆ/20151203-181116-606/failScreen/20151203-181208-959_test010addCity.png"/></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">test010addCity(å’¸å®, XN, æ˜¯)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">/Users/wangxun/Documents/workspace/test/testReport/ç›´è¾¾è½¦webç‰ˆ/20151203-181116-606/failScreen/20151203-181201-023_test010addCity.png</span>
+                <span class="reporter-method-output"><img src="..//Users/wangxun/Documents/workspace/test/testReport/ç›´è¾¾è½¦webç‰ˆ/20151203-181116-606/failScreen/20151203-181201-023_test010addCity.png"/></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">test010addCity(æ·±åœ³, SZ, æ˜¯)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">/Users/wangxun/Documents/workspace/test/testReport/ç›´è¾¾è½¦webç‰ˆ/20151203-181116-606/failScreen/20151203-181217-134_test010addCity.png</span>
+                <span class="reporter-method-output"><img src="..//Users/wangxun/Documents/workspace/test/testReport/ç›´è¾¾è½¦webç‰ˆ/20151203-181116-606/failScreen/20151203-181217-134_test010addCity.png"/></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
@@ -381,47 +407,29 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">test001enterAddCityPage</span>
-                <span class="method-start">5807 ms</span>
+                <span class="method-start">6919 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">test010addCity(ÏÌÄş, XN, ÊÇ)</span>
-                <span class="method-start">22897 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test010addCity(å’¸å®, XN, æ˜¯)</span>
+                <span class="method-start">20925 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">test010addCity(Îäºº, WH, ÊÇ)</span>
-                <span class="method-start">33133 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test010addCity(æ­¦æ±‰, WH, æ˜¯)</span>
+                <span class="method-start">45146 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">test010addCity(ÉîÛÚ, SZ, ÊÇ)</span>
-                <span class="method-start">35734 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">test021addQiCheZhan(ºş±±Ê¡ÎäººÊĞÎäçóÂ·358ºÅ, ¸µ¼ÒÆÂ¿ÍÔËÕ¾, fujiapokeyunzhan, 114.333652, 30.541762, 555, 02796513, 7:00, 21:00, Îäºº)</span>
-                <span class="method-start">38582 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">test021addQiCheZhan(ÏÌÄşÊĞºØÊ¤Â·264ºÅ, ÏÌÄşÊĞÎÂÈªÖĞĞÄ¿ÍÔËÕ¾, xiangningshiwenquanzhongxinkeyunzhan, 114.353536, 29.852981, 6, 07158137708,...)</span>
-                <span class="method-start">43256 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">test021addQiCheZhan(ÏÌÄşÊĞÍ¨É½ÏØÍ¨ÑòÕòÄÏÊĞÂ·23ºÅ, ÏÌÄşÊĞÍ¨É½Æû³µÕ¾, xianningshitongshanqichezhan, 114.490728, 29.618874, 2, 07152395741, 7:00...)</span>
-                <span class="method-start">47227 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">test021addQiCheZhan(ÄÏÉ½ÄÏÍ·ÉÌÒµ²½ĞĞ½ÖE1(ÀÍ¶¯´óÏÃ¶ÔÃæ), ÄÏÉ½Æû³µÕ¾, nanshanqichezhan, 113.920202, 22.548785, 2, 075586003177, 7:00, 21:00, Éî...)</span>
-                <span class="method-start">52500 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">test021addQiCheZhan(ÉîÛÚÊĞÃ·ÁÖ¼ì²éÕ¾¹Ø¿Ú¹«½»Õ¾ÅÔ, »Ê¸ÚÆû³µÕ¾, huanggangqichezhan, 114.079165, 22.527134, 2, 075583287975, 7:00, 21:00, ÉîÛÚ)</span>
-                <span class="method-start">57990 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">test021addQiCheZhan(ÎäººÊĞÎä²ıÇøÖĞÉ½Â·519ºÅ, ºê»ù¿ÍÔËÕ¾, hongjikeyunzhan, 114.323837, 30.539449, 903, 02788074966, 7:00, 21:00, Îäºº)</span>
-                <span class="method-start">61900 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test010addCity(æ·±åœ³, SZ, æ˜¯)</span>
+                <span class="method-start">52783 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">67233 ms</span>
+                <span class="method-start">61604 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
