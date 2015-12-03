@@ -30,7 +30,7 @@ public class qiChe {
 	@BeforeClass
 	public void setUp() {
 		piaoWuWebApp.initialTestData();
-		piaoWuWebApp.runFirefoxApp();
+		piaoWuWebApp.runChormeApp();
 		piaoWuWebApp.logClassInfo("testclasdfdsreinfof");
 
 	}

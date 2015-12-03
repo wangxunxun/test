@@ -69,9 +69,7 @@ public class CommonTools {
 
 	public static void deleteFile(String filePath) {
 		File f = new File(filePath);
-		if (f.exists()) {
-			f.delete();
-		}
+		deleteFile(f);
 	}
 
 	protected static void log(Object content, Integer type) {
@@ -120,7 +118,8 @@ public class CommonTools {
 			brProp.close();
 			return pro;
 		} catch (Exception e) {
-			throw new IllegalStateException("Can't locate config file " + configFileName, e);
+			throw new IllegalStateException("Can't locate config file "
+					+ configFileName, e);
 		}
 	}
 
@@ -144,7 +143,8 @@ public class CommonTools {
 		wb.close();
 	}
 
-	public static void deleteSheet(String excelPath, String name) throws BiffException, IOException, WriteException {
+	public static void deleteSheet(String excelPath, String name)
+			throws BiffException, IOException, WriteException {
 		Workbook wb = Workbook.getWorkbook(new File(excelPath));
 		WritableWorkbook wbe = Workbook.createWorkbook(new File(excelPath), wb);
 		String[] sheetNames = wbe.getSheetNames();
@@ -163,7 +163,8 @@ public class CommonTools {
 		wbe.close();
 	}
 
-	public static boolean verifySheet(String excelPath, String name) throws BiffException, IOException, WriteException {
+	public static boolean verifySheet(String excelPath, String name)
+			throws BiffException, IOException, WriteException {
 		Workbook wb = Workbook.getWorkbook(new File(excelPath));
 		WritableWorkbook wbe = Workbook.createWorkbook(new File(excelPath), wb);
 		String[] sheetNames = wbe.getSheetNames();
@@ -204,7 +205,7 @@ public class CommonTools {
 		}
 		return count;
 	}
-	
+
 	public static int getDirCount(String dirPath) {
 		File dir = new File(dirPath);
 		File[] files = dir.listFiles();
@@ -225,44 +226,76 @@ public class CommonTools {
 		if (actualCount > count) {
 			File dir = new File(dirPath);
 			File[] files = dir.listFiles();
-			for (int i = 0; i < actualCount - count; i++) {
-				files[i + 1].delete();
+			int j = 0;
+			for(int i = 0; i <files.length; i++){
+				if(files[i].isFile()){
+					if (j<actualCount - count){
+						deleteFile(files[i]);
+						j = j+1;
+					}
+				}
 			}
 		}
 	}
-	
+
 	public static void keepDirCount(String dirPath, int count) {
 		if (!(new File(dirPath).isDirectory())) { // 判断是否存在该目录
 			new File(dirPath).mkdir(); // 如果不存在则新建一个目录
 		}
 		int actualCount = getDirCount(dirPath);
-		System.out.println(actualCount);
 		if (actualCount > count) {
 			File dir = new File(dirPath);
 			File[] files = dir.listFiles();
-			for (int i = 0; i < actualCount - count; i++) {
-
-				System.out.println("delete");
+			int j = 0;
+			for(int i = 0; i <files.length; i++){
+				if(files[i].isDirectory()){
+					if (j<actualCount - count){
+						deleteFile(files[i]);
+						j = j+1;
+					}
+				}
 			}
 		}
 	}
 
-	public static void createWorkbook(String excelDir, String excelName, String className, int index,
-			String projectName, String projectInfo, String testSpecification)
-					throws IOException, WriteException, BiffException {
+	public static void deleteFile(File file) {
+		if (file.exists()) { // 判断文件是否存在
+			if (file.isFile()) { // 判断是否是文件
+				file.delete(); // delete()方法 你应该知道 是删除的意思;
+			} else if (file.isDirectory()) { // 否则如果它是一个目录
+				File files[] = file.listFiles(); // 声明目录下所有的文件 files[];
+				for (int i = 0; i < files.length; i++) { // 遍历目录下所有的文件
+					deleteFile(files[i]);
+				}
+			}
+			file.delete();
+		} else {
+			System.out.println("所删除的文件不存在！" + '\n');
+		}
+	}
+
+	public static void createWorkbook(String excelDir, String excelName,
+			String className, int index, String projectName,
+			String projectInfo, String testSpecification) throws IOException,
+			WriteException, BiffException {
 		if (!(new File(excelDir).isDirectory())) { // 判断是否存在该目录
 			new File(excelDir).mkdir(); // 如果不存在则新建一个目录
 		}
 
-		String navigation[] = { "Success", "Failure ", "Skipped", "Success Rate", "Time Consuming", "Total" };
-		String classNavigation[] = { "Test Suite", "Suite Summary", "Success Rate", "Log", "Case Counts", "Test Case",
-				"Case Summary", "Time Consuming", "Error Screenshot", "Status", "Comment" };
-		WritableWorkbook wb = Workbook.createWorkbook(new File(excelDir + excelName));
+		String navigation[] = { "Success", "Failure ", "Skipped",
+				"Success Rate", "Time Consuming", "Total" };
+		String classNavigation[] = { "Test Suite", "Suite Summary",
+				"Success Rate", "Log", "Case Counts", "Test Case",
+				"Case Summary", "Time Consuming", "Error Screenshot", "Status",
+				"Comment" };
+		WritableWorkbook wb = Workbook.createWorkbook(new File(excelDir
+				+ excelName));
 		className = getValidSheetName(className);
 		wb.createSheet(className, index);
 
 		WritableSheet homePageSheet = wb.getSheet(className);
-		WritableFont fontTitle = new WritableFont(WritableFont.ARIAL, 10, WritableFont.BOLD);
+		WritableFont fontTitle = new WritableFont(WritableFont.ARIAL, 10,
+				WritableFont.BOLD);
 		WritableCellFormat formatTitle = new WritableCellFormat(fontTitle);
 		formatTitle.setWrap(true);
 		formatTitle.setBorder(Border.ALL, BorderLineStyle.THIN);
@@ -277,10 +310,12 @@ public class CommonTools {
 
 		Label projectNameLabel = new Label(0, 0, "Project Name", formatTitle);
 		Label projectInfoLabel = new Label(0, 1, "Project Info", formatTitle);
-		Label testSpecificationLabel = new Label(0, 2, "Test Specification", formatTitle);
+		Label testSpecificationLabel = new Label(0, 2, "Test Specification",
+				formatTitle);
 		Label projectNameLabel2 = new Label(1, 0, projectName, formatBody);
 		Label projectInfoLabel2 = new Label(1, 1, projectInfo, formatBody);
-		Label testSpecificationLabel2 = new Label(1, 2, testSpecification, formatBody);
+		Label testSpecificationLabel2 = new Label(1, 2, testSpecification,
+				formatBody);
 		// 概况 总数量 pass fail skip error 百分百 log
 		for (int i = 0; i < navigation.length; i++) {
 			homePageSheet.addCell(new Label(i, 3, navigation[i], formatTitle));
@@ -309,7 +344,8 @@ public class CommonTools {
 		homePageSheet.addCell(label6);
 
 		for (int i = 0; i < classNavigation.length; i++) {
-			homePageSheet.addCell(new Label(i, 7, classNavigation[i], formatTitle));
+			homePageSheet.addCell(new Label(i, 7, classNavigation[i],
+					formatTitle));
 		}
 		homePageSheet.setColumnView(0, 11);
 		homePageSheet.setColumnView(1, 11);
@@ -326,8 +362,9 @@ public class CommonTools {
 		wb.close();
 	}
 
-	public static void writeResultToExcel(String excelPath, String className, List<List<String>> testResultData)
-			throws BiffException, IOException, RowsExceededException, WriteException {
+	public static void writeResultToExcel(String excelPath, String className,
+			List<List<String>> testResultData) throws BiffException,
+			IOException, RowsExceededException, WriteException {
 		Workbook wb = Workbook.getWorkbook(new File(excelPath));
 		WritableWorkbook wbe = Workbook.createWorkbook(new File(excelPath), wb);
 		WritableSheet sheet = wbe.getSheet(className);
@@ -341,8 +378,9 @@ public class CommonTools {
 		wbe.close();
 	}
 
-	public static void writeScriptToExcel(String excelPath, String className, List<List<String>> testScriptData)
-			throws BiffException, IOException, RowsExceededException, WriteException {
+	public static void writeScriptToExcel(String excelPath, String className,
+			List<List<String>> testScriptData) throws BiffException,
+			IOException, RowsExceededException, WriteException {
 		Workbook wb = Workbook.getWorkbook(new File(excelPath));
 		WritableWorkbook wbe = Workbook.createWorkbook(new File(excelPath), wb);
 		WritableSheet sheet = wbe.getSheet(className);
@@ -356,7 +394,8 @@ public class CommonTools {
 		wbe.close();
 	}
 
-	public static void createXmlforTestNg(String path, Map<String, String> data, String className) {
+	public static void createXmlforTestNg(String path,
+			Map<String, String> data, String className) {
 
 		XMLWriter output = null;
 		Document document = null;
@@ -414,7 +453,8 @@ public class CommonTools {
 			output = new XMLWriter(new FileWriter(new File(path)), format);
 			output.write(document);
 			output.close();
-			System.out.println("-----------------------------------------------------------");
+			System.out
+					.println("-----------------------------------------------------------");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -461,12 +501,14 @@ public class CommonTools {
 
 	public static String getValidSheetName(String sheetName) {
 		if (sheetName.length() > 31) {
-			return sheetName.substring(sheetName.length() - 31, sheetName.length());
+			return sheetName.substring(sheetName.length() - 31,
+					sheetName.length());
 		}
 		return sheetName;
 	}
 
-	protected static void copyScreenShot(File screenShotFile, File outputFile) throws IOException {
+	protected static void copyScreenShot(File screenShotFile, File outputFile)
+			throws IOException {
 
 		FileInputStream imgIs = new FileInputStream(screenShotFile);
 		FileOutputStream imageOs = new FileOutputStream(outputFile);
@@ -479,16 +521,19 @@ public class CommonTools {
 		imageOs.close();
 	}
 
-	public static String getConfigValue(Properties configProperties, String propertieName) {
+	public static String getConfigValue(Properties configProperties,
+			String propertieName) {
 
 		// if the specified propertieName exist as an environment variable.
 		// if so , use it. otherwise , search the configJsonNode specified.
-		String returnValue = StringUtils.defaultString(System.getenv(propertieName));
+		String returnValue = StringUtils.defaultString(System
+				.getenv(propertieName));
 		if (StringUtils.isBlank(returnValue)) {
 			try {
 				returnValue = configProperties.getProperty(propertieName);
 			} catch (NullPointerException e) {
-				System.err.println("Cannot locate config file at " + propertieName + ". Will try continue without it.");
+				System.err.println("Cannot locate config file at "
+						+ propertieName + ". Will try continue without it.");
 				return "";
 			}
 		}
@@ -541,7 +586,8 @@ public class CommonTools {
 		return sb.toString();
 	}
 
-	public static void main(String[] args) throws RowsExceededException, BiffException, WriteException, IOException {
+	public static void main(String[] args) throws RowsExceededException,
+			BiffException, WriteException, IOException {
 
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
 		String data = df.format(new Date());
@@ -549,9 +595,10 @@ public class CommonTools {
 		System.out.println(data.substring(8, 10));
 
 		System.out.println("end");
-		int a = getFileCount("F:/workspace/test/testReport");
-		System.out.println(a);
-		keepFileCount("F:/workspace/test/testReport", 1);
+		// int a = getFileCount("F:/workspace/test/testReport");
+		// System.out.println(a);
+		keepDirCount("F:/新建文件夹", 1);
+		deleteFile("F:/新建文件夹/新建文件夹");
 		System.out.println("end");
 	}
 

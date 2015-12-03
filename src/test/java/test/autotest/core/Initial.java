@@ -112,6 +112,7 @@ public class Initial {
 	protected String envName;
 	protected String firefoxPath;
 	private String reportDirPathNoTime;
+	private String currentTime;
 
 	protected String getFirefoxPath() {
 		firefoxPath = getProperties("firefoxPath");
@@ -128,7 +129,7 @@ public class Initial {
 			return CommonTools.setPath(testReportDir);
 		}
 
-		return CommonTools.setPath("/testReport/"+projectName+"/"+CommonTools.getCurrentTime()+"/");
+		return CommonTools.setPath("/testReport/"+projectName+"/"+projectName+"TestReport"+currentTime+"/");
 	}
 	protected String getTestReportDirNoTime() {
 		testReportDir = getProperties("testReportDir");
@@ -179,11 +180,11 @@ public class Initial {
 	protected String getTestReportName() {
 		testReportName = getProperties("testReportName");
 		if (testReportName != null) {
-			testReportName = testReportName + "(" + CommonTools.getCurrentTime() + ")";
+			testReportName = testReportName + "(" + currentTime+ ")";
 			reportName.add(testReportName);
 			return reportName.get(0);
 		}
-		String name = "TestReport" + "(" + CommonTools.getCurrentTime() + ")";
+		String name = "TestReport" + "(" + currentTime + ")";
 		reportName.add(name);
 		return reportName.get(0);
 	}
@@ -525,6 +526,7 @@ public class Initial {
 		screenDir = getScreenDir();
 		appClass = getAppClass();
 		reportDirPathNoTime = getTestReportDirNoTime();
+		currentTime = CommonTools.getCurrentTime();
 		writeScript = Boolean.parseBoolean(getProperties("writeScript"));
 		writeResult = Boolean.parseBoolean(getProperties("writeResult"));
 		logSwitch = Boolean.parseBoolean(getProperties("logSwitch"));
@@ -534,7 +536,6 @@ public class Initial {
 		testReportDir = getTestReportDir();
 		testReportName = getTestReportName();
 		testSummarySheetName = getTestSummarySheetName();
-		System.out.println(reportDirPathNoTime);
 		CommonTools.keepDirCount(reportDirPathNoTime, 4);
 		createWorkBook(testSummarySheetName, 0);
 		createSheet(999);
