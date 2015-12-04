@@ -288,7 +288,7 @@ public class Initial {
 			waitTime = Integer.parseInt(time);
 			return waitTime;
 		}
-		return 10;
+		return 1;
 	}
 
 	protected String getScreenDir() {

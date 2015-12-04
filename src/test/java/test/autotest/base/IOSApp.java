@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import io.appium.java_client.remote.HideKeyboardStrategy;
 import test.autotest.utils.CommonTools;
 import test.autotest.utils.OperateExcel;
 import test.autotest.utils.TestngListener;
@@ -90,21 +91,36 @@ public class IOSApp extends UI {
 
 		return findElement(page, name, this);
 	}
+	
+	public void sendKeysAndHideKeyBoard(String page, String name, String value) {
+		super.sendKeys(page, name, value);
+		hideKeyboard("换行");
+	}
+	
+	public void sendKeysAndClikeEnter(String page, String name, String value) {
+		super.sendKeys(page, name, value);
+		iosDriver.getKeyboard().sendKeys("确认");
+//		hideKeyboard("确认");
+	}
+
+	protected void hideKeyboard(String keyName){
+		iosDriver.hideKeyboard(HideKeyboardStrategy.PRESS_KEY, keyName);
+	}
 
 	public void swipeLeft() {
-		swipeOfType("left");
+		swipeOfType("left",this);
 	}
 
 	public void swipeRight() {
-		swipeOfType("right");
+		swipeOfType("right",this);
 	}
 
 	public void swipeUp() {
-		swipeOfType("up");
+		swipeOfType("up",this);
 	}
 
 	public void swipeDown() {
-		swipeOfType("down");
+		swipeOfType("down",this);
 	}
 
 	@SuppressWarnings({ "unchecked" })
@@ -156,7 +172,7 @@ public class IOSApp extends UI {
 			}
 
 			else if (action.equals("swipeOfType")) {
-				swipeOfType(value);
+				swipeOfType(value,this);
 				logResult(rowin);
 				putResultData(rowin, "P");
 				String script = appClass + "." + "swipeOfType(\"" + value + "\");";

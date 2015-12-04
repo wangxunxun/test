@@ -132,19 +132,19 @@ public class AndroidApp extends UI {
 	}
 
 	public void swipeLeft() {
-		swipeOfType("left");
+		swipeOfType("left",this);
 	}
 
 	public void swipeRight() {
-		swipeOfType("right");
+		swipeOfType("right",this);
 	}
 
 	public void swipeUp() {
-		swipeOfType("up");
+		swipeOfType("up",this);
 	}
 
 	public void swipeDown() {
-		swipeOfType("down");
+		swipeOfType("down",this);
 	}
 
 	public void clickEnter() {
@@ -283,7 +283,7 @@ public class AndroidApp extends UI {
 				break;
 			} else {
 				log("Start to swipe up " + i + " times.");
-				swipeOfType("up");
+				swipeOfType("up",this);
 			}
 		}
 		if (statu == false) {
@@ -376,7 +376,7 @@ public class AndroidApp extends UI {
 				String script = appClass + "." + "clickMenu();";
 				putScriptData(rowin, script);
 			} else if (action.equals("swipeOfType")) {
-				swipeOfType(value);
+				swipeOfType(value,this);
 				logResult(rowin);
 				putResultData(rowin, "P");
 				String script = appClass + "." + "swipeOfType(\"" + value + "\");";

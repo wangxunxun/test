@@ -1,65 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="3" total="4" passed="1">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
     <line>
-      <![CDATA[/Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181201-023_test010addCity.png]]>
+      <![CDATA[/Users/wangxun/Documents/workspace/test/testReport/defaultProject/defaultProjectTestReport20151204-165816-374/failScreen/20151204-170000-705_test001login.png]]>
     </line>
     <line>
-      <![CDATA[<img src="..//Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181201-023_test010addCity.png"/>]]>
-    </line>
-    <line>
-      <![CDATA[/Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181208-959_test010addCity.png]]>
-    </line>
-    <line>
-      <![CDATA[<img src="..//Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181208-959_test010addCity.png"/>]]>
-    </line>
-    <line>
-      <![CDATA[/Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181217-134_test010addCity.png]]>
-    </line>
-    <line>
-      <![CDATA[<img src="..//Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181217-134_test010addCity.png"/>]]>
+      <![CDATA[<img src="..//Users/wangxun/Documents/workspace/test/testReport/defaultProject/defaultProjectTestReport20151204-165816-374/failScreen/20151204-170000-705_test001login.png"/>]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="64933" started-at="2015-12-03T10:11:16Z" finished-at="2015-12-03T10:12:21Z">
+  <suite name="Default suite" duration-ms="107670" started-at="2015-12-04T08:58:14Z" finished-at="2015-12-04T09:00:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="64933" started-at="2015-12-03T10:11:16Z" finished-at="2015-12-03T10:12:21Z">
-      <class name="projects.ticket.testCases.ticketWeb.qiChe">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@59a6e353]" name="setUp" is-config="true" duration-ms="6916" started-at="2015-12-03T18:11:16Z" finished-at="2015-12-03T18:11:23Z">
+    <test name="Default test" duration-ms="107670" started-at="2015-12-04T08:58:14Z" finished-at="2015-12-04T09:00:02Z">
+      <class name="projects.ticket.testCases.IOS.login">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.IOS.login@36d64342]" name="setUp" is-config="true" duration-ms="30637" started-at="2015-12-04T16:58:14Z" finished-at="2015-12-04T16:58:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test001enterAddCityPage()[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@59a6e353]" name="test001enterAddCityPage" duration-ms="13763" started-at="2015-12-03T18:11:23Z" finished-at="2015-12-03T18:11:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test001enterAddCityPage -->
-        <test-method status="FAIL" signature="test010addCity(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@59a6e353]" name="test010addCity" duration-ms="19741" started-at="2015-12-03T18:11:37Z" data-provider="addCity" finished-at="2015-12-03T18:11:56Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[咸宁]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[XN]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[是]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
+        <test-method status="FAIL" signature="test001login()[pri:0, instance:projects.ticket.testCases.IOS.login@36d64342]" name="test001login" duration-ms="69314" started-at="2015-12-04T16:58:45Z" finished-at="2015-12-04T16:59:54Z">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[111]]>
+              <![CDATA[An error occurred while executing user supplied JavaScript. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2.65 seconds
+Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
+System info: host: 'spring-ma.achievo.com', ip: '10.27.0.122', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10', java.version: '1.8.0_25'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities [{app=com.ticketingsystem, networkConnectionEnabled=false, warnings={}, databaseEnabled=false, deviceName=iPhone Simulator, platform=MAC, desired={app=com.ticketingsystem, platformVersion=7.1, browserName=null, platformName=iOS, deviceName=iPhone Simulator, platform=MAC}, platformVersion=7.1, webStorageEnabled=false, locationContextEnabled=false, browserName=null, takesScreenshot=true, javascriptEnabled=true, platformName=iOS}]
+Session ID: 3c7ac27c-77cc-4288-b361-5d1a9c2f9e94]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 111
-	at org.testng.Assert.fail(Assert.java:94)
-	at test.autotest.core.UI.assertFail(UI.java:113)
-	at projects.ticket.testCases.ticketWeb.qiChe.test010addCity(qiChe.java:84)
+              <![CDATA[org.openqa.selenium.WebDriverException: An error occurred while executing user supplied JavaScript. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2.65 seconds
+Build info: version: '2.46.0', revision: '61506a4624b13675f24581e453592342b7485d71', time: '2015-06-04 10:22:50'
+System info: host: 'spring-ma.achievo.com', ip: '10.27.0.122', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10', java.version: '1.8.0_25'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities [{app=com.ticketingsystem, networkConnectionEnabled=false, warnings={}, databaseEnabled=false, deviceName=iPhone Simulator, platform=MAC, desired={app=com.ticketingsystem, platformVersion=7.1, browserName=null, platformName=iOS, deviceName=iPhone Simulator, platform=MAC}, platformVersion=7.1, webStorageEnabled=false, locationContextEnabled=false, browserName=null, takesScreenshot=true, javascriptEnabled=true, platformName=iOS}]
+Session ID: 3c7ac27c-77cc-4288-b361-5d1a9c2f9e94
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:27)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.ios.IOSDriver.execute(IOSDriver.java:1)
+	at org.openqa.selenium.remote.RemoteExecuteMethod.execute(RemoteExecuteMethod.java:35)
+	at org.openqa.selenium.remote.RemoteKeyboard.pressKey(RemoteKeyboard.java:43)
+	at test.autotest.base.IOSApp.sendKeysAndClikeEnter(IOSApp.java:102)
+	at projects.ticket.testCases.IOS.login.test001login(login.java:30)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -86,147 +76,21 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
             <line>
-              <![CDATA[/Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181201-023_test010addCity.png]]>
+              <![CDATA[/Users/wangxun/Documents/workspace/test/testReport/defaultProject/defaultProjectTestReport20151204-165816-374/failScreen/20151204-170000-705_test001login.png]]>
             </line>
             <line>
-              <![CDATA[<img src="..//Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181201-023_test010addCity.png"/>]]>
+              <![CDATA[<img src="..//Users/wangxun/Documents/workspace/test/testReport/defaultProject/defaultProjectTestReport20151204-165816-374/failScreen/20151204-170000-705_test001login.png"/>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- test010addCity -->
-        <test-method status="FAIL" signature="test010addCity(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@59a6e353]" name="test010addCity" duration-ms="4446" started-at="2015-12-03T18:12:01Z" data-provider="addCity" finished-at="2015-12-03T18:12:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[武汉]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[WH]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[是]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[111]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 111
-	at org.testng.Assert.fail(Assert.java:94)
-	at test.autotest.core.UI.assertFail(UI.java:113)
-	at projects.ticket.testCases.ticketWeb.qiChe.test010addCity(qiChe.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1032)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-            <line>
-              <![CDATA[/Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181208-959_test010addCity.png]]>
-            </line>
-            <line>
-              <![CDATA[<img src="..//Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181208-959_test010addCity.png"/>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test010addCity -->
-        <test-method status="FAIL" signature="test010addCity(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@59a6e353]" name="test010addCity" duration-ms="2272" started-at="2015-12-03T18:12:08Z" data-provider="addCity" finished-at="2015-12-03T18:12:11Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[深圳]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[SZ]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[是]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[111]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 111
-	at org.testng.Assert.fail(Assert.java:94)
-	at test.autotest.core.UI.assertFail(UI.java:113)
-	at projects.ticket.testCases.ticketWeb.qiChe.test010addCity(qiChe.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1032)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-            <line>
-              <![CDATA[/Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181217-134_test010addCity.png]]>
-            </line>
-            <line>
-              <![CDATA[<img src="..//Users/wangxun/Documents/workspace/test/testReport/直达车web版/20151203-181116-606/failScreen/20151203-181217-134_test010addCity.png"/>]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- test010addCity -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.ticketWeb.qiChe@59a6e353]" name="tearDown" is-config="true" duration-ms="3266" started-at="2015-12-03T18:12:17Z" finished-at="2015-12-03T18:12:21Z">
+        </test-method> <!-- test001login -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.IOS.login@36d64342]" name="tearDown" is-config="true" duration-ms="1714" started-at="2015-12-04T17:00:00Z" finished-at="2015-12-04T17:00:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- projects.ticket.testCases.ticketWeb.qiChe -->
+      </class> <!-- projects.ticket.testCases.IOS.login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

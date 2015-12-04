@@ -39,19 +39,6 @@ public class UI extends Initial {
 		}
 	}
 
-	public void waitToclickElement(String page, String name) {
-		waitDisplay(page, name);
-		log("Click the " + name + " element on the " + page + " page.");
-		clickElement(page, name);
-
-	}
-
-	public void waitToSendKeys(String page, String name, String value) {
-		waitDisplay(page, name);
-		log("Send the " + value + " to the " + name + " element on the " + page + " page.");
-		sendKeys(page, name, value);
-	}
-
 	public void sendKeys(String page, String name, String value) {
 		log("Send the \"" + value + "\" value to the " + name + " element on the " + page + " page.");
 		try {
@@ -60,12 +47,6 @@ public class UI extends Initial {
 			Assert.fail(
 					"Fail to send the \"" + value + "\" value to the " + name + " element on the " + page + " page.\n");
 		}
-	}
-
-	public void waitToClear(String page, String name) {
-		waitDisplay(page, name);
-		log("Clear the " + name + " element on the " + page + " page.");
-		clear(page, name);
 	}
 
 	public void clear(String page, String name) {
@@ -143,7 +124,7 @@ public class UI extends Initial {
 		CommonTools.sleep(time);
 	}
 
-	public String getElementExpectedValue(String page, String name) {
+	private String getElementExpectedValue(String page, String name) {
 		log("To get the expected text of the " + name + " element on the " + page + " page.");
 		String value = elementData.get(page).get(name).get("Expected Value");
 		if (value != null) {
@@ -162,13 +143,20 @@ public class UI extends Initial {
 	public void assertElementEquals(String page, String name) {
 		assertEquals(getElementText(page, name), getElementExpectedValue(page, name));
 	}
-
-	public WebElement findElementByName(String name) {
-		return driver.findElement(By.name(name));
+	
+	public List<WebElement> findElementsByName(String name) {
+		return driver.findElements(By.name(name));
 	}
 
 	public void clickElmentByName(String name) {
-		findElementByName(name).click();
+		clickElmentByName(name, 0);
+	}
+	
+	public void clickElmentByName(String name,int index) {
+		List<WebElement> elements = findElementsByName(name);
+		System.out.println(elements.size());
+		
+		elements.get(index).click();
 	}
 
 	public void printAllElesByClassName(String className) {
@@ -268,14 +256,32 @@ public class UI extends Initial {
 	}
 
 	public void waitDisplay(String page, String name) {
-		waitDisplay(page, name, 4);
+		waitDisplay(page, name, 10);
+	}
+	protected void waitDisplayAfterLoading(String page,String name,String loadingPage,String loadingName){
+		waitDisplayAfterLoading(page, name, loadingPage, loadingName, 10);
 	}
 
-	public void waitDisplay(String page, String name, int count) {
-		boolean statu = false;
+	protected void waitDisplayAfterLoading(String page,String name,String loadingPage,String loadingName,int count){
+		boolean status = false;
 		for (int i = 0; i < count; i++) {
-			statu = verifyDisplay(page, name);
-			if (statu == false) {
+			if(!verifyDisplay(loadingPage, loadingName)){
+				status = true;
+				waitDisplay(page, name);
+				break;
+			}
+		}
+		if(status == false){
+			Assert.fail("The UI is still loading.");
+		}
+
+		
+	}
+	public void waitDisplay(String page, String name, int count) {
+		boolean status = false;
+		for (int i = 0; i < count; i++) {
+			status = verifyDisplay(page, name);
+			if (status == false) {
 				if (i < count - 1) {
 					log("Start to find the " + name + " element on the " + page + " page again.");
 				}
@@ -284,7 +290,7 @@ public class UI extends Initial {
 				break;
 			}
 		}
-		if (statu == false) {
+		if (status == false) {
 			Assert.fail("Can not find the " + name + " element on the " + page + " page.");
 
 		}
@@ -371,10 +377,19 @@ public class UI extends Initial {
 		return true;
 	}
 
-	protected void swipeOfType(String type) {
+	protected void swipeOfType(String type,UI ui) {
 		try {
-			int windowlenX = androidDriver.manage().window().getSize().getWidth();
-			int windowlenY = androidDriver.manage().window().getSize().getHeight();
+			int windowlenX = 0;
+			int windowlenY = 0;
+			if (ui instanceof AndroidApp){
+				windowlenX = androidDriver.manage().window().getSize().getWidth();
+				windowlenY = androidDriver.manage().window().getSize().getHeight();
+			}
+			else{
+				windowlenX = iosDriver.manage().window().getSize().getWidth();
+				windowlenY = iosDriver.manage().window().getSize().getHeight();
+			}
+				
 			String swipeLeft = "left";
 			String swipeRight = "right";
 			String swipeUp = "up";
@@ -383,30 +398,60 @@ public class UI extends Initial {
 			// Sliding screen to the left
 			if (type.equalsIgnoreCase(swipeLeft)) {
 				log("Swipe left.");
-				androidDriver.swipe((int) (windowlenX * 0.9), (int) (windowlenY * 0.5), (int) (windowlenX * 0.1),
-						(int) (windowlenY * 0.5), 3000);
+				if (ui instanceof AndroidApp){
+					androidDriver.swipe((int) (windowlenX * 0.9), (int) (windowlenY * 0.5), (int) (windowlenX * 0.1),
+							(int) (windowlenY * 0.5), 3000);
+				}
+				else{
+					iosDriver.swipe((int) (windowlenX * 0.9), (int) (windowlenY * 0.5), (int) (windowlenX * 0.1),
+							(int) (windowlenY * 0.5), 3000);
+				}
+
 			}
 
 			// Sliding screen to the right
 			if (type.equalsIgnoreCase(swipeRight)) {
 				log("Swipe right.");
-				androidDriver.swipe((int) (windowlenX * 0.1), (int) (windowlenY * 0.5), (int) (windowlenX * 0.9),
-						(int) (windowlenY * 0.5), 3000);
+				if (ui instanceof AndroidApp){
+					androidDriver.swipe((int) (windowlenX * 0.1), (int) (windowlenY * 0.5), (int) (windowlenX * 0.9),
+							(int) (windowlenY * 0.5), 3000);
+				}
+				else{
+					iosDriver.swipe((int) (windowlenX * 0.1), (int) (windowlenY * 0.5), (int) (windowlenX * 0.9),
+							(int) (windowlenY * 0.5), 3000);
+				}
+				
 			}
 
 			// Screen upward sliding
 			if (type.equalsIgnoreCase(swipeUp)) {
 				log("Swipe up.");
-				androidDriver.swipe((int) (windowlenX * 0.5), (int) (windowlenY * 0.8), (int) (windowlenX * 0.5),
-						(int) (windowlenY * 0.4), 3000);
+				if (ui instanceof AndroidApp){
+					androidDriver.swipe((int) (windowlenX * 0.5), (int) (windowlenY * 0.8), (int) (windowlenX * 0.5),
+							(int) (windowlenY * 0.4), 3000);
+				}
+				else{
+					iosDriver.swipe((int) (windowlenX * 0.5), (int) (windowlenY * 0.8), (int) (windowlenX * 0.5),
+							(int) (windowlenY * 0.4), 3000);
+				}
+
 			}
 
 			// Slide down the screen
 			if (type.equalsIgnoreCase(swipeDown)) {
 				log("Swipe down.");
-				androidDriver.swipe((int) (windowlenX * 0.5), (int) (windowlenY * 0.4), (int) (windowlenX * 0.5),
-						(int) (windowlenY * 0.8), 3000);
+				if (ui instanceof AndroidApp){
+					androidDriver.swipe((int) (windowlenX * 0.5), (int) (windowlenY * 0.4), (int) (windowlenX * 0.5),
+							(int) (windowlenY * 0.8), 3000);
+				}
+				else{
+					iosDriver.swipe((int) (windowlenX * 0.5), (int) (windowlenY * 0.4), (int) (windowlenX * 0.5),
+							(int) (windowlenY * 0.8), 3000);
+				}
+
 			}
+		
+
 		} catch (Exception e) {
 			Assert.fail("Fail to swip to " + type + ".");
 		}
