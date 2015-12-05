@@ -12,14 +12,31 @@
 			</run>
 		</groups>
 		<classes>
-<!-- 			<class name="projects.ticket.testCases.ticketWeb.baShi">
-				<methods>
-				</methods>
-			</class> -->
- 			<class name="projects.ticket.testCases.ticketWeb.qiChe">
+   		    <class name="projects.ticket.testCases.ticketWeb.addQiChePiaoJia">
 				<methods>
 				</methods>
 			</class>
+<!-- 		    <class name="projects.ticket.testCases.ticketWeb.addBusPiaoJia">
+				<methods>
+				</methods>
+			</class>
+		    <class name="projects.ticket.testCases.ticketWeb.addBusLuDuan">
+				<methods>
+				</methods>
+			</class>
+
+ 			<class name="projects.ticket.testCases.ticketWeb.addBusStation">
+				<methods>
+				</methods>
+			</class>
+ 			<class name="projects.ticket.testCases.ticketWeb.addBusXianLu">
+				<methods>
+				</methods>
+			</class> -->
+<!--  			<class name="projects.ticket.testCases.ticketWeb.qiChe">
+				<methods>
+				</methods>
+			</class> -->
 <!--			<class name="projects.ticket.testCases.ticketWeb.cheDuiAndCheLiang">
 				<methods>
 				</methods>

@@ -6,13 +6,13 @@
   </listeners>
   <test name="Default test(failed)">
     <classes>
-      <class name="projects.ticket.testCases.IOS.login">
+      <class name="projects.ticket.testCases.ticketWeb.addQiChePiaoJia">
         <methods>
-          <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="test001login"/>
+          <include name="test022editQiChePiaoJia"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- projects.ticket.testCases.IOS.login -->
+      </class> <!-- projects.ticket.testCases.ticketWeb.addQiChePiaoJia -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

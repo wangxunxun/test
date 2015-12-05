@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -140,7 +141,7 @@ public class WebApp extends UI {
 	public boolean isAlertPresent() {
 		sleep(500);
 		try {
-			driver.switchTo().alert().accept();
+			driver.switchTo().alert();
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -206,6 +207,27 @@ public class WebApp extends UI {
 		}
 		driver.switchTo().window(main_window);
 
+	}
+
+	public void acceptAlert() {
+		String str = getAlertText();
+		log("Accept the " + str + " Alert.");
+		driver.switchTo().alert().accept();
+	}
+
+	public String getAlertText() {
+		log("To get the alert text.");
+		Alert alert = driver.switchTo().alert();
+		String str = alert.getText();
+		return str;
+	}
+	
+	public void closeAlert() {
+		while(isAlertPresent()){
+			String str = getAlertText();
+			log("Close the " + str + " Alert.");
+			driver.switchTo().alert().accept();
+		}
 	}
 
 	public void KeyPress(int key) {

@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>testngIOS.xml</span>
+                    <span>F:\workspace\test\config\ticketSystem\testngWeb.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -101,10 +101,24 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.IOS.login" hash-for-method="test001login">test001login</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.addQiChePiaoJia" hash-for-method="test022editQiChePiaoJia">test022editQiChePiaoJia</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="projects.ticket.testCases.ticketWeb.addQiChePiaoJia" hash-for-method="test001enterAddMainPage">test001enterAddMainPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,39 +133,23 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">projects.ticket.testCases.IOS.login</span>
+              <span class="class-name">projects.ticket.testCases.ticketWeb.addQiChePiaoJia</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test001login">
-                  </a> <!-- test001login -->
-                  <span class="method-name">test001login</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: An error occurred while executing user supplied JavaScript. (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 2.65 seconds
-Build info: version: &apos;2.46.0&apos;, revision: &apos;61506a4624b13675f24581e453592342b7485d71&apos;, time: &apos;2015-06-04 10:22:50&apos;
-System info: host: &apos;spring-ma.achievo.com&apos;, ip: &apos;10.27.0.122&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.10&apos;, java.version: &apos;1.8.0_25&apos;
-Driver info: io.appium.java_client.ios.IOSDriver
-Capabilities [{app=com.ticketingsystem, networkConnectionEnabled=false, warnings={}, databaseEnabled=false, deviceName=iPhone Simulator, platform=MAC, desired={app=com.ticketingsystem, platformVersion=7.1, browserName=null, platformName=iOS, deviceName=iPhone Simulator, platform=MAC}, platformVersion=7.1, webStorageEnabled=false, locationContextEnabled=false, browserName=null, takesScreenshot=true, javascriptEnabled=true, platformName=iOS}]
-Session ID: 3c7ac27c-77cc-4288-b361-5d1a9c2f9e94
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:27)
-	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
-	at io.appium.java_client.ios.IOSDriver.execute(IOSDriver.java:1)
-	at org.openqa.selenium.remote.RemoteExecuteMethod.execute(RemoteExecuteMethod.java:35)
-	at org.openqa.selenium.remote.RemoteKeyboard.pressKey(RemoteKeyboard.java:43)
-	at test.autotest.base.IOSApp.sendKeysAndClikeEnter(IOSApp.java:102)
-	at projects.ticket.testCases.IOS.login.test001login(login.java:30)
+                  <a name="test022editQiChePiaoJia">
+                  </a> <!-- test022editQiChePiaoJia -->
+                  <span class="method-name">test022editQiChePiaoJia</span>
+                  <div class="stack-trace">java.lang.AssertionError: Can not find the iframe element on the 汽车-添加车站 page.
+	at org.testng.Assert.fail(Assert.java:94)
+	at test.autotest.core.UI.waitDisplay(UI.java:294)
+	at test.autotest.core.UI.waitDisplay(UI.java:259)
+	at projects.ticket.testCases.ticketWeb.addQiChePiaoJia.test022editQiChePiaoJia(addQiChePiaoJia.java:49)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
@@ -178,10 +176,25 @@ Session ID: 3c7ac27c-77cc-4288-b361-5d1a9c2f9e94
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">projects.ticket.testCases.ticketWeb.addQiChePiaoJia</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test001enterAddMainPage">
+                  </a> <!-- test001enterAddMainPage -->
+                  <span class="method-name">test001enterAddMainPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/wangxun/Documents/workspace/test/config/ticketSystem/testngIOS.xml</span>
+            <span class="header-content">F:\workspace\test\config\ticketSystem\testngWeb.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -193,7 +206,7 @@ Session ID: 3c7ac27c-77cc-4288-b361-5d1a9c2f9e94
   &lt;/listeners&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;projects.ticket.testCases.IOS.login&quot;/&gt;
+      &lt;class name=&quot;projects.ticket.testCases.ticketWeb.addQiChePiaoJia&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -233,16 +246,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test001login')
-data.setCell(0, 2, 'projects.ticket.testCases.IOS.login')
-data.setCell(0, 3, 69314);
+data.setCell(0, 1, 'test022editQiChePiaoJia')
+data.setCell(0, 2, 'projects.ticket.testCases.ticketWeb.addQiChePiaoJia')
+data.setCell(0, 3, 13223);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'test001enterAddMainPage')
+data.setCell(1, 2, 'projects.ticket.testCases.ticketWeb.addQiChePiaoJia')
+data.setCell(1, 3, 8320);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 21 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -254,10 +271,10 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">test001login</span>
+              <span class="reporter-method-name">test022editQiChePiaoJia</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">/Users/wangxun/Documents/workspace/test/testReport/defaultProject/defaultProjectTestReport20151204-165816-374/failScreen/20151204-170000-705_test001login.png</span>
-                <span class="reporter-method-output"><img src="..//Users/wangxun/Documents/workspace/test/testReport/defaultProject/defaultProjectTestReport20151204-165816-374/failScreen/20151204-170000-705_test001login.png"/></span>
+                <span class="reporter-method-output">F:\workspace\test/testReport/直达车web版/直达车web版TestReport20151205-231516-208/failScreen/20151205-231543-615_test022editQiChePiaoJia.png</span>
+                <span class="reporter-method-output"><img src="../F:\workspace\test/testReport/直达车web版/直达车web版TestReport20151205-231516-208/failScreen/20151205-231543-615_test022editQiChePiaoJia.png"/></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -275,20 +292,24 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">projects.ticket.testCases.IOS.login</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">projects.ticket.testCases.ticketWeb.addQiChePiaoJia</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <span class="method-name">test001enterAddMainPage</span>
+                <span class="method-start">2680 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">test001login</span>
-                <span class="method-start">30638 ms</span>
+                <span class="method-name">test022editQiChePiaoJia</span>
+                <span class="method-start">11002 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">105857 ms</span>
+                <span class="method-start">27581 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

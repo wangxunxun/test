@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Dec 04 17:36:51 CST 2015</td>
+<td>Started on:</td><td>Sat Dec 05 23:15:16 CST 2015</td>
 </tr>
-<tr><td>Total time:</td><td>37 seconds (37303 ms)</td>
+<tr><td>Total time:</td><td>29 seconds (29659 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -68,95 +68,6 @@ function toggleAllBoxes() {
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
 <table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='projects.ticket.testCases.IOS.login.setUp()'><b>setUp</b><br>Test class: projects.ticket.testCases.IOS.login</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:213)
-	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:95)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:71)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
-	at test.autotest.base.IOSApp.runIOSApp(IOSApp.java:44)
-	at projects.ticket.testCases.IOS.login.setUp(login.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:517)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:140)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1032)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace778731861", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace778731861'><pre>java.lang.NullPointerException
-	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:213)
-	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:95)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:71)
-	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)
-	at test.autotest.base.IOSApp.runIOSApp(IOSApp.java:44)
-	at projects.ticket.testCases.IOS.login.setUp(login.java:15)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:517)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:140)
-	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1199)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1032)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div></td>
-<td>0</td>
-<td>projects.ticket.testCases.IOS.login@36d64342</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='projects.ticket.testCases.IOS.login.tearDown()'><b>tearDown</b><br>Test class: projects.ticket.testCases.IOS.login</td>
-<td></td>
-<td>0</td>
-<td>projects.ticket.testCases.IOS.login@36d64342</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -164,13 +75,26 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='projects.ticket.testCases.IOS.login.test001login()'><b>test001login</b><br>Test class: projects.ticket.testCases.IOS.login</td>
-<td><div><pre>java.lang.NullPointerException
-	at test.autotest.utils.TestngListener.test(TestngListener.java:69)
-	at test.autotest.utils.TestngListener.onTestSkipped(TestngListener.java:98)
-	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1789)
-	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1781)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:721)
+<td title='projects.ticket.testCases.ticketWeb.addQiChePiaoJia.test022editQiChePiaoJia()'><b>test022editQiChePiaoJia</b><br>Test class: projects.ticket.testCases.ticketWeb.addQiChePiaoJia<br/>
+<a href="#Output-713312506" onClick='toggleBox("Output-713312506", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-713312506" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-713312506">
+F:\workspace\test/testReport/直达车web版/直达车web版TestReport20151205-231516-208/failScreen/20151205-231543-615_test022editQiChePiaoJia.png<br/>
+<img src="../F:\workspace\test/testReport/直达车web版/直达车web版TestReport20151205-231516-208/failScreen/20151205-231543-615_test022editQiChePiaoJia.png"/><br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: Can not find the iframe element on the 汽车-添加车站 page.
+	at org.testng.Assert.fail(Assert.java:94)
+	at test.autotest.core.UI.waitDisplay(UI.java:294)
+	at test.autotest.core.UI.waitDisplay(UI.java:259)
+	at projects.ticket.testCases.ticketWeb.addQiChePiaoJia.test022editQiChePiaoJia(addQiChePiaoJia.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -189,13 +113,18 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace259564670", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace259564670'><pre>java.lang.NullPointerException
-	at test.autotest.utils.TestngListener.test(TestngListener.java:69)
-	at test.autotest.utils.TestngListener.onTestSkipped(TestngListener.java:98)
-	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1789)
-	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1781)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:721)
+</pre></div><a href='#' onClick='toggleBox("stack-trace713312506", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace713312506'><pre>java.lang.AssertionError: Can not find the iframe element on the 汽车-添加车站 page.
+	at org.testng.Assert.fail(Assert.java:94)
+	at test.autotest.core.UI.waitDisplay(UI.java:294)
+	at test.autotest.core.UI.waitDisplay(UI.java:259)
+	at projects.ticket.testCases.ticketWeb.addQiChePiaoJia.test022editQiChePiaoJia(addQiChePiaoJia.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:659)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:845)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1153)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -215,21 +144,21 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
 </pre></div></td>
-<td>0</td>
-<td>projects.ticket.testCases.IOS.login@36d64342</td></tr>
+<td>13</td>
+<td>projects.ticket.testCases.ticketWeb.addQiChePiaoJia@49e4cb85</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='projects.ticket.testCases.IOS.login.test001login()'><b>test001login</b><br>Test class: projects.ticket.testCases.IOS.login</td>
+<td title='projects.ticket.testCases.ticketWeb.addQiChePiaoJia.test001enterAddMainPage()'><b>test001enterAddMainPage</b><br>Test class: projects.ticket.testCases.ticketWeb.addQiChePiaoJia</td>
 <td></td>
-<td>0</td>
-<td>projects.ticket.testCases.IOS.login@36d64342</td></tr>
+<td>8</td>
+<td>projects.ticket.testCases.ticketWeb.addQiChePiaoJia@49e4cb85</td></tr>
 </table><p>
 </body>
 </html>
