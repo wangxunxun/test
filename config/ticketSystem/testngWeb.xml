@@ -12,15 +12,15 @@
 			</run>
 		</groups>
 		<classes>
-   		    <class name="projects.ticket.testCases.ticketWeb.addQiChePiaoJia">
+<!--    		    <class name="projects.ticket.testCases.ticketWeb.addQiChePiaoJia">
+				<methods>
+				</methods>
+			</class> -->
+ 		    <class name="projects.ticket.testCases.ticketWeb.addBusPiaoJia">
 				<methods>
 				</methods>
 			</class>
-<!-- 		    <class name="projects.ticket.testCases.ticketWeb.addBusPiaoJia">
-				<methods>
-				</methods>
-			</class>
-		    <class name="projects.ticket.testCases.ticketWeb.addBusLuDuan">
+<!--		    <class name="projects.ticket.testCases.ticketWeb.addBusLuDuan">
 				<methods>
 				</methods>
 			</class>

@@ -190,8 +190,17 @@ public class Initial {
 		return reportName.get(0);
 	}
 
+	protected void logWarning(Object content){
+		CommonTools.log(content, 4);
+	}
 	protected Map<String, Map<String, Map<String, String>>> getElementData() {
-		if(testDataExcelPath!=null & elementData!=null){
+		if(testDataExcelPath==null){			
+			logWarning("Please provide testDataExcelPath.");
+		}
+		else if(elementSheet ==null){
+			logWarning("Please provide elementSheet.");
+		}
+		else{
 			ReadElementData elementdata = new ReadElementData(testDataExcelPath, elementSheet);
 			Map<String, Map<String, Map<String, String>>> eledata = null;
 			try {
@@ -200,9 +209,6 @@ public class Initial {
 				Assert.fail("Fail to get the element data.\n");
 			}
 			return eledata;
-		}
-		else{
-			log("Please provide testDataExcelPath or elementSheet.");
 		}
 		return null;
 		
@@ -249,8 +255,13 @@ public class Initial {
 	}
 
 	protected Map<String, Object> getTestCaseData() {
-		if (testCaseSheet != null) {
-			System.out.println(testCaseExcelPath);
+		if(testCaseExcelPath==null){			
+//			logWarning("Please provide testCaseExcelPath.");
+		}
+		else if(testCaseSheet ==null){
+//			logWarning("Please provide testCaseSheet.");
+		}
+		else {
 			ReadTestCasesData testCaseData = new ReadTestCasesData(testCaseExcelPath, testCaseSheet);
 			
 			Map<String, Object> data = null;
@@ -261,11 +272,7 @@ public class Initial {
 			}
 			return data;
 		}
-		else{
-			log("Please provide the test case sheet.");
-		}
 		return null;
-
 	}
 
 	protected String getAppClass() {
@@ -531,24 +538,29 @@ public class Initial {
 		projectInfo = getProjectInfo();
 		testSpecification = getTestSpecification();
 		firefoxPath = getFirefoxPath();
-
-		elementData = getElementData();
-		testCaseData = getTestCaseData();
 		waitTime = getWaitTime();
-
+		appDir = getAppDir();
 		logDir = getlogDir();
 		screenDir = getScreenDir();
-		appClass = getAppClass();
-		reportDirPathNoTime = getTestReportDirNoTime();
-		currentTime = CommonTools.getCurrentTime();
+		
+		appClass = getAppClass();		
 		writeScript = Boolean.parseBoolean(getProperties("writeScript"));
 		writeResult = Boolean.parseBoolean(getProperties("writeResult"));
 		logSwitch = Boolean.parseBoolean(getProperties("logSwitch"));
 		deleteLogFileFirst = Boolean.parseBoolean(getProperties("deleteLogFileFirst"));
-		testClassName = getTestClassName();
-		appDir = getAppDir();
-		testReportDir = getTestReportDir();
+		elementData = getElementData();
+		testCaseData = getTestCaseData();
+		currentTime = CommonTools.getCurrentTime();
+
 		testReportName = getTestReportName();
+
+		testClassName = getTestClassName();
+		reportDirPathNoTime = getTestReportDirNoTime();
+		testReportDir = getTestReportDir();
+		
+		
+		
+
 		testSummarySheetName = getTestSummarySheetName();
 		CommonTools.keepDirCount(reportDirPathNoTime, 4);
 		createWorkBook(testSummarySheetName, 0);

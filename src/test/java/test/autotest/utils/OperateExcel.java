@@ -295,8 +295,22 @@ public class OperateExcel {
 					writeSameRow(8, "");
 					String[] newTestReportDir = Initial.testReportDir.split("/");
 					String lastReportDir = newTestReportDir[newTestReportDir.length - 1];
-					String path = screenPath.split(lastReportDir)[1];
+					String[] midpath = screenPath.split(lastReportDir);
+					String path = "";
+					if(lastReportDir.matches("test")){
+
+						for(int k=2;k<midpath.length;k++){
+							path = path+midpath[k];
+						}
+					}
+					else{
+						path = midpath[1];
+						
+					}
+					
 					String newPath = path.substring(1, path.length());
+
+					
 					setHyperLinkByFormu(8, sheet.getRows() - 1, newPath, method);
 				} else {
 					writeSameRow(8, "");

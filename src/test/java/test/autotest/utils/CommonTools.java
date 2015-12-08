@@ -72,7 +72,7 @@ public class CommonTools {
 		deleteFile(f);
 	}
 
-	protected static void log(Object content, Integer type) {
+	public static void log(Object content, Integer type) {
 
 		switch (type) {
 		case 1: {

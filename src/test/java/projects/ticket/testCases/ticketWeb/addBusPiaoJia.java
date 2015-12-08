@@ -35,13 +35,13 @@ public class addBusPiaoJia {
 
 	@Test
 	public void test000login() {
-		piaoWuWebApp.log("3434");
-		piaoWuWebApp.runTestCase("登录");
+//		piaoWuWebApp.runTestCase("登录");
 		piaoWuWebApp.logTestDescription("进入主页");
 		piaoWuWebApp.enterHomePage();
 		piaoWuWebApp.waitDisplay("侧边栏", "巴士售票管理");
 		piaoWuWebApp.clickElement("侧边栏", "巴士售票管理");
 		piaoWuWebApp.logSuccessMessage("成功进入主页");
+//		piaoWuWebApp.assertFail("33");
 	}
 
 //	@Test
