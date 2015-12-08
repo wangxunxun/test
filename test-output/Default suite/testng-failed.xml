@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]">
-  <listeners>
-    <listener class-name="test.autotest.utils.TestngListener"/>
-  </listeners>
   <test name="Default test(failed)">
     <classes>
-      <class name="projects.ticket.testCases.ticketWeb.addQiChePiaoJia">
+      <class name="projects.ticket.testCases.ticketWeb.addBusPiaoJia">
         <methods>
-          <include name="tearDown"/>
-          <include name="test022editQiChePiaoJia"/>
           <include name="setUp"/>
+          <include name="test000login"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- projects.ticket.testCases.ticketWeb.addQiChePiaoJia -->
+      </class> <!-- projects.ticket.testCases.ticketWeb.addBusPiaoJia -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

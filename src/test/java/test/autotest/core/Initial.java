@@ -191,14 +191,21 @@ public class Initial {
 	}
 
 	protected Map<String, Map<String, Map<String, String>>> getElementData() {
-		ReadElementData elementdata = new ReadElementData(testDataExcelPath, elementSheet);
-		Map<String, Map<String, Map<String, String>>> eledata = null;
-		try {
-			eledata = elementdata.getdata();
-		} catch (Exception e) {
-			Assert.fail("Fail to get the element data.\n");
+		if(testDataExcelPath!=null & elementData!=null){
+			ReadElementData elementdata = new ReadElementData(testDataExcelPath, elementSheet);
+			Map<String, Map<String, Map<String, String>>> eledata = null;
+			try {
+				eledata = elementdata.getdata();
+			} catch (Exception e) {
+				Assert.fail("Fail to get the element data.\n");
+			}
+			return eledata;
 		}
-		return eledata;
+		else{
+			log("Please provide testDataExcelPath or elementSheet.");
+		}
+		return null;
+		
 	}
 
 	public void setThirdAppElementData(String excelPath, String elementSheet) {
@@ -243,7 +250,9 @@ public class Initial {
 
 	protected Map<String, Object> getTestCaseData() {
 		if (testCaseSheet != null) {
+			System.out.println(testCaseExcelPath);
 			ReadTestCasesData testCaseData = new ReadTestCasesData(testCaseExcelPath, testCaseSheet);
+			
 			Map<String, Object> data = null;
 			try {
 				data = testCaseData.getdata();
@@ -251,6 +260,9 @@ public class Initial {
 				Assert.fail("Fail to get the test case data .\n");
 			}
 			return data;
+		}
+		else{
+			log("Please provide the test case sheet.");
 		}
 		return null;
 

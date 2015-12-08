@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
-    <line>
-      <![CDATA[F:\workspace\test/testReport/Ö±´ï³µweb°æ/Ö±´ï³µweb°æTestReport20151205-231516-208/failScreen/20151205-231543-615_test022editQiChePiaoJia.png]]>
-    </line>
-    <line>
-      <![CDATA[<img src="../F:\workspace\test/testReport/Ö±´ï³µweb°æ/Ö±´ï³µweb°æTestReport20151205-231516-208/failScreen/20151205-231543-615_test022editQiChePiaoJia.png"/>]]>
-    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29659" started-at="2015-12-05T15:15:16Z" finished-at="2015-12-05T15:15:45Z">
+  <suite name="Default suite" duration-ms="31828" started-at="2015-12-08T13:23:43Z" finished-at="2015-12-08T13:24:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29659" started-at="2015-12-05T15:15:16Z" finished-at="2015-12-05T15:15:45Z">
-      <class name="projects.ticket.testCases.ticketWeb.addQiChePiaoJia">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.ticketWeb.addQiChePiaoJia@49e4cb85]" name="setUp" is-config="true" duration-ms="2676" started-at="2015-12-05T23:15:16Z" finished-at="2015-12-05T23:15:18Z">
+    <test name="Default test" duration-ms="31828" started-at="2015-12-08T13:23:43Z" finished-at="2015-12-08T13:24:15Z">
+      <class name="projects.ticket.testCases.ticketWeb.addBusPiaoJia">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:projects.ticket.testCases.ticketWeb.addBusPiaoJia@1d251891]" name="setUp" is-config="true" duration-ms="3098" started-at="2015-12-08T21:23:43Z" finished-at="2015-12-08T21:23:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test001enterAddMainPage()[pri:0, instance:projects.ticket.testCases.ticketWeb.addQiChePiaoJia@49e4cb85]" name="test001enterAddMainPage" duration-ms="8320" started-at="2015-12-05T23:15:18Z" finished-at="2015-12-05T23:15:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test001enterAddMainPage -->
-        <test-method status="FAIL" signature="test022editQiChePiaoJia()[pri:0, instance:projects.ticket.testCases.ticketWeb.addQiChePiaoJia@49e4cb85]" name="test022editQiChePiaoJia" duration-ms="13223" started-at="2015-12-05T23:15:27Z" finished-at="2015-12-05T23:15:40Z">
+        <test-method status="FAIL" signature="test000login()[pri:0, instance:projects.ticket.testCases.ticketWeb.addBusPiaoJia@1d251891]" name="test000login" duration-ms="26539" started-at="2015-12-08T21:23:46Z" finished-at="2015-12-08T21:24:13Z">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Can not find the iframe element on the Æû³µ-Ìí¼Ó³µÕ¾ page.]]>
+              <![CDATA[Can not find the ç™»å½•è¾“å…¥æ¡† element on the ç™»å½•é¡µ page.The css is #loginform > form > div:nth-child(1) > div > input]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Can not find the iframe element on the Æû³µ-Ìí¼Ó³µÕ¾ page.
+              <![CDATA[java.lang.AssertionError: Can not find the ç™»å½•è¾“å…¥æ¡† element on the ç™»å½•é¡µ page.The css is #loginform > form > div:nth-child(1) > div > input
 	at org.testng.Assert.fail(Assert.java:94)
-	at test.autotest.core.UI.waitDisplay(UI.java:294)
-	at test.autotest.core.UI.waitDisplay(UI.java:259)
-	at projects.ticket.testCases.ticketWeb.addQiChePiaoJia.test022editQiChePiaoJia(addQiChePiaoJia.java:49)
+	at test.autotest.core.UI.findElement(UI.java:219)
+	at test.autotest.core.UI.findElement(UI.java:181)
+	at test.autotest.core.UI.sendKeys(UI.java:45)
+	at test.autotest.base.WebApp.runTestCase(WebApp.java:348)
+	at projects.ticket.testCases.ticketWeb.addBusPiaoJia.test000login(addBusPiaoJia.java:39)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -60,19 +52,13 @@
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
-            <line>
-              <![CDATA[F:\workspace\test/testReport/Ö±´ï³µweb°æ/Ö±´ï³µweb°æTestReport20151205-231516-208/failScreen/20151205-231543-615_test022editQiChePiaoJia.png]]>
-            </line>
-            <line>
-              <![CDATA[<img src="../F:\workspace\test/testReport/Ö±´ï³µweb°æ/Ö±´ï³µweb°æTestReport20151205-231516-208/failScreen/20151205-231543-615_test022editQiChePiaoJia.png"/>]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- test022editQiChePiaoJia -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.ticketWeb.addQiChePiaoJia@49e4cb85]" name="tearDown" is-config="true" duration-ms="2053" started-at="2015-12-05T23:15:43Z" finished-at="2015-12-05T23:15:45Z">
+        </test-method> <!-- test000login -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:projects.ticket.testCases.ticketWeb.addBusPiaoJia@1d251891]" name="tearDown" is-config="true" duration-ms="2169" started-at="2015-12-08T21:24:13Z" finished-at="2015-12-08T21:24:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- projects.ticket.testCases.ticketWeb.addQiChePiaoJia -->
+      </class> <!-- projects.ticket.testCases.ticketWeb.addBusPiaoJia -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

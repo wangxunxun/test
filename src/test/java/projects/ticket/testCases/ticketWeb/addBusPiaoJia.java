@@ -35,6 +35,8 @@ public class addBusPiaoJia {
 
 	@Test
 	public void test000login() {
+		piaoWuWebApp.log("3434");
+		piaoWuWebApp.runTestCase("登录");
 		piaoWuWebApp.logTestDescription("进入主页");
 		piaoWuWebApp.enterHomePage();
 		piaoWuWebApp.waitDisplay("侧边栏", "巴士售票管理");
@@ -42,8 +44,8 @@ public class addBusPiaoJia {
 		piaoWuWebApp.logSuccessMessage("成功进入主页");
 	}
 
-	@Test
-	public void test031editBaShiPiaoJia() throws InterruptedException, BiffException, IOException {
+//	@Test
+	public void test031editBaShiPiaoJia() {
 		piaoWuWebApp.logTestDescription("添加bus票价");
 		String piaoJia = piaoWuWebApp.getProperties("baShiPiaoJia");
 		String newPiaoJia = piaoWuWebApp.getTableRowLocationByCss(piaoJia, 1);
