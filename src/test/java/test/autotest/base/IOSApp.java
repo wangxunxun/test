@@ -50,7 +50,7 @@ public class IOSApp extends UI {
 
 		try {
 			testAppType = null;
-			String excelPath = CommonTools.setPath(testDataExcelPath);
+			String excelPath = CommonTools.setPath(testCaseExcelPath);
 			if (writeResult == true) {
 				CommonTools.writeResultToExcel(excelPath, testCaseSheet, testResultData);
 				testResultData.clear();

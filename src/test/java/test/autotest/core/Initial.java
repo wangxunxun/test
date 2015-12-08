@@ -26,9 +26,10 @@ public class Initial {
 	// 测试项目配置文件（必填）
 	protected String configFilePath;
 	// 测试数据存储路径（必填）
-	protected String testDataExcelPath;
+	private String testDataExcelPath;
+	protected String testCaseExcelPath;
 	// 元素定位对应sheet名（必填）
-	protected String elementSheet;
+	private String elementSheet;
 	// 测试用例对应sheet名
 	protected String testCaseSheet;
 	// app存放文件夹（android项目必填）
@@ -58,7 +59,7 @@ public class Initial {
 	// 截屏存放路径
 	protected String screenDir;
 	// log存放路径
-	protected String logDir;
+	private String logDir;
 
 	// 测试报告存储文件夹
 	public static String testReportDir;
@@ -78,19 +79,19 @@ public class Initial {
 	// 回写测试结果开关
 	protected boolean writeResult;
 	// log开关
-	protected boolean logSwitch;
+	private boolean logSwitch;
 	// 每次运行时是否删除log.text文件开关
-	protected boolean deleteLogFileFirst;
+	private boolean deleteLogFileFirst;
 
 	// 测试报告testsummary sheet名称
 	protected String testSummarySheetName;
 
 	// 测试项目名称
-	protected String projectName;
+	private String projectName;
 	// 测试项目简介
-	protected String projectInfo;
+	private String projectInfo;
 	// 测试范围
-	protected String testSpecification;
+	private String testSpecification;
 
 	// 每个case执行成功后的message
 	public static String successMessage;
@@ -242,7 +243,7 @@ public class Initial {
 
 	protected Map<String, Object> getTestCaseData() {
 		if (testCaseSheet != null) {
-			ReadTestCasesData testCaseData = new ReadTestCasesData(testDataExcelPath, testCaseSheet);
+			ReadTestCasesData testCaseData = new ReadTestCasesData(testCaseExcelPath, testCaseSheet);
 			Map<String, Object> data = null;
 			try {
 				data = testCaseData.getdata();
@@ -511,6 +512,7 @@ public class Initial {
 
 		configFilePath = getInitialPropertiesPath(coreFilePath, envName);
 		testDataExcelPath = getProperties("testDataExcelPath");
+		testCaseExcelPath = getProperties("testCaseExcelPath");
 		elementSheet = getProperties("elementSheet");
 		testCaseSheet = getProperties("testCaseSheet");
 		projectName = getProjectName();
