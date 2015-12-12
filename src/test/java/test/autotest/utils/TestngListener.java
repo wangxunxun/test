@@ -25,6 +25,7 @@ public class TestngListener extends TestListenerAdapter {
 	private Long time;
 	private String comment;
 	private String screenPath;
+	private String abScreenPath;
 	private String successMessage;
 	private String caseInfo;
 	private String classInfo;
@@ -45,15 +46,16 @@ public class TestngListener extends TestListenerAdapter {
 		Initial.classInfo = null;
 		if (status == "Failure") {
 			CommonTools.log(method + " Failure");
+			List<String> path = null;
 			try {
-				screenPath = takeScreenShot(tr);
+				path = takeScreenShot(tr);				
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			screenPath = path.get(0);
+			abScreenPath = path.get(1);
 			comment = "Failure info - " + tr.getThrowable().getMessage();
 
 		} else if (status == "Success") {
@@ -77,6 +79,7 @@ public class TestngListener extends TestListenerAdapter {
 		methodData.put("status", status);
 		methodData.put("comment", comment);
 		methodData.put("screenPath", screenPath);
+		methodData.put("abScreenPath", abScreenPath);
 		classData.add(methodData);
 	}
 
@@ -121,28 +124,26 @@ public class TestngListener extends TestListenerAdapter {
 		System.out.println("Start to excute " + testContext.getAllTestMethods().length + " case");
 	}
 
-	private String takeScreenShot(ITestResult tr) throws InterruptedException, IOException {
+	private List<String> takeScreenShot(ITestResult tr) throws InterruptedException, IOException {
 		Thread.sleep(3000);
 		File scrFile = null;
 		String dir_name = Initial.testReportDir + "failScreen/";
-/*		if (Initial.testAppType == "web") {
-			dir_name = Initial.testReportDir + "failScreen/web/";
-		} else if (Initial.testAppType == "android") {
-			dir_name = Initial.testReportDir + "failScreen/android/";
-		} else if (Initial.testAppType == "ios") {
-			dir_name = Initial.testReportDir + "failScreen/ios/";
-		}*/
 		scrFile = ((TakesScreenshot) UI.driver).getScreenshotAs(OutputType.FILE);
 
 		if (!(new File(dir_name).isDirectory())) { // 判断是否存在该目录
 			new File(dir_name).mkdir(); // 如果不存在则新建一个目录
 		}
-		String filepath = dir_name + CommonTools.getCurrentTime() + "_" + tr.getName() + ".png";
+		String imgName = CommonTools.getCurrentTime() + "_" + tr.getName() + ".png";
+		String filepath = dir_name + imgName;
+		String abFilePath = "failScreen/" +imgName;
 		FileUtils.copyFile(scrFile, new File(filepath));
 		Reporter.setCurrentTestResult(tr);
 		Reporter.log(filepath);
 		Reporter.log("<img src=\"../" + filepath + "\"/>");
-		return filepath;
+		List<String> path = new ArrayList<>();
+		path.add(filepath);
+		path.add(abFilePath);
+		return path;
 
 	}
 

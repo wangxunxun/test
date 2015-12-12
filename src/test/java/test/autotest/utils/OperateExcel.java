@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import test.autotest.core.Initial;
 import jxl.Sheet;
 import jxl.SheetSettings;
 import jxl.Workbook;
@@ -264,6 +263,7 @@ public class OperateExcel {
 				String status = classData.get(i).get("status");
 				String comment = classData.get(i).get("comment");
 				String screenPath = classData.get(i).get("screenPath");
+				String abScreenPath = classData.get(i).get("abScreenPath");
 				String caseInfo = classData.get(i).get("caseInfo");
 				String classInfo = classData.get(i).get("classInfo");
 				float time1 = Float.parseFloat(time) / 1000;
@@ -292,26 +292,7 @@ public class OperateExcel {
 				}
 
 				if (screenPath != null) {
-					writeSameRow(8, "");
-					String[] newTestReportDir = Initial.testReportDir.split("/");
-					String lastReportDir = newTestReportDir[newTestReportDir.length - 1];
-					String[] midpath = screenPath.split(lastReportDir);
-					String path = "";
-					if(lastReportDir.matches("test")){
-
-						for(int k=2;k<midpath.length;k++){
-							path = path+midpath[k];
-						}
-					}
-					else{
-						path = midpath[1];
-						
-					}
-					
-					String newPath = path.substring(1, path.length());
-
-					
-					setHyperLinkByFormu(8, sheet.getRows() - 1, newPath, method);
+					setHyperLinkByFormu(8, sheet.getRows() - 1, abScreenPath, method);
 				} else {
 					writeSameRow(8, "");
 				}

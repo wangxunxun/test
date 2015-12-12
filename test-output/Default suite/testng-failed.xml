@@ -9,7 +9,7 @@
       <class name="projects.ticket.testCases.ticketWeb.addBusPiaoJia">
         <methods>
           <include name="setUp"/>
-          <include name="test000login"/>
+          <include name="test031editBaShiPiaoJia"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- projects.ticket.testCases.ticketWeb.addBusPiaoJia -->

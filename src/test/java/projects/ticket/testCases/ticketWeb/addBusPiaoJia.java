@@ -44,7 +44,7 @@ public class addBusPiaoJia {
 //		piaoWuWebApp.assertFail("33");
 	}
 
-//	@Test
+	@Test
 	public void test031editBaShiPiaoJia() {
 		piaoWuWebApp.logTestDescription("添加bus票价");
 		String piaoJia = piaoWuWebApp.getProperties("baShiPiaoJia");
@@ -55,7 +55,6 @@ public class addBusPiaoJia {
 		piaoWuWebApp.switchToFrame("巴士车站维护", "iframe");
 		piaoWuWebApp.waitDisplayByCss(newPiaoJia);
 		piaoWuWebApp.clickElementByCss(newPiaoJia);
-
 		piaoWuWebApp.switchToFrame("xubox_iframe1");
 
 		for (int i = 1; i <= 78; i++) {

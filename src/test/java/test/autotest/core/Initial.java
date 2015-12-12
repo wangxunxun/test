@@ -116,7 +116,7 @@ public class Initial {
 	private String currentTime;
 
 	protected String getFirefoxPath() {
-		firefoxPath = getProperties("firefoxPath");
+		String firefoxPath = getProperties("firefoxPath");
 		if (firefoxPath != null) {
 			return firefoxPath;
 		}
@@ -125,7 +125,7 @@ public class Initial {
 	}
 
 	protected String getTestReportDir() {
-		testReportDir = getProperties("testReportDir");
+		String testReportDir = getProperties("testReportDir");
 		if (testReportDir != null) {
 			return CommonTools.setPath(testReportDir);
 		}
@@ -133,7 +133,7 @@ public class Initial {
 		return CommonTools.setPath("/testReport/"+projectName+"/"+projectName+"TestReport"+currentTime+"/");
 	}
 	protected String getTestReportDirNoTime() {
-		testReportDir = getProperties("testReportDir");
+		String testReportDir = getProperties("testReportDir");
 		if (testReportDir != null) {
 			return CommonTools.setPath(testReportDir);
 		}
@@ -142,7 +142,7 @@ public class Initial {
 	}
 
 	protected String getProjectName() {
-		projectName = getProperties("projectName");
+		String projectName = getProperties("projectName");
 		if (projectName != null) {
 			return projectName;
 		}
@@ -151,7 +151,7 @@ public class Initial {
 	}
 
 	protected String getProjectInfo() {
-		projectInfo = getProperties("projectInfo");
+		String projectInfo = getProperties("projectInfo");
 		if (projectInfo != null) {
 			return projectInfo;
 		}
@@ -160,7 +160,7 @@ public class Initial {
 	}
 
 	protected String getTestSpecification() {
-		testSpecification = getProperties("testSpecification");
+		String testSpecification = getProperties("testSpecification");
 		if (testSpecification != null) {
 			return testSpecification;
 		}
@@ -169,7 +169,7 @@ public class Initial {
 	}
 
 	protected String getTestSummarySheetName() {
-		testSummarySheetName = getProperties("testSummarySheetName");
+		String testSummarySheetName = getProperties("testSummarySheetName");
 		if (testSummarySheetName != null) {
 			return testSummarySheetName;
 		}
@@ -179,7 +179,7 @@ public class Initial {
 	}
 
 	protected String getTestReportName() {
-		testReportName = getProperties("testReportName");
+		String testReportName = getProperties("testReportName");
 		if (testReportName != null) {
 			testReportName = testReportName + "(" + currentTime+ ")";
 			reportName.add(testReportName);
@@ -276,7 +276,7 @@ public class Initial {
 	}
 
 	protected String getAppClass() {
-		appClass = getProperties("appClass");
+		String appClass = getProperties("appClass");
 		if (appClass == null) {
 			return "defaultApp";
 		}
@@ -287,7 +287,7 @@ public class Initial {
 	protected int getBasicWindowX() {
 		String x = getProperties("basicWindowX");
 		if (x != null) {
-			basicWindowX = Integer.parseInt(x);
+			int basicWindowX = Integer.parseInt(x);
 			return basicWindowX;
 		}
 		return 720;
@@ -296,7 +296,7 @@ public class Initial {
 	protected int getBasicWindowY() {
 		String y = getProperties("basicWindowY");
 		if (y != null) {
-			basicWindowY = Integer.parseInt(y);
+			int basicWindowY = Integer.parseInt(y);
 			return basicWindowY;
 		}
 		return 1280;
@@ -312,7 +312,7 @@ public class Initial {
 	}
 
 	protected String getScreenDir() {
-		screenDir = getProperties("screenDir");
+		String screenDir = getProperties("screenDir");
 		if (screenDir != null) {
 			return CommonTools.setPath(screenDir);
 		}
@@ -322,7 +322,7 @@ public class Initial {
 	}
 
 	protected String getAppDir() {
-		appDir = getProperties("appDir");
+		String appDir = getProperties("appDir");
 		if (appDir != null) {
 			return CommonTools.setPath(appDir);
 		}
@@ -331,7 +331,7 @@ public class Initial {
 	}
 
 	protected String getlogDir() {
-		logDir = getProperties("logDir");
+		String logDir = getProperties("logDir");
 		if (logDir != null) {
 			return CommonTools.setPath(logDir);
 		}
@@ -555,8 +555,9 @@ public class Initial {
 		testReportName = getTestReportName();
 
 		testClassName = getTestClassName();
-		reportDirPathNoTime = getTestReportDirNoTime();
 		testReportDir = getTestReportDir();
+		reportDirPathNoTime = getTestReportDirNoTime();
+
 		
 		
 		
